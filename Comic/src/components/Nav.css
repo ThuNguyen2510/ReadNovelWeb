@@ -1,0 +1,80 @@
+.subnav {
+    float: left;
+    overflow: hidden;
+    list-style: none;
+}
+
+.subnav .subnavbtn {
+    border: none;
+    outline: none;
+    font-family: unset;
+    margin: 0;
+}
+
+.bg-color {
+    /* background-color: rgb(123, 211, 123); */
+    /* background-image: url(http://hinhnenppt.com/uploads/images/hinh-nen-powerpoint-don-sac-23-hinh-nen-powerpoint-mau-vang-pastel-1491892714-1.jpg);
+    background-size: cover; */
+    background: linear-gradient(to right, #ff9933 0%, #ffffff 100%);
+}
+
+.name {
+    padding: 5px 10px;
+    color: inherit;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+i {
+    color: inherit;
+}
+
+.subnavbtn {
+    /* background-color: #f8f9fa!important; */
+}
+
+.subnav-content {
+    display: none;
+    position: absolute;
+    left: 30%;
+    /* background-color: #f8f9fa; */
+    border: 1px solid rgb(36, 105, 65);
+    border-radius: 4%;
+    width: 20%;
+}
+
+.subnav:hover .subnav-content {
+    display: block;
+}
+
+option:hover {
+    display: block;
+    background-color: rgb(212, 235, 206);
+}
+
+.btnsearch {
+    color: #fff;
+}
+
+input[type="search"] {
+    border-radius: 25px 0 0 25px;
+    border: none;
+    height: 40px;
+    width: 300px;
+    outline: none;
+    padding: 0 25px;
+    background: #fff;
+}
+
+#btnsearch {
+    position: relative;
+    border-radius: 0 25px 25px 0;
+    height: 40px;
+}
+
+.btn {
+    background-color: rgb(32, 79, 180);
+}
+
+.sign {
+    padding-left: 20px;
+}

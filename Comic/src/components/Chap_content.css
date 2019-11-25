@@ -1,0 +1,14 @@
+.container {
+    text-align: center;
+}
+
+.row {
+    display: inline-block;
+}
+
+.content {
+    border: 1px solid honeydew;
+    background-color: honeydew;
+    padding: 5px 5px 5px 5px;
+    text-align: left;
+}

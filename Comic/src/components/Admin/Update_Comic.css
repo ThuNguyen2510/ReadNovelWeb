@@ -1,0 +1,81 @@
+button.btn.btn-primary.btn-lg.btn-block {
+    width: fit-content;
+    margin-left: 110px;
+}
+
+i.fas.fa-upload {
+    font-size: 15px;
+}
+
+.title {
+    font-size: 20px;
+    line-height: 1.6;
+    font-weight: bold;
+    margin: 0;
+}
+
+.col-xs-12 {
+    width: 100%;
+}
+
+a {
+    text-decoration: none
+}
+
+.col-sm-8 {
+    width: 70%;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.story-details .list-chap li {
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 8px 0;
+}
+
+li {
+    float: none;
+}
+
+button.btn.btn-pill.btn-warning {
+    margin-right: 10px;
+    width: 80px;
+}
+
+#li {
+    font-size: 20px;
+    color: seagreen;
+    font-family: cursive;
+}
+
+#wrapper {
+    display: flex;
+}
+
+#row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+#page-top {
+    height: 100%;
+}
+#s{
+    width: 210px;
+    height: 240px
+}
+.col-md-7{
+    padding: 20px;
+}
+a.btn.btn-pill.btn-warning {
+    width: 70px;
+}

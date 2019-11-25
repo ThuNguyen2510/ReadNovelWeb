@@ -1,0 +1,63 @@
+ul.sidebar.navbar-nav {
+    background-color: #159cad;
+    float: left;
+}
+
+#i {
+    color: white;
+    margin-right: 5px;
+}
+
+.side .nav-link {
+    font-weight: 20px;
+    color: #ccc;
+}
+
+.side .nav-item:hover {
+    background: #EEEEEE;
+}
+
+.navbar-brand span {
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.nav-item span {
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.nav-item span:hover {
+    color: teal;
+}
+
+.side .nav-link:hover {
+    color: #333333;
+}
+
+.side .nav-item .nav-link {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    margin-top: 10px
+}
+
+.sidebar-color {
+    background-color: #159cad;
+}
+
+.side .navbar-brand {
+    width: 100%;
+    height: 70px;
+}
+
+.side {
+    height: 100%;
+    width: 16%;
+    position: fixed;
+    text-align: left;
+    min-height: calc(100vh - 56px);
+}
