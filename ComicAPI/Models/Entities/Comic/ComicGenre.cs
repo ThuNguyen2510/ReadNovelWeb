@@ -9,7 +9,7 @@ namespace ComicAPI.Models.Entities
     {
         public int ComicID { get; set; }
         public int GenreID{ get; set; }
-        public virtual Comic Comic { get; set; }        
+        public  Comic Comic { get; set; }        
         public Genre Genre { get; set; }
         
     }

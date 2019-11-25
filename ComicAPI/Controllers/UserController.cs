@@ -8,7 +8,7 @@ using ComicAPI.Models.Entities;
 
 namespace ComicAPI.Controllers
 {
-    [Route("api/user")]
+    [Route("api/users")]
     [ApiController]
     public class UserController : ControllerBase
     {

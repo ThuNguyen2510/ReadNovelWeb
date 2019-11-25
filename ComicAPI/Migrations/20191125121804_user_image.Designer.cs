@@ -4,14 +4,16 @@ using ComicAPI;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ComicAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20191125121804_user_image")]
+    partial class user_image
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -65,7 +67,7 @@ namespace ComicAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ComicID");
+                    b.Property<int>("ComicId");
 
                     b.Property<string>("Content");
 
@@ -75,7 +77,7 @@ namespace ComicAPI.Migrations
 
                     b.HasKey("ChapterID");
 
-                    b.HasIndex("ComicID");
+                    b.HasIndex("ComicId");
 
                     b.ToTable("Chapter");
 
@@ -83,7 +85,7 @@ namespace ComicAPI.Migrations
                         new
                         {
                             ChapterID = 1,
-                            ComicID = 1,
+                            ComicId = 1,
                             Content = "",
                             STT = 1,
                             Title = "Đỗ Mạnh Cầm"
@@ -91,7 +93,7 @@ namespace ComicAPI.Migrations
                         new
                         {
                             ChapterID = 2,
-                            ComicID = 1,
+                            ComicId = 1,
                             Content = "",
                             STT = 2,
                             Title = "Khổ luyện"
@@ -99,7 +101,7 @@ namespace ComicAPI.Migrations
                         new
                         {
                             ChapterID = 3,
-                            ComicID = 2,
+                            ComicId = 2,
                             Content = "",
                             STT = 1,
                             Title = "Bộ mặt thật của 3 bà chị"
@@ -107,7 +109,7 @@ namespace ComicAPI.Migrations
                         new
                         {
                             ChapterID = 4,
-                            ComicID = 2,
+                            ComicId = 2,
                             Content = "",
                             STT = 2,
                             Title = "Xui Kiếp"
@@ -125,8 +127,6 @@ namespace ComicAPI.Migrations
                     b.Property<int>("Chapter_long");
 
                     b.Property<string>("Description");
-
-                    b.Property<int>("GenreID");
 
                     b.Property<string>("Image");
 
@@ -151,7 +151,6 @@ namespace ComicAPI.Migrations
                             Author = "Đỗ Cầm",
                             Chapter_long = 0,
                             Description = " Sẽ thế nào khi bạn mang trong người song tu thần kinh? Sở hữu khả năng xuyên qua 10 thế giới? Đào hoa vận không thua gì Rito (To love ru)? Lập 1 giàn harem, thủy tinh cung khủng nhất vũ trụ về khoe cho bọn bạn gato chơi.Đỗ Cầm có tất cả nhưng lại thừa 1 điều..... thừa bóng ma tâm lý về phụ nữ.Hãy đón xem công cuộc bị chinh phục của anh chàng đen đủi hay may mắn này nhé",
-                            GenreID = 1,
                             Image = "https://sstruyen.com/assets/img/story//cong-cuoc-bi-em-gai-chinh-phuc.jpg",
                             Likes = 100,
                             Name = "Công Cuộc Bị 999 Em Gái Chinh Phục",
@@ -165,7 +164,6 @@ namespace ComicAPI.Migrations
                             Author = "Phong Tử Tam Tam",
                             Chapter_long = 0,
                             Description = "Cố Minh Sâm giúp Ôn Vãn, lại không ngờ con bé kia lấy oán trả ơn.Mà Ôn Vãn không thẹn với lòng, dám khẳng định: Cô đối với Cố Minh Sâm, chỉ còn kém việc, dâng cái mạng nhỏ này cho anh ta. Kết quả chỉ đổi lấy tờ giấy thỏa thuận li hôn. Quả nhiên, thế giới này vô cùng bất công, người tốt lại chẳng được đền đáp.Dùng một câu để chốt văn án: Kết thúc đoạn hôn nhân hữu danh vô thực  đáng thất vọng, vận đào hoa của Ôn Vãn bỗng nhiên khởi sắc.",
-                            GenreID = 4,
                             Image = "https://sstruyen.com/assets/img/story//cau-chuyen-ho-o.jpg",
                             Likes = 100,
                             Name = "Câu Chuyện Hồ Đồ",
@@ -186,6 +184,28 @@ namespace ComicAPI.Migrations
                     b.HasIndex("GenreID");
 
                     b.ToTable("ComicGenre");
+
+                    b.HasData(
+                        new
+                        {
+                            ComicID = 1,
+                            GenreID = 2
+                        },
+                        new
+                        {
+                            ComicID = 1,
+                            GenreID = 1
+                        },
+                        new
+                        {
+                            ComicID = 2,
+                            GenreID = 5
+                        },
+                        new
+                        {
+                            ComicID = 2,
+                            GenreID = 3
+                        });
                 });
 
             modelBuilder.Entity("ComicAPI.Models.Entities.User", b =>
@@ -251,14 +271,14 @@ namespace ComicAPI.Migrations
                 {
                     b.HasOne("ComicAPI.Models.Entities.Comic", "Comic")
                         .WithMany("Chapters")
-                        .HasForeignKey("ComicID")
+                        .HasForeignKey("ComicId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("ComicAPI.Models.Entities.ComicGenre", b =>
                 {
                     b.HasOne("ComicAPI.Models.Entities.Comic", "Comic")
-                        .WithMany()
+                        .WithMany("ComicGenres")
                         .HasForeignKey("ComicID")
                         .OnDelete(DeleteBehavior.Cascade);
 

@@ -17,7 +17,7 @@ namespace ComicAPI.Models.Entities
         public int Views{get;set;}
         public DateTime Update_time{get;set;}
         public string Image{get;set;}
-        public ICollection<ComicGenre> ComicGenres { get; set; }
+        public int GenreID { get; set; }
         public ICollection<Chapter> Chapters { get; set; }
     }
 }

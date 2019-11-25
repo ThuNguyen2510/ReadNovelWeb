@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using ComicAPI.Services.UserService;
+using ComicAPI.Services.ComicServices;
 
 namespace ComicAPI
 {
@@ -33,6 +34,8 @@ namespace ComicAPI
             services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("ComicDatabase")));
            services.AddScoped<IUserService, UserService>();
+           services.AddScoped<IComicService,comicService>();
+           services.AddScoped<IChapService,ChapService>();
 
          }
 

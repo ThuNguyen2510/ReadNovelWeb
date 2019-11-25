@@ -10,7 +10,7 @@ namespace ComicAPI.Models.Entities
     public class Chapter
     {
         public int ChapterID{get;set;}
-        public int ComicId { get; set; }
+        public int ComicID { get; set; }
         public int STT{get;set;}
         public string Title{get;set;}
         public string Content{get;set;}
