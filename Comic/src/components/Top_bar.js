@@ -9,6 +9,7 @@ import {fetchGenres} from '../actions/GenreAction'
 import LeftBody from './LeftBody';
 import Search from './Search';
 import Home from './Home';
+import './Top_bar.css';
 import {SearchByName} from '../actions/SearchAction'
 class Nav extends React.Component{
     
@@ -32,38 +33,37 @@ class Nav extends React.Component{
         listStyle: "none"
     }
     var option=this.props.list.map((a,index)=>{
-    return(
-        <li className="cate ml-5">
-        <a   id={index}>{a.genre_name}</a><br/>
-        </li>
-    )
+    return <><option id={index}>{a.genre_name}</option></>
     });
     let {search}=this.state
         return(
-            <div  id="header">             
-                <div className="wrap-nav" >
-                    <div className="second-nav">
-                        <ul className="menu">
-                            <li>
-                                <i  style={{marginRight:"-15px"}}  className="fas fa-home"></i><Link to="/">TRANG CHỦ</Link>
-                            </li>
-                            <li className=" dropdown">
-                                <Link className="dropdown" to="/">THỂ LOẠI</Link><i className="fas fa-caret-down" style={{marginLeft:"-15px"}} ></i>
-                                <ul className="dropdown-content">
-                                    {option}
-                                </ul>
-                            </li>
-                            <li>
-                                <Link to="/">TRUYỆN HOT</Link>
-                            </li>
-                            <li>
-                                <Link to="/">DIỄN ĐÀN</Link>
-                            </li>
-                        </ul>
+          <>
+            <div id="headers">             
+                <div className="container" >
+                    <div className="row level" style={{backgroundColor:"#fff"}}>
+                        <div className="d-flex justify-content-start">
+                            <Link className="logo">
+                                <img className="img" style={{width:"100px"}} src = {require('../TVT.PNG')} alt = "logo"></img>
+                            </Link>      
+                        </div>                      
+                        <div className="input-group  d-flex justify-content-center " style={{width:"500px"}}>
+                            <input className="form-control py-2 border-right-0 border-radius-25" type="search" placeholder="What are you looking for?"  id="ip1" />
+                            <span className="input-group-append">
+                                <button className="btn btn-outline-secondary border-left-0 border" style={{backgroundColor:"#0282f9"}} id="ip2" type="button">
+                                <i className="fa fa-search" style={{color:"#fff"}} />
+                                </button>
+                            </span>
+                        </div>                          
+                        <div className="d-flex justify-content-end">
+                          <div className ="sign mr-5">
+                              {this.login_logout()}                  
+                          </div>
+                        </div>
                     </div>
                 </div>
-                <hr style={{marginTop:"-12px"}}/>
+              
             </div>
+          </>
 
         )
     }
@@ -87,7 +87,7 @@ class Nav extends React.Component{
       else{
         
         return   <>
-        <Link className="link" id="login" to='/Signin'  ><i className="fas fa-sign-in-alt link" ></i></Link> 
+        <Link className="link mr-auto"  id="login" to='/Signin'  >Log in<i className="fas fa-sign-in-alt link" ></i></Link> 
         </> 
       }
      
@@ -100,7 +100,7 @@ class Nav extends React.Component{
       var link=document.getElementById('login')
         link.setAttribute('href','/Signin')
         var icon=document.getElementById('icon')
-        icon.setAttribute('className','fas fa-sign-in-alt link')
+        icon.setAttribute('class','fas fa-sign-in-alt link')
      //   link.setAttribute('data-content','Signin/Signup')
         document.getElementById("user").style.visibility = "hidden";
         
