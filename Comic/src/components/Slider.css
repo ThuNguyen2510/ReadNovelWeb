@@ -1,7 +1,12 @@
-.aws-sld__content {
+/* .aws-sld__content {
     background-color: white
 }
 
 #top {
     padding-left: 5px;
+} */
+
+.pre-next {
+    color: rgb(77, 73, 73);
+    border-radius: 50%;
 }

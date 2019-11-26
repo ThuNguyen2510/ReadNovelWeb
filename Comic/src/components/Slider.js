@@ -1,117 +1,84 @@
 import React from 'react';
-import AwesomeSlider from 'react-awesome-slider';
-import 'react-awesome-slider/dist/styles.css';
+import styled from 'styled-components';
+import ItemsCarousel from 'react-items-carousel';
 import './Slider.css';
-import Comic_inSlider from './Comic_inSlider';
+import {fetchComicHot} from '../actions/ComicActions';
 import {connect} from 'react-redux';
-import {fetchComicHot} from '../actions/ComicActions'
+import Comic_inSlider from './Comic_inSlider';
 
-class Slider extends React.Component{
-    componentDidMount()
-    {
-        this.props.fetchComicHot()
-    }
-    get1()
-    {
-        var result=[]
-        console.log(this.props.listhot)
-        for(var i=0;i<this.props.listhot.length/2;i++)
-        {
-            result.push(
-            <div className="col-md-2">
-                <Comic_inSlider id={this.props.listhot[i].id} Image={this.props.listhot[i].Image} />
-            </div>)
-        }
-        return result;
-    }
-    get2()
-    {
-        var result=[]
-        console.log(this.props.listhot)
-        for(var i=6;i<this.props.listhot.length;i++)
-        {
-            result.push(
-            <div className="col-md-2">
-            <Comic_inSlider id={this.props.listhot[i].id} Image={this.props.listhot[i].Image} />
-            </div>)
-        }
-        return result;
-    }
-    comic1()
-    {
-        var c1=[]
-         c1.push(
-           <>
-           {this.get1()}
-           </>)
-        return c1;
-           
-    }
-    comic2()
-    {
-        var c2=[]
-        c2.push(
-           <>
-            {this.get2()}
-            </>
-        )
-        return c2;
-    }
-    show()
-    {
-        var div=[]
-        var j=0;
+const noOfItems = 12;
+const noOfCards = 5;
+const autoPlayDelay = 2000;
+const chevronWidth = 50;
+
+const Wrapper = styled.div`
+  padding: 10px ${chevronWidth}px;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: #1c1c1c;
+`;
+
+class Slider extends React.Component {
     
-        div.push(
-        <div className="row " > 
-         {this.comic1()}
-        </div>)
-        div.push(
-        <div className="row "> 
-            {this.comic2()}
-           </div>
-        )    
-        return div   
+  state = {
+    activeItemIndex: 0,
+  };
 
-    }
-    render()
-    {
-        var style={
-            height:"350px",
-            width:"100%",
-            marginLeft:"0%"
+  componentDidMount() {
+    this.interval = setInterval(this.tick, autoPlayDelay);
+    this.props.fetchComicHot();
+  }
 
-        }
-        var s={
-            backgroundColor: "#fffffc",
-            float:"left",
-            backroundSize: "cover"
-        }
-        return(
-            <>
-                  <AwesomeSlider style={style}>
-                {this.show()}
-                  
-                </AwesomeSlider>
-            </>
-        )
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+  tick = () => this.setState(prevState => ({
+    activeItemIndex: (prevState.activeItemIndex + 1) % (noOfItems-noOfCards + 1),
+  }));
+  get1()
+  {
+      var result=[]
+      console.log(this.props.listhot)
+      for(var i=0;i<this.props.listhot.length;i++)
+      {
+          result.push(
+          <Comic_inSlider id={this.props.listhot[i].id} Image={this.props.listhot[i].Image} Name={this.props.listhot[i].Name} />)
+      }
+      return result;
     }
+  onChange = value => this.setState({ activeItemIndex: value });
+
+  render() {
+    return (
+      <Wrapper>
+        <ItemsCarousel
+          gutter={12}
+          numberOfCards={noOfCards}
+          activeItemIndex={this.state.activeItemIndex}
+          requestToChangeActive={this.onChange}
+          rightChevron={<button className="pre-next">{'>'}</button>}
+          leftChevron={<button className="pre-next">{'<'}</button>}
+          chevronWidth={chevronWidth}
+          outsideChevron
+          children={this.get1()}
+        />
+      </Wrapper>
+    );
+  }
 }
 const mapStateToProps = (state) =>{
-    return{
-      listhot: state.comichot
+        return{
+          listhot: state.comichot
+        }
+      }
+ 
+      const mapDispatchToProps =(dispatch, props)=>
+      {
+        return {
+          fetchComicHot : ()=>{
+          dispatch(fetchComicHot())
+      
+        }
+      }
     }
-  }
-  
-  
-  
-  const mapDispatchToProps =(dispatch, props)=>
-  {
-    return {
-      fetchComicHot : ()=>{
-      dispatch(fetchComicHot())
-  
-    }
-  }
-  }
 export default connect(mapStateToProps, mapDispatchToProps)(Slider);

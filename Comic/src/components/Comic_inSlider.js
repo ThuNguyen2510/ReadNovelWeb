@@ -12,7 +12,8 @@ class Comic_inSlider extends React.Component{
             <>
             
             <Link className="book-img position-relative" id="top" to={"/Comic/"+this.props.id} >
-              <img  src={this.props.Image} style={{width:"98%"}} className="zoom-me" />
+              <img  src={this.props.Image} style={{width:"98%"}}/>
+              <strong className="tencomic">{this.props.Name}</strong>
             </Link>
             </>
         )
