@@ -48,7 +48,7 @@ class Nav extends React.Component{
                                 <i  style={{marginRight:"-15px"}}  className="fas fa-home"></i><Link to="/">TRANG CHỦ</Link>
                             </li>
                             <li className=" dropdown">
-                                <Link className="dropdown" to="/">THỂ LOẠI</Link><i className="fas fa-caret-down" style={{marginLeft:"-15px"}} ></i>
+                                <Link className="dropdown" to="/">THỂ LOẠI</Link><i className="fas fa-caret-down" style={{marginLeft:"-10px"}} ></i>
                                 <ul className="dropdown-content">
                                     {option}
                                 </ul>

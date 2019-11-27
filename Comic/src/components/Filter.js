@@ -115,11 +115,10 @@ class Filter extends React.Component
         return <Comic  id={a.id} Src={a.Image} name={a.Name} author={a.Author} follow={a.Number_of_Read} like={a.Number_of_Like}/>})
     }
         return(
-            <>
+            <div className="container-fluid">
             <Header/>
             <div>
-                <hr/>
-                <div className="container">
+                <div className="container mt-2">
                     <div className="row">
                         <div className="col-md-12 col-lg-9 mb-4">
                            
@@ -192,7 +191,7 @@ class Filter extends React.Component
                     </div>
                 </div>
             </div>
-            </>
+            </div>
         );
     }
 }

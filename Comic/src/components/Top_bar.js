@@ -32,9 +32,6 @@ class Nav extends React.Component{
       var li_style={
         listStyle: "none"
     }
-    var option=this.props.list.map((a,index)=>{
-    return <><option id={index}>{a.genre_name}</option></>
-    });
     let {search}=this.state
         return(
           <>
@@ -42,16 +39,14 @@ class Nav extends React.Component{
                 <div className="container" >
                     <div className="row level" style={{backgroundColor:"#fff"}}>
                         <div className="d-flex justify-content-start">
-                            <Link className="logo">
+                            <Link className="logo"  to="/">
                                 <img className="img" style={{width:"100px"}} src = {require('../TVT.PNG')} alt = "logo"></img>
                             </Link>      
                         </div>                      
                         <div className="input-group  d-flex justify-content-center " style={{width:"500px"}}>
                             <input className="form-control py-2 border-right-0 border-radius-25" type="search" placeholder="What are you looking for?"  id="ip1" />
                             <span className="input-group-append">
-                                <button className="btn btn-outline-secondary border-left-0 border" style={{backgroundColor:"#0282f9"}} id="ip2" type="button">
-                                <i className="fa fa-search" style={{color:"#fff"}} />
-                                </button>
+                            <Link  onClick={this.handleClick} to={"/search/"+search} className="btn btn-primary" id="ip2" ><i className="fas fa-search btnsearch"></i></Link>
                             </span>
                         </div>                          
                         <div className="d-flex justify-content-end">
@@ -61,7 +56,6 @@ class Nav extends React.Component{
                         </div>
                     </div>
                 </div>
-              
             </div>
           </>
 
@@ -74,7 +68,6 @@ class Nav extends React.Component{
           flag:true
         });
         this.props.SearchByName(this.state.search)
-        
       }
   
     login_logout()
@@ -86,9 +79,12 @@ class Nav extends React.Component{
       }
       else{
         
-        return   <>
-        <Link className="link mr-auto"  id="login" to='/Signin'  >Log in<i className="fas fa-sign-in-alt link" ></i></Link> 
+        return   (
+        <>
+            <Link className="btn btn-info"  id="login" to='/Signin' >Đăng nhập</Link> 
+            <Link className="btn btn-success ml-2"  id="login" to='/Signup' >Đăng ký</Link> 
         </> 
+        )
       }
      
     }
