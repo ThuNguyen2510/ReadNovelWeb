@@ -56,13 +56,10 @@ class Comic_detail extends React.Component{
     show()
     {
        
-        return <>         
+        return (     
         <div className="container-fluid">    
-            <Header/>
-            </div> 
-            
-             <hr/>              
-            <div className="container">
+            <Header/>       
+            <div className="container mt-4">
                 <div className="row">
                     <div className="col-md-12 col-lg-9">
                         <div className="row wrap-detail">
@@ -70,7 +67,7 @@ class Comic_detail extends React.Component{
                                {this.image()}
                             </div>
                             <div className="col-md-8 details">
-                            {this.Detail()}  
+                                {this.Detail()}  
                             </div>
                         </div>
                         <hr/>
@@ -88,12 +85,13 @@ class Comic_detail extends React.Component{
                 <div className="row">   
                     <Comment comic_id={this.props.match.params.index}/>                
                 </div>
-                <hr/>
-                <div className="row">   
-                    <Footer/>                
-                </div>
+                <hr/>                
             </div>   
-        </>
+            <div className="row">   
+                <Footer/>                
+            </div>
+        </div> 
+        )
     }
     render()
     {

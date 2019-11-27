@@ -1,80 +1,89 @@
-.subnav {
-    float: left;
-    overflow: hidden;
+#header {
+    clear: both;
+    position: relative;
+    z-index: 100;
+    height: 50px;
+    width: 100%;
+    background-color: #effbff
+}
+
+.second-nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wrap-nav {
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
+ul.menu {
+    list-style-type: none;
+    padding-top: 10px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+ul.menu a {
+    display: inline-block;
+    font-family: monospace;
+    font-size: 16px;
     list-style: none;
+    color: #464646;
+    margin: 0 20px;
+    padding: 0 0 10px;
+    position: relative;
 }
 
-.subnav .subnavbtn {
+ul.menu i {
+    color: #464646;
+    font-size: 16px;
+}
+
+.dropbtn {
+    color: white;
+    padding: 16px;
+    font-size: 16px;
     border: none;
-    outline: none;
-    font-family: unset;
-    margin: 0;
+    cursor: pointer;
 }
 
-.bg-color {
-    /* background-color: rgb(123, 211, 123); */
-    /* background-image: url(http://hinhnenppt.com/uploads/images/hinh-nen-powerpoint-don-sac-23-hinh-nen-powerpoint-mau-vang-pastel-1491892714-1.jpg);
-    background-size: cover; */
-    background: linear-gradient(to right, #ff9933 0%, #ffffff 100%);
+.dropdown {
+    position: relative;
+    display: inline-block;
 }
 
-.name {
-    padding: 5px 10px;
-    color: inherit;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-i {
-    color: inherit;
-}
-
-.subnavbtn {
-    /* background-color: #f8f9fa!important; */
-}
-
-.subnav-content {
+.dropdown-content {
     display: none;
     position: absolute;
-    left: 30%;
-    /* background-color: #f8f9fa; */
-    border: 1px solid rgb(36, 105, 65);
-    border-radius: 4%;
-    width: 20%;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 260px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
-.subnav:hover .subnav-content {
+.dropdown.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
     display: block;
 }
 
-option:hover {
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
     display: block;
-    background-color: rgb(212, 235, 206);
 }
 
-.btnsearch {
-    color: #fff;
+ul.menu.dropdown.cate {
+    display: block;
 }
 
-input[type="search"] {
-    border-radius: 25px 0 0 25px;
-    border: none;
-    height: 40px;
-    width: 300px;
-    outline: none;
-    padding: 0 25px;
-    background: #fff;
-}
-
-#btnsearch {
-    position: relative;
-    border-radius: 0 25px 25px 0;
-    height: 40px;
-}
-
-.btn {
-    background-color: rgb(32, 79, 180);
-}
-
-.sign {
-    padding-left: 20px;
+ul.menu.dropdown.cate a {
+    font-size: 14px;
 }

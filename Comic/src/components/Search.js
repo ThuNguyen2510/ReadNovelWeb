@@ -31,7 +31,6 @@ class Search extends React.Component
             <>
           
             <div>
-                <hr/>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 col-lg-9">

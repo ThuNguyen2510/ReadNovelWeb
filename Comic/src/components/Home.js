@@ -9,13 +9,9 @@ class Home extends React.Component{
     render(){
       
         return(
-            <div >
+            <div className="container-fluid">
                 <Header/>
-                <div className="row">
-                        <div className="col-md-12 lg-col-12" id="_s">
-                            <Slider/>
-                        </div>
-                    </div>
+                <Slider/>
                 <div className="container bg-navy">
                     
                     <div className="row">
