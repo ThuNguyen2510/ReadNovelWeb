@@ -81,8 +81,8 @@ class Nav extends React.Component{
         
         return   (
         <>
-            <Link className="btn btn-info"  id="login" to='/Signin' >Đăng nhập</Link> 
-            <Link className="btn btn-success ml-2"  id="login" to='/Signup' >Đăng ký</Link> 
+            <Link className="btn"  id="login" to='/Signin' >Đăng nhập</Link> 
+            <Link className="btn ml-2"  id="signup" to='/Signup' >Đăng ký</Link> 
         </> 
         )
       }
