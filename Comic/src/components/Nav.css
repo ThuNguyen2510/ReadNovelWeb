@@ -31,14 +31,14 @@ ul.menu a {
     font-family: monospace;
     font-size: 16px;
     list-style: none;
-    color: #464646;
+    color: #ffffff;
     margin: 0 20px;
     padding: 0 0 10px;
     position: relative;
 }
 
 ul.menu i {
-    color: #464646;
+    color: #ffffff;
     font-size: 16px;
 }
 
