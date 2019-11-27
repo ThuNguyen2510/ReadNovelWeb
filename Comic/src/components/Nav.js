@@ -1,14 +1,10 @@
 import React from 'react';
 import './Nav.css';
-import { Router, Link, NavLink } from "react-router-dom";
-import AwesomeSlider from 'react-awesome-slider';
+import {Link} from "react-router-dom";
 import 'react-awesome-slider/dist/styles.css';
 import {connect} from 'react-redux';
 import {logout} from '../reducers/login_reducer';
 import {fetchGenres} from '../actions/GenreAction'
-import LeftBody from './LeftBody';
-import Search from './Search';
-import Home from './Home';
 import {SearchByName} from '../actions/SearchAction'
 class Nav extends React.Component{
     
@@ -48,7 +44,7 @@ class Nav extends React.Component{
                                 <i  style={{marginRight:"-15px"}}  className="fas fa-home"></i><Link to="/">TRANG CHỦ</Link>
                             </li>
                             <li className=" dropdown">
-                                <Link className="dropdown" to="/">THỂ LOẠI</Link><i className="fas fa-caret-down" style={{marginLeft:"-15px"}} ></i>
+                                <Link className="dropdown" to="/">THỂ LOẠI</Link><i className="fas fa-caret-down" style={{marginLeft:"-10px"}} ></i>
                                 <ul className="dropdown-content">
                                     {option}
                                 </ul>

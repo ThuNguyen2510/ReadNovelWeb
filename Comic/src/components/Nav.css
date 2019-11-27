@@ -2,9 +2,9 @@
     clear: both;
     position: relative;
     z-index: 100;
-    height: 70px;
+    height: 50px;
     width: 100%;
-    background-color: #effbff
+    background-color: rgb(46, 118, 226);
 }
 
 .second-nav {
@@ -12,7 +12,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: ;
 }
 
 .wrap-nav {
@@ -29,18 +28,18 @@ ul.menu {
 
 ul.menu a {
     display: inline-block;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 24px;
+    font-family: monospace;
+    font-size: 16px;
     list-style: none;
-    color: midnightblue;
+    color: #ffffff;
     margin: 0 20px;
     padding: 0 0 10px;
     position: relative;
 }
 
 ul.menu i {
-    color: midnightblue;
-    font-size: 24px;
+    color: #ffffff;
+    font-size: 16px;
 }
 
 .dropbtn {

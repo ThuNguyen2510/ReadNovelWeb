@@ -2,8 +2,6 @@ import React from 'react';
 import './Filter.css';
 import {Link} from 'react-router-dom'
 import Header from './Header';
-import Nav from './Nav';
-import LeftBody from './LeftBody';
 import RightBody from './RightBody';
 import Footer from  './Footer';
 import Comic from './Comic'
@@ -11,7 +9,6 @@ import {connect} from 'react-redux';
 import {SearchByName} from '../actions/SearchAction';
 import {fetchGenres} from '../actions/GenreAction';
 import {fetchComicUpdateNew2,fetchComicHot,fetchComicByCategory} from '../actions/ComicActions'
-import comic from '../reducers/a_comic_reducer';
 class Filter extends React.Component
 {
     constructor(props)
@@ -24,11 +21,11 @@ class Filter extends React.Component
        
         this.props.fetchGenres()
         
-        if(window.location.pathname=='/TruyenMoi')
+        if(window.location.pathname==='/TruyenMoi')
         {
             this.props.fetchComicUpdateNew2()
         }
-        if(window.location.pathname=='/TruyenHot')
+        if(window.location.pathname==='/TruyenHot')
         {
             
             this.props.fetchComicHot()
@@ -43,11 +40,11 @@ class Filter extends React.Component
     {
         this.props.fetchGenres()
         
-        if(window.location.pathname=='/TruyenMoi')
+        if(window.location.pathname==='/TruyenMoi')
         {
             this.props.fetchComicUpdateNew2()
         }
-        if(window.location.pathname=='/TruyenHot')
+        if(window.location.pathname==='/TruyenHot')
         {
             
             this.props.fetchComicHot()
@@ -76,20 +73,10 @@ class Filter extends React.Component
       
         
     }
-    var but_style={
-        cursor: "pointer",
-        background: "#FFFFFF",
-        border: "1px solid #E1E1E11",
-        padding: "3px 10px",
-        fontWeight: "bold"
-    }
     var table_s={
         textAlign:"center",
         width:"70%",
 
-    }
-    var h={
-        color:"#ef2d3f"
     }
     var li={
         listStyle:"none"
@@ -103,23 +90,22 @@ class Filter extends React.Component
          comics=this.props.result.map(a=>{
         return <Comic  id={a.id} Src={a.Image} name={a.Name} author={a.Author} follow={a.Number_of_Read} like={a.Number_of_Like} />
     })  }
-     if(window.location.pathname=='/TruyenMoi'&&this.props.new.length>0){
+     if(window.location.pathname==='/TruyenMoi'&&this.props.new.length>0){
        
         comics=this.props.new.map(a=>{
         return <Comic  id={a.id} Src={a.Image} name={a.Name} author={a.Author} follow={a.Number_of_Read} like={a.Number_of_Like}/>})
     }
-     if(window.location.pathname=='/TruyenHot'&& this.props.hot.length>0)
+     if(window.location.pathname==='/TruyenHot'&& this.props.hot.length>0)
     {
 
         comics=this.props.hot.map(a=>{
         return <Comic  id={a.id} Src={a.Image} name={a.Name} author={a.Author} follow={a.Number_of_Read} like={a.Number_of_Like}/>})
     }
         return(
-            <>
+            <div className="container-fluid">
             <Header/>
             <div>
-                <hr/>
-                <div className="container">
+                <div className="container mt-2">
                     <div className="row">
                         <div className="col-md-12 col-lg-9 mb-4">
                            
@@ -192,7 +178,7 @@ class Filter extends React.Component
                     </div>
                 </div>
             </div>
-            </>
+            </div>
         );
     }
 }
@@ -218,4 +204,3 @@ const mapDispatchToProps = (dispatch) => {
   }
   
   export default connect(mapStateToProps, mapDispatchToProps)(Filter);
-  

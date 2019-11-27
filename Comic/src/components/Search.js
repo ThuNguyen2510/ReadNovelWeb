@@ -1,7 +1,5 @@
 import React from 'react';
 import './Filter.css';
-import Header from './Header';
-import Nav from './Nav';
 import LeftBody from './LeftBody';
 import RightBody from './RightBody';
 import Footer from  './Footer';
@@ -31,7 +29,6 @@ class Search extends React.Component
             <>
           
             <div>
-                <hr/>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 col-lg-9">
@@ -66,4 +63,3 @@ const mapStateToProps = (state) => {
   }
   
   export default connect(mapStateToProps, mapDispatchToProps)(Search);
-  
