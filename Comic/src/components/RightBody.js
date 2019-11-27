@@ -28,7 +28,7 @@ import { fetchComicUpdateNew } from '../actions/ComicActions';
             borderRadius: "8px",
         }
         var i_s={
-            color:"#0282f9",
+            color:"teal",
             textDecoration: "none",
         }
         var tb_s={

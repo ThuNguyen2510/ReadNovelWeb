@@ -1,5 +1,7 @@
 .footer {
     position: relative;
+    background-color: teal;
+    color: #fff;
 }
 
 section {
@@ -86,9 +88,4 @@ section .section-title {
     width: 90%;
     border-top: 1px #BBB solid;
     font-size: 13px;
-}
-
-.fter {
-    background-color: #0282f9;
-    color: #ffffff;
 }
