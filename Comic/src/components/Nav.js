@@ -1,14 +1,10 @@
 import React from 'react';
 import './Nav.css';
-import { Router, Link, NavLink } from "react-router-dom";
-import AwesomeSlider from 'react-awesome-slider';
+import {Link} from "react-router-dom";
 import 'react-awesome-slider/dist/styles.css';
 import {connect} from 'react-redux';
 import {logout} from '../reducers/login_reducer';
 import {fetchGenres} from '../actions/GenreAction'
-import LeftBody from './LeftBody';
-import Search from './Search';
-import Home from './Home';
 import {SearchByName} from '../actions/SearchAction'
 class Nav extends React.Component{
     

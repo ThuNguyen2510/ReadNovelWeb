@@ -1,7 +1,6 @@
 import React from 'react';
-import {Link,Route} from 'react-router-dom';
-import {connect} from 'react-redux'
-import {fetchChapters} from '../actions/ChapterAction'
+import {Link} from 'react-router-dom';
+
 class Comic extends React.Component{
 
     render()
@@ -13,7 +12,7 @@ class Comic extends React.Component{
             textAlign:"center"
         }
         var a_s={
-            color:"#1b1e21",
+            color:"#0282f9",
             fontSize:"10px",
             fontWeight: "600",
             lineHeight: "1.0",
@@ -34,8 +33,8 @@ class Comic extends React.Component{
         //     textAlign:"left"
         // }
         var sp={
-            backgroundColor: "#ebebeb",
-            borderRadius: "10px",
+            backgroundColor: "#fff",
+            color: "slategray",
             fontSize:"10px",
             fontWeight: "600",
             textDecoration: "none",

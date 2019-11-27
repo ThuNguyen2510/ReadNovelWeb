@@ -1,6 +1,6 @@
 import React from 'react';
 import ListComic from './ListComic';
-import {Link,Redirect} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import './LeftBody.css';
 import {connect} from 'react-redux';
 import {fetchGenres} from '../actions/GenreAction';
@@ -33,24 +33,13 @@ class LeftBody extends React.Component{
     render(){
         var con_m21={
             backgroundColor: "#fff",
-            height: "98%",
-          
-            
-        }
-        var but_style={
-            cursor: "pointer",
-            background: "#FFFFFF",
-            border: "1px solid #E1E1E11",
-            padding: "3px 10px",
-            fontWeight: "bold"
+            height: "100%",
+            width: "100%"
         }
         var table_s={
             textAlign:"center",
             width:"70%",
 
-        }
-        var h={
-            color:"#ef2d3f"
         }
         var li={
             listStyle:"none"
@@ -60,14 +49,14 @@ class LeftBody extends React.Component{
             })
         return(
             <div style={con_m21}>
-                <div className="content m2l">
-                <div >
+                <div className="ctn-m2l">
+                <div className="searchform" id="sform">
                     <form>
                         <table style={table_s}>                          
                             <tr>
                             <td> 
-                                <select onChange={e=>this.props.fetchComicByCategory(e.target.value)} className="mdb-select md-form colorful-select dropdown-primary"  >
-                                    <option value="0" >Thể Loại </option>
+                                <select id="select" onChange={e=>this.props.fetchComicByCategory(e.target.value)} className="mdb-select md-form colorful-select dropdown-primary"  >
+                                    <option value="0"  >Thể Loại </option>
                                     {option}
                             </select>
                             </td>
@@ -75,10 +64,10 @@ class LeftBody extends React.Component{
                                 
                             </td>
                             <td>                            
-                                <input type="checkbox" id="check"/>Truyện Full
+                            <p id="check_"><input type="checkbox" id="check"/>Truyện Full</p>
                             </td>
                             <td>
-                                <button onClick={this.Search23} className="btn btn-search"><i class="fa fa-search fa-fw"></i>Tìm truyện</button>
+                                <button onClick={this.Search23} id="search_comic" className="btn "><i class="fa fa-search fa-fw"></i>Tìm truyện</button>
                             </td>
                             </tr>                                                
                         </table>

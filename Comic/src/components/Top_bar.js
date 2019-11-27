@@ -1,14 +1,9 @@
 import React from 'react';
 import './Nav.css';
-import { Router, Link, NavLink } from "react-router-dom";
-import AwesomeSlider from 'react-awesome-slider';
-import 'react-awesome-slider/dist/styles.css';
+import {Link} from "react-router-dom";
 import {connect} from 'react-redux';
 import {logout} from '../reducers/login_reducer';
 import {fetchGenres} from '../actions/GenreAction'
-import LeftBody from './LeftBody';
-import Search from './Search';
-import Home from './Home';
 import './Top_bar.css';
 import {SearchByName} from '../actions/SearchAction'
 class Nav extends React.Component{
@@ -29,9 +24,6 @@ class Nav extends React.Component{
       this.props.logout()
     }
     render(){
-      var li_style={
-        listStyle: "none"
-    }
     let {search}=this.state
         return(
           <>
@@ -46,7 +38,7 @@ class Nav extends React.Component{
                         <div className="input-group  d-flex justify-content-center " style={{width:"500px"}}>
                             <input className="form-control py-2 border-right-0 border-radius-25" type="search" placeholder="What are you looking for?"  id="ip1" />
                             <span className="input-group-append">
-                            <Link  onClick={this.handleClick} to={"/search/"+search} className="btn btn-primary" id="ip2" ><i className="fas fa-search btnsearch"></i></Link>
+                            <Link  onClick={this.handleClick} to={"/search/"+search} className="btn" id="ip2" ><i style={{color:"#fff"}} className="fas fa-search btnsearch"></i></Link>
                             </span>
                         </div>                          
                         <div className="d-flex justify-content-end">

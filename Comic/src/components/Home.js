@@ -14,7 +14,7 @@ class Home extends React.Component{
                 <Slider/>
                 <div className="container bg-navy">
                     
-                    <div className="row">
+                    <div className="row mt-3">
                         <div className="col-md-8 ">
                             <LeftBody/>
                         </div>

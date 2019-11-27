@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link,Route} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 class Comic_mini extends React.Component{
     render()
     {
@@ -15,7 +15,7 @@ class Comic_mini extends React.Component{
         }
         var k={
             
-                color: "#952121",fontSize:"14px"
+                color: "slategray",fontSize:"14px"
             
         }
         return(
