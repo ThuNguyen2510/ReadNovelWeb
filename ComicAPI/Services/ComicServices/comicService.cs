@@ -48,6 +48,9 @@ namespace ComicAPI.Services.ComicServices
                     STT=e.STT,
                     ChapterID=e.ChapterID,ComicID=e.ComicID,Title=e.Title,
                     Content=e.Content
+                }).ToList(),
+                Comments=x.Comments.Select(w=> new Comment{
+                    ID=w.ID,Content=w.Content,CommentTime=w.CommentTime,User=w.User
                 }).ToList()
             }).Where(x=>x.ID==Id).SingleOrDefault();
             throw new NotImplementedException();
@@ -64,6 +67,9 @@ namespace ComicAPI.Services.ComicServices
                     STT=e.STT,
                     ChapterID=e.ChapterID,ComicID=e.ComicID,Title=e.Title,
                     Content=e.Content
+                }).ToList(),
+                 Comments=x.Comments.Select(w=> new Comment{
+                    ID=w.ID,Content=w.Content,CommentTime=w.CommentTime,User=w.User
                 }).ToList()
             }).ToList();
             return comics;

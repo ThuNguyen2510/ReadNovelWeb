@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ComicAPI.Migrations
 {
-    public partial class reset : Migration
+    public partial class ReSET : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -228,24 +228,6 @@ namespace ComicAPI.Migrations
                     { 2, 1, "", 2, "Khổ luyện" },
                     { 3, 2, "", 1, "Bộ mặt thật của 3 bà chị" },
                     { 4, 2, "", 2, "Xui Kiếp" }
-                });
-
-            migrationBuilder.InsertData(
-                table: "Like",
-                columns: new[] { "ID", "ComicID", "UserLikeID", "check" },
-                values: new object[,]
-                {
-                    { 1, 1, 1, true },
-                    { 2, 1, 3, true }
-                });
-
-            migrationBuilder.InsertData(
-                table: "Post",
-                columns: new[] { "PostID", "PostContent", "PostTime", "Title", "UserPostID" },
-                values: new object[,]
-                {
-                    { 1, "Mn tim giup minh cuon truyen", new DateTime(2019, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "Help me", 1 },
-                    { 2, "Mn tim giup minh cuon truyen", new DateTime(2019, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "Help me", 2 }
                 });
 
             migrationBuilder.CreateIndex(

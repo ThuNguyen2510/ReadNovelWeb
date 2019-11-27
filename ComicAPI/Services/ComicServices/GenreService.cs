@@ -23,7 +23,6 @@ namespace ComicAPI.Services.ComicServices
         {
             _context.Genres.Remove(_context.Genres.Where(x=>x.GenreID==id).SingleOrDefault());
             _context.SaveChanges();
-
             throw new NotImplementedException();
         }
 

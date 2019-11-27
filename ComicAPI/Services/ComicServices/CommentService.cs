@@ -18,8 +18,8 @@ namespace ComicAPI.Services.ComicServices
             var User = _context.Users.Where(x=>x.ID==comment.User.ID).SingleOrDefault();
             _context.Comments.Add(comment);
             User.Comment.Add(comment);
-            var Comic=_context.Comics.Where(x=>x.ID==comment.Comic.ID).SingleOrDefault();
-            Comic.Comments.Add(comment);
+            // var Comic=_context.Comics.Where(x=>x.ID==comment.Comic.ID).SingleOrDefault();
+            // Comic.Comments.Add(comment);
             _context.SaveChanges();
         }
 

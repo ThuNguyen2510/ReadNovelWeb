@@ -14,9 +14,9 @@ namespace ComicAPI
         public DbSet<Chapter> Chapters {get;set;}
         public DbSet<ComicGenre> ComicGenres{get;set;}
         public DbSet<Comment> Comments{get;set;}
-        public DbSet<Post> Posts{get;set;}
+       // public DbSet<Post> Posts{get;set;}
     //    public DbSet<Answer> Answers{get;set;}
-        public DbSet<Like> Likes{get;set;}
+      //  public DbSet<Like> Likes{get;set;}
      //   public DbSet<RepComment> RepComments{get;set;}
 
        protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -120,7 +120,7 @@ namespace ComicAPI
 
                  }
              };
-            modelBuilder.Entity<Post>().HasData(posts);
+           // modelBuilder.Entity<Post>().HasData(posts);
             var likes= new Like[]
             {
                 new Like{
@@ -130,7 +130,7 @@ namespace ComicAPI
                     ID=2,UserLikeID=3,check=true,ComicID=1
                 }
             };
-            modelBuilder.Entity<Like>().HasData(likes);
+            //modelBuilder.Entity<Like>().HasData(likes);
             // var answers= new Answer[]
             // {
             //     new Answer{

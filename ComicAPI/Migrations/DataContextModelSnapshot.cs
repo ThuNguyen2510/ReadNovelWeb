@@ -248,22 +248,6 @@ namespace ComicAPI.Migrations
                     b.HasIndex("UserLikeID");
 
                     b.ToTable("Like");
-
-                    b.HasData(
-                        new
-                        {
-                            ID = 1,
-                            ComicID = 1,
-                            UserLikeID = 1,
-                            check = true
-                        },
-                        new
-                        {
-                            ID = 2,
-                            ComicID = 1,
-                            UserLikeID = 3,
-                            check = true
-                        });
                 });
 
             modelBuilder.Entity("ComicAPI.Models.Entities.Post", b =>
@@ -285,24 +269,6 @@ namespace ComicAPI.Migrations
                     b.HasIndex("UserPostID");
 
                     b.ToTable("Post");
-
-                    b.HasData(
-                        new
-                        {
-                            PostID = 1,
-                            PostContent = "Mn tim giup minh cuon truyen",
-                            PostTime = new DateTime(2019, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Help me",
-                            UserPostID = 1
-                        },
-                        new
-                        {
-                            PostID = 2,
-                            PostContent = "Mn tim giup minh cuon truyen",
-                            PostTime = new DateTime(2019, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Help me",
-                            UserPostID = 2
-                        });
                 });
 
             modelBuilder.Entity("ComicAPI.Models.Entities.User", b =>
