@@ -24,7 +24,7 @@ class Comic_detail extends React.Component{
         var im;
         for(var i=0;i<this.props.comic.length-1;i++)
         {
-          im=<img id="s" src={this.props.comic[i].Image}></img>
+          im=<img id="s" src={this.props.comic[i].image}></img>
         }
         return <>{im}</>
     }
@@ -33,7 +33,7 @@ class Comic_detail extends React.Component{
         var result=[];
             for(var i = 0; i < this.props.comic.length-1; i++)
             {
-                var s=this.props.comic[i].Status
+                var s=this.props.comic[i].status
                 var tus=""
                 if(s===0)
                 {
@@ -43,11 +43,11 @@ class Comic_detail extends React.Component{
                 {
                     tus="Full"
                 }
-                localStorage.setItem('comic_name',this.props.comic[i].Name)
-                result.push(<Detail id_comic={this.props.comic[i].id }Name={this.props.comic[i].Name} 
-                    Author={this.props.comic[i].Author} id={this.props.comic[i+1]} 
-                    like={this.props.comic[i].Number_of_Like} 
-                    read={this.props.comic[i].Number_of_Read} status={tus} description={this.props.comic[i].Description}/>)
+                localStorage.setItem('comic_name',this.props.comic[i].name)
+                result.push(<Detail id_comic={this.props.comic[i].id }Name={this.props.comic[i].name} 
+                    Author={this.props.comic[i].author} id={this.props.comic[i+1]} 
+                    like={this.props.comic[i].likea} 
+                    read={this.props.comic[i].views} status={tus} description={this.props.comic[i].description}/>)
             }
            
             return result;

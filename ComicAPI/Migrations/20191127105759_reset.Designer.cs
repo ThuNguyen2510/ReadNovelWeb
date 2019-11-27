@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ComicAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20191125162131_editgenre")]
-    partial class editgenre
+    [Migration("20191127105759_reset")]
+    partial class reset
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -190,6 +190,123 @@ namespace ComicAPI.Migrations
                     b.ToTable("ComicGenre");
                 });
 
+            modelBuilder.Entity("ComicAPI.Models.Entities.Comment", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("ComicID");
+
+                    b.Property<DateTime>("CommentTime");
+
+                    b.Property<string>("Content");
+
+                    b.Property<int?>("UserID");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("ComicID");
+
+                    b.HasIndex("UserID");
+
+                    b.ToTable("Comment");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            CommentTime = new DateTime(2019, 11, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Content = "OK"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            CommentTime = new DateTime(2019, 11, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Content = "OK"
+                        },
+                        new
+                        {
+                            ID = 3,
+                            CommentTime = new DateTime(2019, 11, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Content = "OK"
+                        });
+                });
+
+            modelBuilder.Entity("ComicAPI.Models.Entities.Like", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ComicID");
+
+                    b.Property<int>("UserLikeID");
+
+                    b.Property<bool>("check");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("UserLikeID");
+
+                    b.ToTable("Like");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            ComicID = 1,
+                            UserLikeID = 1,
+                            check = true
+                        },
+                        new
+                        {
+                            ID = 2,
+                            ComicID = 1,
+                            UserLikeID = 3,
+                            check = true
+                        });
+                });
+
+            modelBuilder.Entity("ComicAPI.Models.Entities.Post", b =>
+                {
+                    b.Property<int>("PostID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("PostContent");
+
+                    b.Property<DateTime>("PostTime");
+
+                    b.Property<string>("Title");
+
+                    b.Property<int>("UserPostID");
+
+                    b.HasKey("PostID");
+
+                    b.HasIndex("UserPostID");
+
+                    b.ToTable("Post");
+
+                    b.HasData(
+                        new
+                        {
+                            PostID = 1,
+                            PostContent = "Mn tim giup minh cuon truyen",
+                            PostTime = new DateTime(2019, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Title = "Help me",
+                            UserPostID = 1
+                        },
+                        new
+                        {
+                            PostID = 2,
+                            PostContent = "Mn tim giup minh cuon truyen",
+                            PostTime = new DateTime(2019, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Title = "Help me",
+                            UserPostID = 2
+                        });
+                });
+
             modelBuilder.Entity("ComicAPI.Models.Entities.User", b =>
                 {
                     b.Property<int>("ID")
@@ -265,8 +382,35 @@ namespace ComicAPI.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("ComicAPI.Genre", "Genre")
-                        .WithMany("ComicGenres")
+                        .WithMany()
                         .HasForeignKey("GenreID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("ComicAPI.Models.Entities.Comment", b =>
+                {
+                    b.HasOne("ComicAPI.Models.Entities.Comic", "Comic")
+                        .WithMany("Comments")
+                        .HasForeignKey("ComicID");
+
+                    b.HasOne("ComicAPI.Models.Entities.User", "User")
+                        .WithMany("Comment")
+                        .HasForeignKey("UserID");
+                });
+
+            modelBuilder.Entity("ComicAPI.Models.Entities.Like", b =>
+                {
+                    b.HasOne("ComicAPI.Models.Entities.User", "UserLike")
+                        .WithMany()
+                        .HasForeignKey("UserLikeID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("ComicAPI.Models.Entities.Post", b =>
+                {
+                    b.HasOne("ComicAPI.Models.Entities.User", "UserPost")
+                        .WithMany()
+                        .HasForeignKey("UserPostID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

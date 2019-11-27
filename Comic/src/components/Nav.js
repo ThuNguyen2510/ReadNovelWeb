@@ -55,7 +55,7 @@ class Nav extends React.Component{
                     <li className="nav-item subnav" >
                       <Link className="name" to="/Category">Thể loại</Link><i class="fas fa-caret-down"></i>
                       <div class="subnav-content">
-                        {option}
+                        {/* {option} */}
                       </div>
                     </li> 
                     <li className="nav-item">

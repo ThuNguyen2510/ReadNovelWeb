@@ -10,9 +10,8 @@ namespace ComicAPI.Services.ComicServices
     {
         void AddChap(Chapter chap);
         void DeleteChap(int id);
-        Chapter GetChap(int chapid,int comicid);
         List<Chapter> GetChapsofComic(int comicid);
         List<Chapter> GetChaps();
-        void UpdateChap(int chapid,int comicid, Chapter chapter);
+        void UpdateChap(int chapid,Chapter chapter);
     }
 }

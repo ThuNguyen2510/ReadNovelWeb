@@ -31,8 +31,19 @@ namespace ComicAPI.Services.UserService
 
         public User GetUserById(int Id)
         {
-            return _context.Users.FirstOrDefault(x=> x.ID==Id);
-          //  throw new NotImplementedException();
+            return _context.Users.Select(u=> new User{
+                ID=u.ID,
+                Username=u.Username,
+                Password=u.Password,
+                Image=u.Image,
+                Email=u.Email,Role=u.Role,
+                Comment=u.Comment.Select(e=> new Comment
+                {
+                    ID = e.ID,
+                   Content= e.Content,CommentTime=e.CommentTime,Comic= new Comic{ID=e.Comic.ID}
+                }).ToList()
+            }).Where(x=> x.ID==Id).SingleOrDefault();
+            throw new NotImplementedException();
         }
 
         public List<User> GetUsers()

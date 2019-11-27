@@ -89,10 +89,10 @@ class Slider extends React.Component{
         }
         return(
             <>
-                  <AwesomeSlider style={style}>
+                  {/* <AwesomeSlider style={style}>
                 {this.show()}
                   
-                </AwesomeSlider>
+                </AwesomeSlider> */}
             </>
         )
     }

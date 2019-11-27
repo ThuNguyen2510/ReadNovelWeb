@@ -13,6 +13,9 @@ namespace ComicAPI.Models.Entities
         public string Password{get;set;}
         public string Image {get;set;}
         public int Role {get;set;}
-
+        //public ICollection<Post> posts{get;set;}
+        public ICollection<Comment> Comment { get; set; }
+     //   public ICollection<RepComment> repComments{get;set;}
+       // public ICollection<Like> likes{get;set;}
     }
 }

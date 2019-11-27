@@ -1,9 +1,13 @@
 import axios from 'axios';
 import Comic_detail from '../components/Comic_detail';
 export const fetchListComic = () => {
+    
     return dispatch => {
         return axios.get('http://127.0.0.1:3000/comics').then(data => {
+            
             dispatch(returnList(data.data))
+        }).catch(error => {
+            console.log(error)
         })
     }
 }
@@ -28,11 +32,10 @@ export const getLikedComics = (userid) => {
 }
 export const fetchOneComic = (Id) => {
     return dispatch => {
-        return axios.get('http://127.0.0.1:3000/comics?id=' + Id).then(
+        return axios.get('http://127.0.0.1:3000/comics/' + Id).then(
             data => {
                 const c = data.data[0]
-
-                axios.get('http://127.0.0.1:3000/genres?id=' + c.Genre_id).then(
+                axios.get('http://127.0.0.1:3000/genres/'+c.genreID).then(
                     g => {
                         const g_name = g.data[0].genre_name
 

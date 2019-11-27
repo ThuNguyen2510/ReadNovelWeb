@@ -5,12 +5,14 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using ComicAPI.Models.Entities;
 using ComicAPI.Services.ComicServices;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComicAPI.Controllers
 {
-    [Route("api/comics")]
+    [Route("comics")]
     [ApiController]
+    [EnableCors("AllowOrigin")]  
     public class ComicController : ControllerBase
     {
         private IComicService _comicService;

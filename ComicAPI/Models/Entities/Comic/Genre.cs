@@ -10,6 +10,6 @@ namespace ComicAPI
     {
         public int GenreID{get;set;}
         public string Genre_name{get;set;}
-        public ICollection<ComicGenre> ComicGenres { get; set; }
+        
     }
 }

@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using ComicAPI.Models.Entities;
 using System.Linq;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace ComicAPI
 {
@@ -12,17 +13,27 @@ namespace ComicAPI
         public DbSet<Genre> Genres {get;set;}
         public DbSet<Chapter> Chapters {get;set;}
         public DbSet<ComicGenre> ComicGenres{get;set;}
+        public DbSet<Comment> Comments{get;set;}
+        public DbSet<Post> Posts{get;set;}
+    //    public DbSet<Answer> Answers{get;set;}
+        public DbSet<Like> Likes{get;set;}
+     //   public DbSet<RepComment> RepComments{get;set;}
 
        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            
             modelBuilder.Entity<User>().ToTable("User");
             modelBuilder.Entity<Chapter>().ToTable("Chapter");
             modelBuilder.Entity<Comic>().ToTable("Comic");
             modelBuilder.Entity<Genre>().ToTable("Genre");
             modelBuilder.Entity<ComicGenre>().ToTable("ComicGenre");
-            modelBuilder.Entity<ComicGenre>().HasKey(c=> new {c.ComicID,c.GenreID});
-            modelBuilder.Entity<User>().HasData(
+            modelBuilder.Entity<ComicGenre>().HasKey(c=> new {c.ComicID,c.GenreID});     
+            modelBuilder.Entity<Comment>().ToTable("Comment"); 
+            modelBuilder.Entity<Post>().ToTable("Post");
+          //  modelBuilder.Entity<RepComment>().ToTable("Repcomment");
+            modelBuilder.Entity<Like>().ToTable("Like");
+           // modelBuilder.Entity<Answer>().ToTable("Answer");
+            var users= new User[]
+            {
                  new User { ID=1, Username = "ThuNguyen",   Email = "user@gmail.com",
                 Password="12345",Role=0,Image="https://middle.pngfans.com/20190505/lx/avatar-user-png-avatar-computer-icons-clipart-c26add6546fc41bb.jpg"
                     },
@@ -35,7 +46,8 @@ namespace ComicAPI
                      new User {ID=4, Username = "Admin",   Email = "admin@gmail.com",
                 Password="12345",Role=1,Image="https://cactusthemes.com/blog/wp-content/uploads/2018/01/tt_avatar_small.jpg"
                     }
-             );
+            }     ;
+            modelBuilder.Entity<User>().HasData(users);
              var genres= new Genre[]
              {
                 new Genre{ GenreID=1,Genre_name="Trinh Thám" },
@@ -45,6 +57,22 @@ namespace ComicAPI
                 new Genre{ GenreID=5,Genre_name="Dị Giới" }
              };
              modelBuilder.Entity<Genre>().HasData(genres);
+               var chapters =new Chapter[]
+             {
+                 new Chapter{
+                     ChapterID=1,ComicID=1,Title="Đỗ Mạnh Cầm",STT=1,
+                     Content=   "",                     
+                 },
+                  new Chapter{
+                     ChapterID=2,ComicID=1,Title="Khổ luyện",STT=2,
+                     Content= ""},
+                  new Chapter{
+                     ChapterID=3,ComicID=2,Title="Bộ mặt thật của 3 bà chị",STT=1,
+                     Content="" },
+                  new Chapter{
+                     ChapterID=4,ComicID=2,Title="Xui Kiếp",STT=2,
+                     Content=""  }
+             };
              var comics=new Comic[]
              {
                   new Comic{ID=1, Name="Công Cuộc Bị 999 Em Gái Chinh Phục",Status=0,Author="Đỗ Cầm",
@@ -60,48 +88,61 @@ namespace ComicAPI
                     GenreID=4
                  }
              };
-            modelBuilder.Entity<Comic>().HasData(comics);  
+            modelBuilder.Entity<Comic>().HasData(comics);              
+            modelBuilder.Entity<Chapter>().HasData(chapters);
 
-            //  var comicgenres=new ComicGenre[]
-            //  {
-            //     new ComicGenre{
-            //          ComicID=comics.Single(c=>c.Name=="Công Cuộc Bị 999 Em Gái Chinh Phục").ID,
-            //          GenreID=genres.Single(d=> d.Genre_name=="Ngôn Tình").GenreID
-            //      },
-            //     new ComicGenre{
-            //          ComicID=comics.Single(c=>c.Name=="Công Cuộc Bị 999 Em Gái Chinh Phục").ID,
-            //          GenreID=genres.Single(d=> d.Genre_name=="Trinh Thám").GenreID
-            //      },
-            //      new ComicGenre{
-            //          ComicID=comics.Single(c=>c.Name=="Câu Chuyện Hồ Đồ").ID,
-            //          GenreID=genres.Single(d=> d.Genre_name=="Dị Giới").GenreID
-            //      },
-            //      new ComicGenre{
-            //          ComicID=comics.Single(c=>c.Name=="Câu Chuyện Hồ Đồ").ID,
-            //          GenreID=genres.Single(d=> d.Genre_name=="Viễn Tưởng").GenreID
-            //      },
-            //  };
-            //   modelBuilder.Entity<ComicGenre>().HasData(comicgenres);
-              var chapters =new Chapter[]
+            var comments= new Comment[]
+            {
+                new Comment{
+                    ID=1,CommentTime=new System.DateTime(2019,11,26),
+                    Content="OK"
+                },
+                 new Comment{
+                    ID=2,CommentTime=new System.DateTime(2019,11,26),
+                    Content="OK"
+                },
+                 new Comment{
+                    ID=3,CommentTime=new System.DateTime(2019,11,26),
+                    Content="OK"
+                }
+            };
+             modelBuilder.Entity<Comment>().HasData(comments);
+             var posts= new Post[]
              {
-                 new Chapter{
-                     ChapterID=1,ComicID=comics[0].ID,Title="Đỗ Mạnh Cầm",STT=1,
-                     Content=   "",
-                     
+                 new Post{
+                     PostID=1,UserPostID=1,PostContent="Mn tim giup minh cuon truyen",
+                     PostTime=new System.DateTime(2019,10,5),Title="Help me"
+
                  },
-                  new Chapter{
-                     ChapterID=2,ComicID=1,Title="Khổ luyện",STT=2,
-                     Content= ""  },
-                  new Chapter{
-                     ChapterID=3,ComicID=2,Title="Bộ mặt thật của 3 bà chị",STT=1,
-                     Content="" },
-                  new Chapter{
-                     ChapterID=4,ComicID=2,Title="Xui Kiếp",STT=2,
-                     Content=""  }
+                  new Post{
+                     PostID=2,UserPostID=2,PostContent="Mn tim giup minh cuon truyen",
+                     PostTime=new System.DateTime(2019,10,5),Title="Help me"
+
+                 }
              };
-             modelBuilder.Entity<Chapter>().HasData(chapters);
-           
-	
+            modelBuilder.Entity<Post>().HasData(posts);
+            var likes= new Like[]
+            {
+                new Like{
+                    ID=1,UserLikeID=1,check=true,ComicID=1
+                },
+                 new Like{
+                    ID=2,UserLikeID=3,check=true,ComicID=1
+                }
+            };
+            modelBuilder.Entity<Like>().HasData(likes);
+            // var answers= new Answer[]
+            // {
+            //     new Answer{
+            //         AnswerID=1,AnswerTime=new System.DateTime(2019,2,22),
+            //         UserAnswerID=2,Content="NE ............",PostID=1
+            //     },
+            //     new Answer{
+            //         AnswerID=2,AnswerTime=new System.DateTime(2019,2,22),
+            //         UserAnswerID=1,Content="NE ............",PostID=2
+            //     }
+            // };
+            // modelBuilder.Entity<Answer>().HasData(answers);      
        }
      
      

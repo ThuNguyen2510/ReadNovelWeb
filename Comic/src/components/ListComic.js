@@ -16,12 +16,12 @@ class ListComic extends React.Component {
             var result = [];
 
             for (var i = 0; i < this.props.list.length; i++) {
-                result.push( < Comic id = { i }
-                    Src = { this.props.list[i].Image }
-                    name = { this.props.list[i].Name }
-                    author = { this.props.list[i].Author }
-                    follow = { this.props.list[i].Number_of_Read }
-                    like = { this.props.list[i].Number_of_Like }
+                result.push( < Comic id = { this.props.list[i].id }
+                    Src = { this.props.list[i].image }
+                    name = { this.props.list[i].name }
+                    author = { this.props.list[i].author }
+                    follow = { this.props.list[i].views }
+                    like = { this.props.list[i].likes }
                     />)
                 }
                 if(result.length==0) return <p style={{marginLeft:"40%"}}>NO RESULT</p>

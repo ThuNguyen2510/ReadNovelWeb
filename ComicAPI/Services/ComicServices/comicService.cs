@@ -18,10 +18,18 @@ namespace ComicAPI.Services.ComicServices
         public void AddNewComic(Comic comic)
         {
             _context.Comics.Add(comic);
+            // if(comic.Chapters.ToList()!=null)
+            // {
+            //     foreach (var i in comic.Chapters)
+            //     {
+            //         _context.Chapters.Add(i);                
+            //         comic.Chapters.Add(i);
+            //     }
+            // }
             _context.SaveChanges();
             throw new NotImplementedException();
         }
-
+        //delete comic => delete chapter
         public void DeleteComic(int id)
         {
              var comic=_context.Comics.FirstOrDefault(x=>x.ID==id);
@@ -32,14 +40,32 @@ namespace ComicAPI.Services.ComicServices
 
         public Comic GetComicById(int Id)
         {
-            return _context.Comics.FirstOrDefault(x=> x.ID==Id);
+            return _context.Comics.Select(x=> new Comic{
+                ID=x.ID,Name=x.Name,Author=x.Author,Update_time=x.Update_time,
+                Likes=x.Likes,Views=x.Views,Status=x.Status,Description=x.Description,
+                Chapter_long=x.Chapter_long,Image=x.Image,GenreID=x.GenreID,
+                Chapters=x.Chapters.Select(e=> new Chapter{
+                    STT=e.STT,
+                    ChapterID=e.ChapterID,ComicID=e.ComicID,Title=e.Title,
+                    Content=e.Content
+                }).ToList()
+            }).Where(x=>x.ID==Id).SingleOrDefault();
             throw new NotImplementedException();
         }
         
         public List<Comic> GetComics()
         {
-            var comics= new List<Comic>();
-            comics=_context.Comics.ToList();
+            List<Comic> comics= new List<Comic>();
+            comics=_context.Comics.Select(x=> new Comic{
+                ID=x.ID,Name=x.Name,Author=x.Author,Update_time=x.Update_time,
+                Likes=x.Likes,Views=x.Views,Status=x.Status,Description=x.Description,
+                Chapter_long=x.Chapter_long,Image=x.Image,GenreID=x.GenreID,
+                Chapters=x.Chapters.Select(e=> new Chapter{
+                    STT=e.STT,
+                    ChapterID=e.ChapterID,ComicID=e.ComicID,Title=e.Title,
+                    Content=e.Content
+                }).ToList()
+            }).ToList();
             return comics;
             throw new NotImplementedException();
         }
@@ -65,6 +91,7 @@ namespace ComicAPI.Services.ComicServices
             comic.Chapter_long=comic_.Chapter_long;
             comic.GenreID=comic_.GenreID;
             comic.Description=comic_.Description;
+            _context.SaveChanges();
             throw new NotImplementedException();
         }
     }

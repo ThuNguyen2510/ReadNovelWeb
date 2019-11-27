@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ComicAPI.Services.UserService;
 using ComicAPI.Models.Entities;
+using Microsoft.AspNetCore.Cors;
 
 namespace ComicAPI.Controllers
 {
-    [Route("api/users")]
+    [Route("users")]
     [ApiController]
+    [EnableCors("AllowOrigin")]  
     public class UserController : ControllerBase
     {
          private IUserService _userService;

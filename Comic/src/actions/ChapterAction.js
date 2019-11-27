@@ -1,13 +1,16 @@
 import axios from 'axios';
 export const fetchChapters= (comic_id) =>
 {
+   
     return dispatch =>{
-        return axios.get('http://127.0.0.1:3000/chapters?comic_id='+comic_id).then(
+        return axios.get('http://127.0.0.1:3000/comics/'+comic_id).then(
             data =>{
-                const list=data.data
+                const list=data.data.chapters
                 dispatch(returnListChapter(list));
             }
-        )
+        ).catch(error=>{
+            console.log(error);
+        })
     }
 }
 export const fetchChapter = (chapter_id,comic_id) =>

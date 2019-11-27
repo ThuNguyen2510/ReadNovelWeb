@@ -15,7 +15,7 @@ import { fetchComicUpdateNew } from '../actions/ComicActions';
     show()
     {
        return this.props.list.map((a,index)=>
-      <Comic_mini id={a.id} src={a.Image} name={a.Name} datetime={a.Post_DateTime}/>
+      <Comic_mini id={a.id} src={a.image} name={a.name} datetime={a.update_time}/>
       )
     }
      render()
