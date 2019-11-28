@@ -33,13 +33,12 @@ class LeftBody extends React.Component{
     render(){
         var con_m21={
             backgroundColor: "#fff",
-            height: "100%",
+            height: "95%",
             width: "100%"
         }
         var table_s={
             textAlign:"center",
             width:"70%",
-
         }
         var li={
             listStyle:"none"
@@ -49,16 +48,16 @@ class LeftBody extends React.Component{
             })
         return(
             <div style={con_m21}>
-                <div className="ctn-m2l">
+                {/* <div className="ctn-m2l">
                 <div className="searchform" id="sform">
-                    <form>
+                    {/* <form>
                         <table style={table_s}>                          
                             <tr>
                             <td> 
                                 <select id="select" onChange={e=>this.props.fetchComicByCategory(e.target.value)} className="mdb-select md-form colorful-select dropdown-primary"  >
                                     <option value="0"  >Thể Loại </option>
                                     {option}
-                            </select>
+                                </select>
                             </td>
                             <td>
                                 
@@ -71,12 +70,11 @@ class LeftBody extends React.Component{
                             </td>
                             </tr>                                                
                         </table>
-                    </form>
+                    </form> 
                 </div>
-                </div>
-                <hr></hr>
+                </div> */}
                 <div>
-                <nav aria-label="Page navigation example">
+                {/* <nav aria-label="Page navigation example">
                     <ul className="pagination justify-content-center">
                         <li className="page-item">
                             <Link className="page-link" to="/" aria-label="Previous">
@@ -94,11 +92,11 @@ class LeftBody extends React.Component{
                             </Link>
                         </li>
                     </ul>
-                </nav>
+                </nav> */}
                 </div>
                <div className="row">
                    <ListComic/>
-                   </div> 
+                </div> 
             </div>
         );
 
@@ -115,7 +113,6 @@ const mapStateToProps = (state) => {
     return {
       fetchGenres:() =>dispatch(fetchGenres()),
       fetchComicByCategory:(id) => dispatch(fetchComicByCategory(id))
-  
     };
   }
   

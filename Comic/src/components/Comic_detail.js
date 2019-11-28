@@ -58,7 +58,7 @@ class Comic_detail extends React.Component{
        
         return (     
         <div className="container-fluid">    
-            <Header/>       
+            <Header/>      
             <div className="container mt-4">
                 <div className="row">
                     <div className="col-md-12 col-lg-9">
@@ -87,7 +87,7 @@ class Comic_detail extends React.Component{
                 </div>
                 <hr/>                
             </div>   
-            <div className="row">   
+            <div className="row">  
                 <Footer/>                
             </div>
         </div> 

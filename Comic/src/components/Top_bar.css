@@ -29,15 +29,18 @@
 #login {
     padding: 6px;
     border-radius: 10px;
-    background-color: darkorange;
-    color: #fff;
+    font-weight: bold;
+    background-color: #fff;
+    color: teal;
+    border: 0.1em solid teal;
 }
 
 #signup {
     padding: 6px;
     border-radius: 10px;
+    font-weight: bold;
     color: #fff;
-    background-color: rgb(220, 20, 20);
+    background-color: teal;
 }
 
 #logo_but {
