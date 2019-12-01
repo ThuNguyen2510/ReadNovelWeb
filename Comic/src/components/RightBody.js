@@ -24,11 +24,11 @@ import { fetchComicUpdateNew } from '../actions/ComicActions';
             backgroundColor: "#fff",
             height: "100%",
             width: "100%",
-            border: "2px solid #e1e1e1",
+            border: "2px solid currentColor",
             borderRadius: "8px",
         }
         var i_s={
-            color:"#0282f9",
+            color:"teal",
             textDecoration: "none",
         }
         var tb_s={
@@ -39,10 +39,11 @@ import { fetchComicUpdateNew } from '../actions/ComicActions';
           border: "1px solid #E1E1E1",
           padding: "3px 8px",
           fontWeight:" bold",
-          color: "#f66b00",
+          color: "#fff",
           textDecoration: "none",
-          backgroundColor: "#42100f",
-          borderRadius: "8px"
+          backgroundColor: "teal",
+          borderRadius: "8px",
+          marginBottom: "-5px"
         }
         
          return(
@@ -50,8 +51,8 @@ import { fetchComicUpdateNew } from '../actions/ComicActions';
             <div className="row">
             <div style={con_d}>
               <div>
-              <h5 className="widget-heading font-nav" title="TRUYỆN ĐỌC NHIỀU NHẤT" >
-              <i style={i_s} className="fab fa-font-awesome-flag"></i>
+              <h5 className="widget-heading font-nav mt-3" title="TRUYỆN ĐỌC NHIỀU NHẤT" >
+                <i style={i_s} className="fab fa-font-awesome-flag"></i>
                 <Link to="/" style={i_s}>TRUYỆN MỚI NHẤT</Link>                
                 </h5>
               </div>

@@ -1,5 +1,5 @@
 .comicname {
-    color: rgb(43, 39, 39);
+    color: steelblue;
     text-decoration: none;
 }
 
@@ -10,6 +10,8 @@
 
 .info {
     text-align: left;
+    color: slategrey;
+    font-family: sans-serif;
 }
 
 .description {

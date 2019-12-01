@@ -1,12 +1,15 @@
-.home {
-    width: 100%;
-}
-
-.slide {
-    display: inline-block;
-}
-
-.container {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
+  .home {
+      width: 100%;
+  }
+  
+  .slide {
+      display: inline-block;
+  }
+  
+  #update {
+      font-family: inherit;
+      color: teal;
+      font-size: 30px;
+      text-align: left;
+      margin-left: 20px;
+  }

@@ -31,8 +31,9 @@ class Nav extends React.Component{
                 <div className="container" >
                     <div className="row level" style={{backgroundColor:"#fff"}}>
                         <div className="d-flex justify-content-start">
-                            <Link className="logo"  to="/">
-                                <img className="img" style={{width:"100px"}} src = {require('../TVT.PNG')} alt = "logo"></img>
+                            <Link className="logo ml-5"  to="/">
+                                {/* <img className="img" style={{width:"100px"}} src = {require('../TVT.PNG')} alt = "logo"></img> */}
+                                <button id="logo_but">TVT</button>
                             </Link>      
                         </div>                      
                         <div className="input-group  d-flex justify-content-center " style={{width:"500px"}}>
@@ -73,8 +74,8 @@ class Nav extends React.Component{
         
         return   (
         <>
-            <Link className="btn btn-info"  id="login" to='/Signin' >Đăng nhập</Link> 
-            <Link className="btn btn-success ml-2"  id="login" to='/Signup' >Đăng ký</Link> 
+            <Link className="btn"  id="login" to='/Signin' >Đăng nhập</Link> 
+            <Link className="btn ml-2"  id="signup" to='/Signup' >Đăng ký</Link> 
         </> 
         )
       }

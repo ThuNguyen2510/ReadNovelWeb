@@ -69,7 +69,7 @@ class Filter extends React.Component
         localStorage.setItem('searchByName',this.props.match.params.string)
         var con_m21={
         backgroundColor: "#fff",
-        height: "98%",
+        height: "95%",
       
         
     }

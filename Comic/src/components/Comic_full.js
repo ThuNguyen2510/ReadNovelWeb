@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-class Comic extends React.Component{
+class Comic_full extends React.Component{
 
     render()
     {
@@ -28,10 +28,6 @@ class Comic extends React.Component{
             color:"#999",
             textAlign:"left"
         }
-        // var x={
-        //     color:"#999",
-        //     textAlign:"left"
-        // }
         var sp={
             backgroundColor: "#fff",
             color: "slategray",
@@ -47,7 +43,7 @@ class Comic extends React.Component{
         }
         return(
             <>
-            <div className="col-12 col-md-3" style={i_k}>
+            <div className="col-12 col-md-2" style={i_k}>
                 <div className="page-item-detail manga">
                     <div className="item-thumb hover-details c-image-hover">
                         <Link className="book-img position-relative" to={"/Comic/"+this.props.id}>
@@ -70,4 +66,4 @@ class Comic extends React.Component{
     }
 }
 
-  export default Comic;
+  export default Comic_full;

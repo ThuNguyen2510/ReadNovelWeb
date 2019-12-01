@@ -46,63 +46,51 @@ class Detail extends React.Component {
 
     }
     daLike() {
-        return ( < > < button className = "liked"
-            onClick = { this.btnClick.bind(this) } >
-            <
-            i className = "fa fa-heart" > < /i> < /
-            button > <
-            span className = "like" > { this.props.like } < /span></ > );
+        return ( 
+        <> 
+            <button className = "liked" onClick = { this.btnClick.bind(this) } >
+                <i className = "fa fa-heart" > </i> 
+            </button > 
+            <span className = "like" > { this.props.like } </span>
+        </> 
+        );
     }
     chuaLike() {
-        return ( < > < button className = "but-like"
-            onClick = { this.btnClick.bind(this) } >
-            <
-            i className = "fa fa-heart" > < /i> < /
-            button > <
-            span className = "like" > { this.props.like } < /span></ > );
+        return (
+        <> 
+            < button className = "but-like" onClick = { this.btnClick.bind(this) } >
+                <i className = "fa fa-heart" > </i> 
+            </button> 
+            < span className = "like" > { this.props.like } </span>
+        </>
+        );
     }
     render() {
 
-        return ( <
-            >
+        return ( 
+        <>
+            <div className = "title" >
+                <h3 className = "title" >
+                <Link to = { "/Comic/" + this.props.id_comic }
+                className = "comicname" > { this.props.Name } </Link> </h3> 
+            </div> 
+            <div className = "contend" >
+                <div className = "info" >
+                    <p> Tác giả: <Link to = "/Author" className = "author" > { this.props.Author } </Link></p >
+                    <p> Thể loại: < Link to = "/Search" className = "author" > { this.props.id } </Link> </p >
+                    <p> Trạng thái: < span className = "status" > { this.props.status } </span> </p >
+                    <p> </p> 
+                    <div className = "view"> { console.log(this.props.liked) } { this.props.liked && this.daLike() } {!this.props.liked && this.chuaLike() } 
+                        <button className = "but-dt" > < i className = "fa fa-eye" > { this.props.read } </i></button >
+                    </div>
 
-            <
-            div className = "title" >
-            <
-            h3 className = "title" >
-            <
-            Link to = { "/Comic/" + this.props.id_comic }
-            className = "comicname" > { this.props.Name } < /Link> < /
-            h3 > <
-            /div> <
-            div className = "contend" >
-            <
-            div className = "info" >
-            <
-            p > Tác giả: < Link to = "/Author"
-            className = "author" > { this.props.Author } < /Link></p >
-            <
-            p > Thể loại: < Link to = "/Search"
-            className = "author" > { this.props.id } < /Link> </p >
-            <
-            p > Trạng thái: < span className = "status" > { this.props.status } < /span> </p >
-            <
-            p > < /p> <
-            div className = "view" > { console.log(this.props.liked) } { this.props.liked && this.daLike() } {!this.props.liked && this.chuaLike() } <
-            button className = "but-dt" > < i className = "fa fa-eye" > { this.props.read } < /i></button >
-            <
-            /div>
-
-            <
-            /div> <
-            div className = "description" >
-            <
-            p > { this.props.description } <
-            /p> <
-            p > < /p> < /
-            div > <
-            /div> < /
-            >
+                </div> 
+                <div className = "description" >
+                    <p> { this.props.description } </p> 
+                    <p> </p> 
+                </div> 
+            </div> 
+        </>
         );
     }
 
