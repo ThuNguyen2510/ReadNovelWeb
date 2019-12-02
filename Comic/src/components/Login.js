@@ -5,6 +5,7 @@ import Home from './Home';
 import { connect } from 'react-redux';
 import {Redirect} from 'react-router-dom';
 import { login } from './../reducers/login_reducer';
+import './Login.css';
 class Login extends React.Component{
     constructor(props) {
         super(props);
@@ -18,23 +19,20 @@ class Login extends React.Component{
       var image_s={
         width:"250px"
       }
-    var d_s={
-                
-        border: "1px solid #E1E1E1",
-        padding: "10px 20px 10px 10px",
-        backgroundColor: "#42100f",
-        borderRadius: "8px",
+    var d_s={  
+        border: "1px solid #fff",
+        padding: "100px 20px 10px 10px",
         width: "500px",
         textAlign: "center",
     }
     var sign={
-        color: "#f66b00",
+        color: "teal",
         fontWeight:" bold",
 
     }
     var p={
         textAlign:"left",
-        fontWeight:" 600",
+        fontWeight:" 1000",
         fontVariant: "ordinal"
     }
     var input={
@@ -53,16 +51,23 @@ class Login extends React.Component{
                   
              <>
              <div className="containers h-100">
-                <div className="row h-100 justify-content-center align-items-center">
-                  <Link to="/"><img src={require('../TVT.PNG')} style={{width:'250px'}} alt="Logo"/></Link>
-                </div>
+                
               </div>
               <form name="loginForm" className="row h-100 justify-content-center align-items-center" onSubmit={this.onSubmit}>
                 <div className="position-relative ">
                   <div className="box">
-                    <div className="row">
-                      <div className="col-md-12">
-                        <div className="bg-white" id="bran" style={d_s}>
+                  {/* ,backgroundImage: "url('https://static.vecteezy.com/system/resources/previews/000/549/557/non_2x/abstract-technology-background-geometric-vector-background-global-network-connections-with-points-and-lines.jpg')",backgroundSize:"cover",backgroundRepeat:"no-repeat" */}
+                    <div className="row mt-5" style={{border:"1px solid teal",borderRadius:"8px" ,backgroundImage: "url('https://www.megoras.com.tr/wp-content/uploads/2019/04/BACK12.png')",backgroundSize:"cover",backgroundRepeat:"no-repeat"}}>
+                    <div className="col-md-4 justify-content-center align-items-center phanTrai">
+                    {/* <Link to="/"><img src={require('../TVT.PNG')} style={{width:'250px'}} alt="Logo"/></Link> */}
+                      <Link className="logo"  to="/">
+                          <button id="logo_but1">TVT</button>
+                      </Link> 
+                      <p className="slogan">Tạo tài khoản và trải nghiệm với những nhân vật trong những bộ truyện mình yêu thích</p>
+                      <div><strong style={{color:"#fff", textAlign:"center"}}>Not have Account <Link to="/Signup" style={{textDecoration:"none"}} >Signup</Link></strong></div>
+                    </div>
+                      <div className="col-md-8">
+                        <div className="bg" id="bran" style={d_s}>
                           <h1 style={sign}>SIGN IN</h1>
                           <form action="">
                             <div className="form-group">
@@ -80,23 +85,15 @@ class Login extends React.Component{
                             { loginError && <p style={i}>Check PassWord and Username</p> }
                             {!isLoginSuccess}
                           </div>
-                            <button type="submit" className="btn btn-primary" >Sign in</button>
-                           
+                            <button type="submit" className="btn-signin" >Sign in</button>
+                            
                           </form>
                         </div>
+                        <div className="row  justify-content-center ">
+                        <strong ><Link to="/" style={{textDecoration:"none",color:"teal"}}><i className="far fa-arrow-alt-circle-left"></i>Back to Homepage </Link></strong>
+                        </div>
+                        
                       </div>
-                    </div>
-                    <div className="row  justify-content-center " >
-                      <ul>
-                      <li style={{listStyle:"none"}}>
-                     
-                        <div>Not have Account <Link to="/Signup" >Signup</Link></div>
-                      </li>
-                      <br/>
-                      <li style={{listStyle:"none"}}>
-                        <span><Link to="/"><i className="far fa-arrow-alt-circle-left"></i>Back to Homepage </Link></span>
-                      </li>
-                      </ul>
                     </div>
                   </div>
                 </div>
