@@ -14,7 +14,8 @@ import AddComic from './components/Admin/AddComic';
 import Chapter_detail from './components/Chapter_detail';
 import Filter from './components/Filter';
 import Author from './components/Author_comic';
-import Hello from './components/Admin/Hello';
+import Forum from './components/Forum';
+import ForumDetail from './components/ForumDetail';
 import Admin_user from './components/Admin/Admin_user';
 import User_page from './components/User/User_page';
 import User_book from './components/User/User_book';
@@ -31,6 +32,8 @@ class App extends React.Component {
       <div className="App">      
         <Router history={history}>
           <Switch> 
+            <Route path='/FDetail'exact  component={ForumDetail}/>
+          <Route path='/Forum' exact component={Forum} />
           <Route path='/Search' exact component={Filter}/>  
           <Route path="/search/:string" exact component ={Filter}/>
           <Route path="Comic/search" exact component ={Filter}/>
