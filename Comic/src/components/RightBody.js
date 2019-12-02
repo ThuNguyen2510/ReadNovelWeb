@@ -1,24 +1,5 @@
 import React from 'react';
 import Comic_mini from './Comic_mini';
-<<<<<<< HEAD
-import {Link} from 'react-router-dom';
-import {connect} from 'react-redux'
-import { fetchComicUpdateNew } from '../actions/ComicActions';
- class RightBody extends React.Component{
-   constructor(props)
-   {
-     super(props)
-   }
-   componentDidMount()
-   {
-     this.props.fetchComicUpdateNew()
-   }
-    show()
-    {
-       return this.props.list.map((a,index)=>
-      <Comic_mini id={a.id} src={a.image} name={a.name} datetime={a.update_time}/>
-      )
-=======
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { fetchGenres } from '../actions/GenreAction';
@@ -26,7 +7,6 @@ import './Right_body.css';
 class RightBody extends React.Component {
     constructor(props) {
         super(props)
->>>>>>> origin/interface
     }
     componentDidMount() {
         this.props.fetchGenres();

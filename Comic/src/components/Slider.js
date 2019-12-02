@@ -41,7 +41,7 @@ class Slider extends React.Component {
       for(var i=0;i<this.props.listhot.length;i++)
       {
           result.push(
-          <Comic_inSlider id={this.props.listhot[i].id} Image={this.props.listhot[i].Image} Name={this.props.listhot[i].Name} />)
+          <Comic_inSlider id={this.props.listhot[i].id} Image={this.props.listhot[i].image} Name={this.props.listhot[i].name} />)
       }
       return result;
     }
