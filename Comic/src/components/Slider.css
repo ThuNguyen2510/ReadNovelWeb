@@ -7,6 +7,7 @@
 } */
 
 .pre-next {
-    color: rgb(77, 73, 73);
+    color: #fff;
+    font-size: 16px;
     border-radius: 50%;
 }

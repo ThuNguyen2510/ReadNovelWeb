@@ -6,7 +6,10 @@
       display: inline-block;
   }
   
-  .container {
-      padding-top: 10px;
-      padding-bottom: 10px;
+  #update {
+      font-family: inherit;
+      color: teal;
+      font-size: 30px;
+      text-align: left;
+      margin-left: 20px;
   }

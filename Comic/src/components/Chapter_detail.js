@@ -74,10 +74,13 @@ SelectSync2(name)
 
    select2()
    {
-       return <> <select id={'slt2'} onClick={e=> this.SelectSync2(e.target.value)} className="chapter" onChange= {(e) => this.props.fetchChapter(e.target.value,this.props.match.params.index)} >
-       {this.option()}                       
-   </select>
-       </>
+       return (
+        <>
+            <select id={'slt2'} onClick={e=> this.SelectSync2(e.target.value)} className="chapter" onChange= {(e) => this.props.fetchChapter(e.target.value,this.props.match.params.index)} >
+                {this.option()}                       
+            </select>
+        </>
+       )
    }
 
     show()
@@ -93,30 +96,28 @@ SelectSync2(name)
             content=this.props.comic[j].chapters[i].content
             id=this.props.comic[j].chapters[i].stt
         }
-        return <>
-         <div className="nav-content"> 
-                    <i className="fas fa-home"></i><Link to="/">Trang chủ</Link><i className="fas fa-angle-right"></i>
-                    <Link to={"/Comic/"+this.props.match.params.index}>{localStorage.getItem('comic_name')}</Link><i className="fas fa-angle-right"></i>
-                    <Link to={"/Comic/"+this.props.match.params.index+"/Chapter/"+this.props.match.params.id}>Chap {id}</Link>
-                    <hr/>
-                </div>
-                <div className="list-chap">
-                    <Link to={"/Comic/"+this.props.match.params.index+"/Chapter/"+this.props.match.params.id}>{name}</Link><br/> 
-                    {this.select1()}
-                </div>
-                 <Chap_content content={content}/>
-                    {this.select2()}
-                <hr/>
-                
-            
-        </>
+        return(
+        <div >
+            <div className="container nav-content"> 
+                <Link id="home" to="/"><i className="fas fa-home"></i> TRANG CHỦ </Link> <i className="fas fa-angle-right"> </i>
+                <Link to={"/Comic/"+this.props.match.params.index}>{localStorage.getItem('comic_name')} </Link><i className="fas fa-angle-right"> </i>
+                <Link to={"/Comic/"+this.props.match.params.index+"/Chapter/"+this.props.match.params.id}> CHƯƠNG {parseInt(id)}</Link>
+                <hr style={{marginTop:"4px"}}/>
+            </div>
+            <div className="list-chap">
+                <Link id="chapname" to={"/Comic/"+this.props.match.params.index+"/Chapter/"+this.props.match.params.id}>{name}</Link><br/> 
+                {this.select1()}
+            </div>
+            <Chap_content id="chap-content" content={content}/>
+            {this.select2()}
+        </div>
+        )
     }
   
     render(){
         return(
-            <div>
+            <div className="container-fluid">
                 <Header/>
-                <hr/>
                 {this.show()}
                 <hr/>
                 <Footer/>

@@ -37,7 +37,7 @@ class Nav extends React.Component{
                             </Link>      
                         </div>                      
                         <div className="input-group  d-flex justify-content-center " style={{width:"500px"}}>
-                            <input className="form-control py-2 border-right-0 border-radius-25" type="search" placeholder="What are you looking for?"  id="ip1" />
+                            <input className="form-control py-2 border-right-0 border-radius-25" type="search" placeholder="Bạn đang tìm kiếm điều gì?"  id="ip1" />
                             <span className="input-group-append">
                             <Link  onClick={this.handleClick} to={"/search/"+search} className="btn" id="ip2" ><i style={{color:"#fff"}} className="fas fa-search btnsearch"></i></Link>
                             </span>

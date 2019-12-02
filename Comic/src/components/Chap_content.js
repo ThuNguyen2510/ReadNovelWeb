@@ -9,7 +9,7 @@ class Chap_content extends React.Component{
             <div>
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-10 offset-1 content">
+                        <div className="col-md-12 content">
                             {this.props.content}
                         </div>
                     </div>

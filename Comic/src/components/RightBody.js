@@ -1,5 +1,6 @@
 import React from 'react';
 import Comic_mini from './Comic_mini';
+<<<<<<< HEAD
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux'
 import { fetchComicUpdateNew } from '../actions/ComicActions';
@@ -17,71 +18,85 @@ import { fetchComicUpdateNew } from '../actions/ComicActions';
        return this.props.list.map((a,index)=>
       <Comic_mini id={a.id} src={a.image} name={a.name} datetime={a.update_time}/>
       )
+=======
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux'
+import { fetchGenres } from '../actions/GenreAction';
+import './Right_body.css';
+class RightBody extends React.Component {
+    constructor(props) {
+        super(props)
+>>>>>>> origin/interface
     }
-     render()
-     {
-        var con_d={
+    componentDidMount() {
+        this.props.fetchGenres();
+    }
+    render() {
+        var con_d = {
             backgroundColor: "#fff",
             height: "100%",
-            width: "100%",
-            border: "2px solid #e1e1e1",
+            width: "90%",
+            border: "none",
+            backgroundColor: "#f0f0f0",
             borderRadius: "8px",
         }
-        var i_s={
-            color:"teal",
+        var i_s = {
+            color: "teal",
             textDecoration: "none",
         }
-        var tb_s={
+        var tb_s = {
             margin: "20px"
         }
-        var a_style ={
-          cursor: "pointer",         
-          border: "1px solid #E1E1E1",
-          padding: "3px 8px",
-          fontWeight:" bold",
-          color: "#f66b00",
-          textDecoration: "none",
-          backgroundColor: "#42100f",
-          borderRadius: "8px"
+        var a_style = {
+            cursor: "pointer",
+            border: "1px solid #E1E1E1",
+            padding: "3px 8px",
+            fontWeight: " bold",
+            color: "#fff",
+            textDecoration: "none",
+            backgroundColor: "teal",
+            borderRadius: "8px",
+            marginBottom: "-5px"
         }
-        
-         return(
+        var list = this.props.gens.map((value_, index) => {
+            return <><Link to="/Search" className="theloai"  >{value_.genre_name}</Link><br></br></>
+        })
+        return (
             <>
-            <div className="row">
-            <div style={con_d}>
-              <div>
-              <h5 className="widget-heading font-nav" title="TRUYỆN ĐỌC NHIỀU NHẤT" >
-              <i style={i_s} className="fab fa-font-awesome-flag"></i>
-                <Link to="/" style={i_s}>TRUYỆN MỚI NHẤT</Link>                
-                </h5>
-              </div>
-              <hr></hr>
-              <div className="widget-content" style={tb_s}>
-                {this.show()}
-              </div> 
-              <span class="c-wg-button-wrap">
-                  <Link style={a_style} className="widget-view-more" to="/TruyenMoi">Xem thêm</Link>
-              </span>           
-            </div>
-            </div>            
-            <div className="row">             
-            </div>
+                <div className="row">
+                    <div className="ml-5" style={con_d}>
+                        <div>
+                            <h5 className="widget-heading font-nav mt-3" title="TRUYỆN ĐỌC NHIỀU NHẤT" >
+                                <i style={i_s} className="fab fa-font-awesome-flag"></i>
+                                <Link to="/" style={i_s}> THỂ LOẠI</Link>
+                            </h5>
+                        </div>
+                        <hr></hr>
+                        <div className="widget-content" style={tb_s}>
+                            {list}
+                        </div>
+                        <span class="c-wg-button-wrap">
+                            <Link style={a_style} className="widget-view-more" to="/TruyenMoi">Xem thêm</Link>
+                        </span>
+                    </div>
+                </div>
+                <div className="row">
+                </div>
             </>
-         );
+        );
+    }
+}
 
-     }
- }
-
- function mapStateToProps (state)
-{
-  return{
-    list: state.comicnew
-  }
+const mapStateToProps = (state) => {
+    return {
+        gens: state.genre,
+    };
 }
 const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchComicUpdateNew: () => dispatch(fetchComicUpdateNew()),
-  };
+    return {
+        fetchGenres: () => dispatch(fetchGenres()),
+    }
 }
+export default connect(mapStateToProps, mapDispatchToProps)(RightBody);
 
-export default connect(mapStateToProps, mapDispatchToProps)(RightBody);   
+
