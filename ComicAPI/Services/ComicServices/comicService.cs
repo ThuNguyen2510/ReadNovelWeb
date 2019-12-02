@@ -29,6 +29,34 @@ namespace ComicAPI.Services.ComicServices
             _context.SaveChanges();
             throw new NotImplementedException();
         }
+
+        public List<Comic> ComicHot()
+        {
+            int like=0;
+            for(int i=1;i<=this.GetComics().Count;i++)
+            {
+                Comic c= this.GetComicById(i);
+                like+=c.Likes;
+            }
+            like/=this.GetComics().Count;
+            List<Comic> comics= new List<Comic>();
+            comics=_context.Comics.Select(x=> new Comic{
+                ID=x.ID,Name=x.Name,Author=x.Author,Update_time=x.Update_time,
+                Likes=x.Likes,Views=x.Views,Status=x.Status,Description=x.Description,
+                Chapter_long=x.Chapter_long,Image=x.Image,GenreID=x.GenreID,
+                Chapters=x.Chapters.Select(e=> new Chapter{
+                    STT=e.STT,
+                    ChapterID=e.ChapterID,ComicID=e.ComicID,Title=e.Title,
+                    Content=e.Content
+                }).ToList(),
+                 Comments=x.Comments.Select(w=> new Comment{
+                    ID=w.ID,Content=w.Content,CommentTime=w.CommentTime,User=w.User
+                }).ToList()
+            }).Where(e=> e.Likes > like ).ToList();
+            return comics;
+            throw new NotImplementedException();
+        }
+
         //delete comic => delete chapter
         public void DeleteComic(int id)
         {

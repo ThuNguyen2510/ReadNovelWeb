@@ -23,11 +23,12 @@ import { fetchComicUpdateNew } from '../actions/ComicActions';
         var con_d={
             backgroundColor: "#fff",
             height: "100%",
-            border: "2.5px solid #e1e1e1",
-            
+            width: "100%",
+            border: "2px solid #e1e1e1",
+            borderRadius: "8px",
         }
         var i_s={
-            color:"#ef2d3f",
+            color:"teal",
             textDecoration: "none",
         }
         var tb_s={
@@ -41,7 +42,6 @@ import { fetchComicUpdateNew } from '../actions/ComicActions';
           color: "#f66b00",
           textDecoration: "none",
           backgroundColor: "#42100f",
-          color: "white",
           borderRadius: "8px"
         }
         

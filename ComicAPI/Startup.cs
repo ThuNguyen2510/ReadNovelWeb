@@ -14,6 +14,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using ComicAPI.Services.UserService;
 using ComicAPI.Services.ComicServices;
+using Microsoft.IdentityModel.Tokens;
+using ComicAPI.Controllers;
 
 namespace ComicAPI
 {
@@ -33,9 +35,24 @@ namespace ComicAPI
         {
             services.AddCors(c =>  
                 {  
-                    c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());  
+                    c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());  
                 });  
+            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddAuthentication(Options=>{
+                Options.DefaultAuthenticateScheme="JwtBearer";
+                Options.DefaultChallengeScheme="JwtBearer";
+           }).AddJwtBearer("JwtBearer",jwtOptions=>{
+                jwtOptions.TokenValidationParameters= new TokenValidationParameters()
+                {
+                    IssuerSigningKey= TokenController.SIGNING_KEY,
+                    ValidateIssuer=false,
+                    ValidateAudience=false,
+                    ValidateIssuerSigningKey=true,
+                    ValidateLifetime=true,
+                    ClockSkew=TimeSpan.FromMinutes(5)
+                };
+            });
             services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("ComicDatabase")));
            services.AddScoped<IUserService, UserService>();
@@ -57,12 +74,12 @@ namespace ComicAPI
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-            app.UseCors(options => options.AllowAnyOrigin());   
-            app.UseCors(MyAllowSpecificOrigins); 
+            // add port to use react
+            app.UseCors(options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());   
+           // app.UseCors(MyAllowSpecificOrigins); 
+            app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseMvc();
-            
-           // dbInit.Seed().Wait();
         }
     }
 }

@@ -13,5 +13,6 @@ namespace ComicAPI.Services.UserService
         void AddNewUser(User user);
         void UpdateUser(int id,User user);
         void DeleteUser(int id);
+        User UserLogin(string username,string pass);
     }
 }

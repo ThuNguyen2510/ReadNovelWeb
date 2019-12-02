@@ -14,7 +14,7 @@ namespace ComicAPI.Services.ComicServices
         List<Comic> GetComics();
         void UpdateComic(int id, Comic comic);
         List<Comic> SearchByName(string keyword);
-        
+        List<Comic> ComicHot();
     }
 
 }

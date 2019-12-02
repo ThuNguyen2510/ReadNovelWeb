@@ -1,7 +1,5 @@
 import React from 'react';
 import './Filter.css';
-import Header from './Header';
-import Nav from './Nav';
 import LeftBody from './LeftBody';
 import RightBody from './RightBody';
 import Footer from  './Footer';
@@ -65,4 +63,3 @@ const mapStateToProps = (state) => {
   }
   
   export default connect(mapStateToProps, mapDispatchToProps)(Search);
-  

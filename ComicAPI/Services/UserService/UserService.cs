@@ -64,5 +64,11 @@ namespace ComicAPI.Services.UserService
             _context.SaveChanges();
             throw new NotImplementedException();
         }
+
+        public User UserLogin(string Username,string Password)
+        {
+            return _context.Users.FirstOrDefault(x=> x.Username==Username && x.Password==Password);
+            throw new NotImplementedException();
+        }
     }
 }

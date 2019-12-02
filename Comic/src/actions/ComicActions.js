@@ -3,7 +3,10 @@ import Comic_detail from '../components/Comic_detail';
 export const fetchListComic = () => {
     
     return dispatch => {
-        return axios.get('http://127.0.0.1:3000/comics').then(data => {
+        return axios.get('http://127.0.0.1:3000/comics', { headers: {
+            "Authorization":'Bearer '+ localStorage.getItem("token"),
+            'Content-Type': 'application/json',
+          }}).then(data => {
             
             dispatch(returnList(data.data))
         }).catch(error => {
@@ -32,23 +35,21 @@ export const getLikedComics = (userid) => {
 }
 export const fetchOneComic = (Id) => {
     return dispatch => {
-        return axios.get('http://127.0.0.1:3000/comics/' + Id).then(
+        return axios.get('http://127.0.0.1:3000/comics/' + Id,
+        { headers: {
+            "Authorization":'Bearer '+ localStorage.getItem("token"),
+            'Content-Type': 'application/json',
+          }}).then(
             data => {
-                const c = data.data[0]
-                axios.get('http://127.0.0.1:3000/genres/'+c.genreID).then(
-                    g => {
-                        const g_name = g.data[0].genre_name
-
-                        dispatch(returnOneComic(c, g_name))
+                const c = data.data
+                        dispatch(returnOneComic(c))
                     }
                 )
-            }
-        )
-    }
+                }
 }
 export const fetchComicHot = () => {
     return dispatch => {
-        return axios.get('http://127.0.0.1:3000/comics?_sort=Number_of_Like&_order=desc?_start=0&_end=12').then(data => {
+        return axios.get('http://127.0.0.1:3000/comics/comicHot').then(data => {
             dispatch(returnComicHot(data.data))
         })
     }
@@ -137,10 +138,9 @@ const returnList = (comics) => ({
     type: 'SHOW_LIST',
     list: comics
 });
-const returnOneComic = (comic, gen) => ({
+const returnOneComic = (comic) => ({
     type: 'SHOW_A_COMIC',
-    comic: comic,
-    gen: gen
+    comic: comic
 })
 const returnLikedComicId = (comicid) => ({
     type: 'GET_LIKED_COMIC_ID',

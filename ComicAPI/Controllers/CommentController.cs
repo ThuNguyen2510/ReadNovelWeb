@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ComicAPI.Controllers
 {
-    [Route("comments")]
+   [Route("comments")]
     [ApiController]
     [EnableCors("AllowOrigin")]  
     public class CommentController : ControllerBase
@@ -24,7 +24,7 @@ namespace ComicAPI.Controllers
         {
             return _ics.GetComments();
         }
-
+        
         [HttpGet("{id}")]
         public ActionResult<Comment> Get(int id)
         {

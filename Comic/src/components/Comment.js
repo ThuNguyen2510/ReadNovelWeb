@@ -51,20 +51,19 @@ class Comment extends React.Component{
   }
  show()
  {  
-  console.log("REN")
-   var cm = this.props.comt.map((cmt)=>{
-     console.log(cmt.user_id)
+  
+   var cm = this.props.listcmt.map((cmt)=>{
+    
     return(
      <>
       <li className=" media">
         <Link href="#" className="pull-left">
-          <img src="https://bootdey.com/img/Content/user_1.jpg" alt="avatar" className="img-circle mr-3" />
+          <img src={cmt.user.image} alt="avatar" className="img-circle mr-3" />
        </Link>
         <div className="row media-body">
-          {/* <strong className="text-success">{this.props.user(cmt.user_id)}</strong><br/> */}
-          <strong className="text-success">{this.findusername(cmt.user_id)}</strong><br/>
+          <strong className="text-success">{cmt.user.username}</strong><br/>
           <p className="text-muted pull-right">
-            <small className="text-muted ml-2" style={{fontSize:'10px'}}>{cmt.time}</small>
+            <small className="text-muted ml-2" style={{fontSize:'10px'}}>{cmt.commentTime}</small>
           </p>
           <p>
             {cmt.content}

@@ -38,7 +38,6 @@ class Slider extends React.Component {
   get1()
   {
       var result=[]
-      console.log(this.props.listhot)
       for(var i=0;i<this.props.listhot.length;i++)
       {
           result.push(

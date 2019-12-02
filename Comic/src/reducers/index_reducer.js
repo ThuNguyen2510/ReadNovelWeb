@@ -14,7 +14,7 @@ import users from './user_reducer';
 import like from './like_reducer';
 import comt from './comt_reducer';
 import user from './LoadUserReducer';
-import likedcomic from './likedcomic_reducer'
+import likedcomic from './likedcomic_reducer';
 const appReducers = combineReducers({
     comics,
     comic,
@@ -30,6 +30,6 @@ const appReducers = combineReducers({
     like,
     comt,
     user,
-    likedcomic
+    likedcomic,
 });
 export default appReducers;

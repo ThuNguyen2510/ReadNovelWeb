@@ -72,7 +72,7 @@ class Login extends React.Component{
                             </div>
                             <div className="form-group">
                             <p style={p}><i className="fas fa-lock"></i> PassWord</p>
-                              <input style={input}type="password" className="form-control" id="passWord"
+                              <input style={input} type="password" className="form-control" id="passWord"
                               placeholder="***********" onChange={e => this.setState({password: e.target.value})} value={password} required />
                             </div>
                             <div className="message">  
@@ -81,7 +81,7 @@ class Login extends React.Component{
                             {!isLoginSuccess}
                           </div>
                             <button type="submit" className="btn btn-primary" >Sign in</button>
-                            
+                           
                           </form>
                         </div>
                       </div>
@@ -89,6 +89,7 @@ class Login extends React.Component{
                     <div className="row  justify-content-center " >
                       <ul>
                       <li style={{listStyle:"none"}}>
+                     
                         <div>Not have Account <Link to="/Signup" >Signup</Link></div>
                       </li>
                       <br/>
@@ -96,16 +97,17 @@ class Login extends React.Component{
                         <span><Link to="/"><i className="far fa-arrow-alt-circle-left"></i>Back to Homepage </Link></span>
                       </li>
                       </ul>
-                      
                     </div>
                   </div>
                 </div>
               </form>
+
              </>
 
          
         )
     }
+    
     LoginSuccess()
     {
       
@@ -140,13 +142,15 @@ const mapStateToProps = (state) => {
     return {
       isLoginPending: state.login.isLoginPending,
       isLoginSuccess: state.login.isLoginSuccess,
-      loginError: state.login.loginError
+      loginError: state.login.loginError,
+     
     };
   }
   
   const mapDispatchToProps = (dispatch) => {
     return {
       login: (email, password) => dispatch(login(email, password)),
+     
     };
   }
   

@@ -6,6 +6,7 @@ import { fetchLike } from '../actions/LikeComicAction';
 import { getLike } from '../actions/LikeComicAction';
 import { unLike } from '../actions/LikeComicAction';
 import { connect } from 'react-redux';
+import { fetchGenre } from '../actions/GenreAction';
 
 class Detail extends React.Component {
     constructor(props) {
@@ -24,11 +25,22 @@ class Detail extends React.Component {
             var user = JSON.parse(localStorage.getItem('logined_user'))
             this.props.getLike(user.id, this.props.id_comic)
         }
+        
         // }
 
     }
 
-
+    genre(id)
+    {
+        for(var i=0;i<this.props.genre.length;i++)
+        {
+            if(id==this.props.genre[i].genreID)
+            {
+                return this.props.genre[i].genre_name
+                
+            }
+        }
+    }
     btnClick() {
         if (JSON.parse(localStorage.getItem('logined_user')) === null) {
             alert("vui lòng đăng nhập để tương tác")
@@ -77,7 +89,7 @@ class Detail extends React.Component {
             <div className = "contend" >
                 <div className = "info" >
                     <p> Tác giả: <Link to = "/Author" className = "author" > { this.props.Author } </Link></p >
-                    <p> Thể loại: < Link to = "/Search" className = "author" > { this.props.id } </Link> </p >
+                    <p> Thể loại: < Link to = {"/Search/"+this.props.genreID} className = "author" > { this.genre(this.props.genreID) } </Link> </p >
                     <p> Trạng thái: < span className = "status" > { this.props.status } </span> </p >
                     <p> </p> 
                     <div className = "view"> { console.log(this.props.liked) } { this.props.liked && this.daLike() } {!this.props.liked && this.chuaLike() } 
@@ -99,7 +111,8 @@ const mapStateToProps = (state) => {
     console.log(state)
     return {
         comic: state.comic,
-        liked: state.like
+        liked: state.like,
+        genre:state.genre
     };
 }
 
@@ -108,7 +121,8 @@ const mapDispatchToProps = (dispatch) => {
         likeComic: (id) => dispatch(likeComic(id)),
         fetchLike: (user_id, comic_id) => dispatch(fetchLike(user_id, comic_id)),
         getLike: (user_id, comic_id) => dispatch(getLike(user_id, comic_id)),
-        unLike: (id, user_id, comic_id) => dispatch(unLike(id, user_id, comic_id))
+        unLike: (id, user_id, comic_id) => dispatch(unLike(id, user_id, comic_id)),
+        fetchgenre:()=> dispatch(fetchGenre())
     };
 }
 

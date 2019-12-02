@@ -1,7 +1,7 @@
 import axios from 'axios';
 export const fetchComt = (comic_id) => {
     return dispatch => {
-        return axios.get('http://127.0.0.1:3000/comments?comic_id=' + comic_id).then(
+        return axios.get('http://127.0.0.1:3000/comments').then(
             data => {
                 const list = data.data;
                 dispatch(returnListComt(list));

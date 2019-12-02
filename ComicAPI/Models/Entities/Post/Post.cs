@@ -12,7 +12,7 @@ namespace ComicAPI.Models.Entities
         public string Title{get;set;}
         public string PostContent{get;set;}
         public DateTime PostTime{get;set;}
-      //  public ICollection<Answer> Answers{get;set;}
+        public ICollection<Answer> Answers{get;set;}
         public User UserPost{get;set;}
     }
 }

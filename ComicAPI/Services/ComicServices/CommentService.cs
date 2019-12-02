@@ -36,7 +36,8 @@ namespace ComicAPI.Services.ComicServices
                 ID = c.ID,
                 Content = c.Content,
                 User= new User{
-                    ID=c.User.ID
+                    ID=c.User.ID,Username=c.User.Username,
+                    Image=c.User.Image
                 },
                 Comic=new Comic{
                     ID=c.Comic.ID
@@ -53,7 +54,8 @@ namespace ComicAPI.Services.ComicServices
                 ID = c.ID,
                 Content = c.Content,
                 User= new User{
-                    ID=c.User.ID
+                    ID=c.User.ID,Username=c.User.Username,
+                    Image=c.User.Image
                 }
                 // Comic=new Comic{
                 //     ID=c.Comic.ID

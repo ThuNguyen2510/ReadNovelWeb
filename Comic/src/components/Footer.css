@@ -1,5 +1,7 @@
 .footer {
     position: relative;
+    background-color: teal;
+    color: #fff;
 }
 
 section {

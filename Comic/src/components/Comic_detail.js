@@ -22,7 +22,8 @@ class Comic_detail extends React.Component{
     image()
     {
         var im;
-        for(var i=0;i<this.props.comic.length-1;i++)
+       
+        for(var i=0;i<this.props.comic.length;i++)
         {
           im=<img id="s" src={this.props.comic[i].image}></img>
         }
@@ -31,7 +32,7 @@ class Comic_detail extends React.Component{
     Detail()
     {
         var result=[];
-            for(var i = 0; i < this.props.comic.length-1; i++)
+            for(var i = 0; i < this.props.comic.length; i++)
             {
                 var s=this.props.comic[i].status
                 var tus=""
@@ -45,8 +46,8 @@ class Comic_detail extends React.Component{
                 }
                 localStorage.setItem('comic_name',this.props.comic[i].name)
                 result.push(<Detail id_comic={this.props.comic[i].id }Name={this.props.comic[i].name} 
-                    Author={this.props.comic[i].author} id={this.props.comic[i+1]} 
-                    like={this.props.comic[i].likea} 
+                    Author={this.props.comic[i].author} 
+                    like={this.props.comic[i].likes} genreID={this.props.comic[i].genreID}
                     read={this.props.comic[i].views} status={tus} description={this.props.comic[i].description}/>)
             }
            
@@ -55,7 +56,18 @@ class Comic_detail extends React.Component{
     }
     show()
     {
-       
+    var chapters_=[]
+    for(var i=0;i<this.props.comic.length;i++)
+    chapters_=this.props.comic[i].chapters.map(a=>{
+        return a
+    })
+    var cmts=[]
+    for (var i=0;i<this.props.comic.length;i++)
+    {
+        cmts=this.props.comic[i].comments.map(a=>{
+            return a
+        })
+    }
         return (     
         <div className="container-fluid">    
             <Header/>       
@@ -72,7 +84,7 @@ class Comic_detail extends React.Component{
                         </div>
                         <hr/>
                         <div className="col-md-12">
-                        <ListChap comic_id={this.props.match.params.index} />
+                        <ListChap chapters={chapters_} />
                         </div>
                     </div>
                     <hr/>                    
@@ -83,7 +95,7 @@ class Comic_detail extends React.Component{
                     </div>
                 </div>
                 <div className="row">   
-                    <Comment comic_id={this.props.match.params.index}/>                
+                    <Comment listcmt={cmts}/>                
                 </div>
                 <hr/>                
             </div>   
@@ -104,8 +116,6 @@ class Comic_detail extends React.Component{
     }
 }
 const mapStateToProps = (state) => {
-    console.log("map")
-    console.log(state)
     return {
      comic: state.comic, 
      chaps: state.chapters

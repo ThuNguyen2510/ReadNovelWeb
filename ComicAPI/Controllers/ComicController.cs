@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using ComicAPI.Models.Entities;
 using ComicAPI.Services.ComicServices;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,6 +13,7 @@ namespace ComicAPI.Controllers
 {
     [Route("comics")]
     [ApiController]
+    //  [Authorize]
     [EnableCors("AllowOrigin")]  
     public class ComicController : ControllerBase
     {
@@ -37,7 +39,12 @@ namespace ComicAPI.Controllers
         {
             return _comicService.SearchByName(keyword);
         }
-
+        [HttpGet]
+       [Route("comicHot")]
+       public ActionResult<IEnumerable<Comic>> ComicHot()
+        {
+            return _comicService.ComicHot();
+        }
         [HttpPost]
         public void Post([FromBody] Comic comic)
         {

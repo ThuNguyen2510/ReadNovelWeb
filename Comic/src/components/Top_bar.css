@@ -2,7 +2,7 @@
     clear: both;
     position: relative;
     z-index: 100;
-    height: 50px;
+    height: 90px;
     width: 100%;
     background-color: #fff;
 }
@@ -23,6 +23,7 @@
 
 #ip2 {
     border-radius: 0 25px 25px 0;
+    background-color: teal;
 }
 
 #login {
@@ -37,4 +38,15 @@
     border-radius: 10px;
     color: #fff;
     background-color: rgb(220, 20, 20);
+}
+
+#logo_but {
+    color: teal;
+    font-size: 40px;
+    background-color: #fff;
+    border: 3px solid teal;
+    font-family: fantasy;
+    border-radius: 50%;
+    width: 85px;
+    height: 85px;
 }

@@ -20,19 +20,20 @@ class Chapter_detail extends React.Component{
     }
    componentWillMount()
    {
-       this.props.fetchChapter(this.props.match.params.id,this.props.match.params.index)
-       this.props.fetchChapters(this.props.match.params.index)
+      this.props.fetchChapter(this.props.match.params.id,this.props.match.params.index)
+      this.props.fetchChapters(this.props.match.params.index)
        
    }
    option()
    {
     var chaps=[]
-    for(var i=0;i<this.props.chaps.length;i++)
+    for(var j=0;j<this.props.comic.length;j++)
+    for(var i=0;i<this.props.comic[j].chapters.length;i++)
     {
         var select=false;
         if((i+1)==this.props.match.params.id) select=true;
          chaps.push(
-         <option id={i+1} value={this.props.chaps[i].id} selected={select}>Chương {this.props.chaps[i].id}: {this.props.chaps[i].chapter_name}</option>)
+         <option id={i+1} value={this.props.comic[j].chapters[i].chapterID} selected={select}>Chương {this.props.comic[j].chapters[i].stt}: {this.props.comic[j].chapters[i].title}</option>)
     }
     return chaps;
    }
@@ -83,18 +84,20 @@ SelectSync2(name)
     {
         var name=""
         var content=""
-        var id
-        for(var i=0;i<this.props.chap.length;i++)
+        var id=0
+        console.log(this.props.comic)
+        for(var j=0;j<this.props.comic.length;j++)
+        for(var i=0;i<this.props.comic[j].chapters.length;i++)
         {
-            name=this.props.chap[i].chapter_name            
-            content=this.props.chap[i].content
-            id=this.props.chap[i].id
+            name=this.props.comic[j].chapters[i].title            
+            content=this.props.comic[j].chapters[i].content
+            id=this.props.comic[j].chapters[i].stt
         }
         return <>
          <div className="nav-content"> 
                     <i className="fas fa-home"></i><Link to="/">Trang chủ</Link><i className="fas fa-angle-right"></i>
                     <Link to={"/Comic/"+this.props.match.params.index}>{localStorage.getItem('comic_name')}</Link><i className="fas fa-angle-right"></i>
-                    <Link to={"/Comic/"+this.props.match.params.index+"/Chapter/"+this.props.match.params.id}>Chap {parseInt(id)}</Link>
+                    <Link to={"/Comic/"+this.props.match.params.index+"/Chapter/"+this.props.match.params.id}>Chap {id}</Link>
                     <hr/>
                 </div>
                 <div className="list-chap">
@@ -104,7 +107,7 @@ SelectSync2(name)
                  <Chap_content content={content}/>
                     {this.select2()}
                 <hr/>
-                <Footer/>
+                
             
         </>
     }
@@ -125,9 +128,9 @@ SelectSync2(name)
 }
 const mapStateToProps = (state) => {
     return {
-     chap: state.chapter,  
+    // chap: state.chapter,  
      comic: state.comic,
-     chaps:state.chapters
+    // chaps:state.chapters
     
   }
 }

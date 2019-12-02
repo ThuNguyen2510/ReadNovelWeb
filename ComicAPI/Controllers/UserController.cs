@@ -6,12 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using ComicAPI.Services.UserService;
 using ComicAPI.Models.Entities;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ComicAPI.Controllers
 {
     [Route("users")]
     [ApiController]
-    [EnableCors("AllowOrigin")]  
+   // [Authorize]
+   // [EnableCors("AllowOrigin")]  
     public class UserController : ControllerBase
     {
          private IUserService _userService;
@@ -24,19 +26,25 @@ namespace ComicAPI.Controllers
         {
             return  _userService.GetUsers();
         }
-
-        [HttpGet("{id}")]
+        [HttpGet]
+        [Route("{id}")]
         public ActionResult<User> Get(int id)
         {
             return _userService.GetUserById(id);
         }
-
+        [HttpGet("check/{username}/{password}")]
+        public ActionResult<User> Get2(string username,string password)
+        {
+            
+            return _userService.UserLogin(username,password);
+        }
         [HttpPost]
         public void Post([FromBody] User user)
         {
             _userService.AddNewUser(user);
         }
-
+        
+       
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] User user)
         {

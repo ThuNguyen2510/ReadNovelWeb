@@ -12,17 +12,17 @@ class ListChap extends React.Component
     componentDidMount()
     {
         
-        this.props.fetchChapters(this.props.comic_id);
+       // this.props.fetchChapters(this.props.comic_id);
     }
     show1()
     {
         var r=[];
-        console.log(this.props.comic_id.parseInt)
-        for(var i=0;i<this.props.chaps.length;i++)
+      
+        for(var i=0;i<this.props.chapters.length;i++)
         {
-            r.push(<> <Link  to={"/Comic/"+this.props.comic_id+"/Chapter/"+(this.props.chaps[i].id)} id="tenchuong">Chương {(this.props.chaps[i].id)}: {this.props.chaps[i].chapter_name}</Link><br></br></>)
+            r.push(<> <Link  to={"/Comic/"+this.props.chapters[i].comicID+"/Chapter/"+(this.props.chapters[i].chapterID)} id="tenchuong">Chương {(this.props.chapters[i].stt)}: {this.props.chapters[i].title}</Link><br></br></>)
         }
-        return r;
+         return r;
     }
     show2(r)
     {
@@ -66,7 +66,7 @@ class ListChap extends React.Component
 }
 const mapStateToProps = (state) => {
     return {
-     chaps: state.chapters,  
+    // chaps: state.chapters,  
 
     };
   }
