@@ -12098,23 +12098,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "C:\\Users\\TuongVi\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Giao Trinh\\Nam4\\Ki1\\GIAO_TIEP_NGUOI_MAY\\AngularJS\\ComicAPI\\ComicAPI.csproj",
+      "projectUniqueName": "C:\\Users\\TuongVi\\OneDrive\\Máy tính\\GiaoTiepNguoiMay\\AngularJS\\ComicAPI\\ComicAPI.csproj",
       "projectName": "ComicAPI",
-      "projectPath": "D:\\Giao Trinh\\Nam4\\Ki1\\GIAO_TIEP_NGUOI_MAY\\AngularJS\\ComicAPI\\ComicAPI.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\Giao Trinh\\Nam4\\Ki1\\GIAO_TIEP_NGUOI_MAY\\AngularJS\\ComicAPI\\obj\\",
+      "projectPath": "C:\\Users\\TuongVi\\OneDrive\\Máy tính\\GiaoTiepNguoiMay\\AngularJS\\ComicAPI\\ComicAPI.csproj",
+      "packagesPath": "C:\\Users\\TuongVi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\TuongVi\\OneDrive\\Máy tính\\GiaoTiepNguoiMay\\AngularJS\\ComicAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\TuongVi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

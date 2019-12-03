@@ -4,7 +4,6 @@ import Nav from './Nav';
 import Content from './Content';
 import './Admin_Comic.css';
 import {connect} from 'react-redux';
-import Breadcrumb from './Breadcrumb';
 import {fetchOneComic} from '../../actions/ComicActions';
 import {updateChapter} from '../../actions/ChapterAction';
 import {fetchChapter} from '../../actions/ChapterAction'
@@ -58,7 +57,6 @@ class UpdateChapter extends React.Component{
                 </div>
                 <div className="col-md-10">
                     <Nav/>                    
-                    <Breadcrumb className="col-md-12" br="Quản lý truyện"/>
                     <div className="row" id="row">
                         <div className="col-md-7 ml-3 order-md-1">
                             <form className="needs-validation">

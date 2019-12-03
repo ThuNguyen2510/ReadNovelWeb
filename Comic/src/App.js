@@ -14,7 +14,6 @@ import AddComic from './components/Admin/AddComic';
 import Chapter_detail from './components/Chapter_detail';
 import Filter from './components/Filter';
 import Author from './components/Author_comic';
-import Hello from './components/Admin/Hello';
 import Admin_user from './components/Admin/Admin_user';
 import User_page from './components/User/User_page';
 import User_book from './components/User/User_book';
