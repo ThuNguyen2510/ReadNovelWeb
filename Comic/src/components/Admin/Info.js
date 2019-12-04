@@ -49,7 +49,7 @@ export class Info extends Component {
                             <div className="card bg-gradient-success card-img-holder text-white">
                                 <div className="card-body">
                                     <img src="assets/images/dashboard/circle.svg" className="card-img-absolute" alt="circle-image" />
-                                    <Link style={{fontSize:"50px", color:"#fff"}} to="/"><h4 className="font-weight-normal mb-3">Thể loại <i className="mdi mdi-diamond mdi-24px float-right" />
+                                    <Link style={{fontSize:"50px", color:"#fff"}} to="/Admin/Categorys"><h4 className="font-weight-normal mb-3">Thể loại <i className="mdi mdi-diamond mdi-24px float-right" />
                                     </h4>
                                     <h2 className="mb-5">95,5741</h2>
                                     <a href="/" style={{fontSize:"50px", color:"#fff"}}><i className="mdi mdi-plus-circle-outline large"></i></a>

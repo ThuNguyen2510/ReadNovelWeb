@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Route } from 'react-router-dom';
 import Content from './Content';
 import './Admin_Comic.css';
+import Footer from './footer';
 import { connect } from 'react-redux';
 import { fetchListComic, deleteComic } from '../../actions/ComicActions';
 import { fetchGenres } from '../../actions/GenreAction';
@@ -21,29 +22,15 @@ class Admin_Comic extends React.Component {
     findGenre(id) {
         var gen = ""
         for (var i = 0; i < this.props.gens.length; i++) {
-
             if (this.props.gens[i].id === id) {
                 gen = this.props.gens[i].genre_name
-
                 break;
             }
         }
         return gen;
     }
     show() {
-        return this.props.list.map((a) =>
-            // <tr>
-            //     <td><img style={{ width: "50px" }} src={a.Image}></img></td>
-            //     <td> <Link to={"/Comic/" + a.id + "/Show"}>{a.Name}</Link></td>
-            //     <td>{a.Author}</td>
-            //     <td>{this.findGenre(a.Genre_id)}</td>
-            //     <td>
-            //         <ul>
-            //             <li id="but" ><Link to={"/Comic/" + a.id + "/Show"}><i class="far fa-eye"></i></Link></li>
-            //             <li id="but" ><button onClick={e => { if (window.confirm("Are you sure??")) this.props.deleteComic(a.id) }} ><i id="del" class="far fa-minus-square"></i></button></li>
-            //         </ul>
-            //     </td>
-            // </tr>
+        return this.props.list.map((a) =>           
             <tr>
                 <td>
                     <img src={a.Image} className="mr-2" alt="image" /><br/>
@@ -55,12 +42,11 @@ class Admin_Comic extends React.Component {
                 </td>
                 <td> 
                     <ul className="ml-5">
-                        <li id="but" ><Link to={"/Comic/" + a.id + "/Show"}><i class="far fa-eye"></i></Link></li>
+                        <li id="but" ><Link to={"/Comic/" + a.ID + "/Show"}><i class="far fa-eye"></i></Link></li>
                         <li id="but" ><button onClick={e => { if (window.confirm("Are you sure??")) this.props.deleteComic(a.id) }} ><i id="del" class="far fa-minus-square"></i></button></li>
                     </ul> 
                 </td>
             </tr>
-
         )
     }
     search(keyword) {
@@ -79,8 +65,8 @@ class Admin_Comic extends React.Component {
                             <Content />
                         </div>
                         <div className="col-md-10 col-lg-10">
-                            <div className="card" style={{ width: "100%" }}>
-                                <div className="card-header">
+                            <div className="card" style={{ width: "100%", backgroundColor:"#f2edf3"}}>
+                                <div className="card-header" style={{backgroundColor:"ghostwhite"}}>
                                     <p><i class="fas fa-table mr-2"></i>Quản lý truyện</p>
                                 </div>
                                 <div id="addcomic"> <Link to="/Comics/Add"><i class="fas fa-plus"></i>Thêm truyện </Link></div>
@@ -115,46 +101,6 @@ class Admin_Comic extends React.Component {
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody>
-                                                                        {/* <tr>
-                                                                            <td>
-                                                                                <img src="assets/images/faces/face1.jpg" className="mr-2" alt="image" /> David Grey </td>
-                                                                            <td> Fund is not recieved </td>
-                                                                            <td>
-                                                                                <label className="badge badge-gradient-success">DONE</label>
-                                                                            </td>
-                                                                            <td> Dec 5, 2017 </td>
-                                                                            <td> WD-12345 </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>
-                                                                                <img src="assets/images/faces/face2.jpg" className="mr-2" alt="image" /> Stella Johnson </td>
-                                                                            <td> High loading time </td>
-                                                                            <td>
-                                                                                <label className="badge badge-gradient-warning">PROGRESS</label>
-                                                                            </td>
-                                                                            <td> Dec 12, 2017 </td>
-                                                                            <td> WD-12346 </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>
-                                                                                <img src="assets/images/faces/face3.jpg" className="mr-2" alt="image" /> Marina Michel </td>
-                                                                            <td> Website down for one week </td>
-                                                                            <td>
-                                                                                <label className="badge badge-gradient-info">ON HOLD</label>
-                                                                            </td>
-                                                                            <td> Dec 16, 2017 </td>
-                                                                            <td> WD-12347 </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>
-                                                                                <img src="assets/images/faces/face4.jpg" className="mr-2" alt="image" /> John Doe </td>
-                                                                            <td> Loosing control on server </td>
-                                                                            <td>
-                                                                                <label className="badge badge-gradient-danger">REJECTED</label>
-                                                                            </td>
-                                                                            <td> Dec 3, 2017 </td>
-                                                                            <td> WD-12348 </td>
-                                                                        </tr> */}
                                                                         {this.show()}
                                                                     </tbody>
                                                                 </table>
@@ -180,6 +126,7 @@ class Admin_Comic extends React.Component {
                                         </div>
                                 </div>
                             </div>
+                            <Footer/>
                         </div>
                     </div>
                 </div>

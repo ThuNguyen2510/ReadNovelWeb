@@ -142,10 +142,8 @@ class ShowComic extends React.Component {
                         <Content />
                     </div>
                     <div className="col-md-10">
-                        <Nav />
                         {this.show()}
                         {list}
-
                     </div>
                 </div>
             </>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
-import './Content.css'
 class Content extends React.Component {
     render() {
         return (
@@ -39,17 +38,17 @@ class Content extends React.Component {
                         </a>
                     </li>
                     <li className="nav-item">
+                        <a className="nav-link float-md-left" href="/Admin/Categorys">
+                            <i className="mdi mdi-table-large menu-icon" />
+                            <span className="menu-title ml-2">Thể loại</span>
+                        </a>
+                    </li>
+                    <li className="nav-item">
                         <a className="nav-link float-md-left" href="pages/charts/chartjs.html">
                             <i className="mdi mdi-chart-bar menu-icon" />
                             <span className="menu-title ml-2">Charts</span>
                         </a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link float-md-left" href="pages/tables/basic-table.html">
-                            <i className="mdi mdi-table-large menu-icon" />
-                            <span className="menu-title ml-2">Tables</span>
-                        </a>
-                    </li>
+                    </li>                    
                     <li className="nav-item">
                         <a className="nav-link float-md-left" data-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages">
                             <i className="mdi mdi-medical-bag menu-icon" />
