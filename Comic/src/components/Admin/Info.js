@@ -24,10 +24,10 @@ export class Info extends Component {
                             <div className="card bg-gradient-danger card-img-holder text-white">
                                 <div className="card-body">
                                     <img src="assets/images/dashboard/circle.svg" className="card-img-absolute" alt="circle-image" />
-                                    <Link style={{fontSize:"50px", color:"#fff"}} to="/"> <h4 className="font-weight-normal mb-3">Thành viên <i className="mdi mdi-chart-line mdi-24px float-right" />
+                                    <Link style={{fontSize:"50px", color:"#fff"}} to="/Admin/Users"> <h4 className="font-weight-normal mb-3">Thành viên <i className="mdi mdi-chart-line mdi-24px float-right" />
                                     </h4>
                                     <h2 className="mb-5">150 </h2>
-                                    <a href="/" style={{fontSize:"50px", color:"#fff"}}><i className="mdi mdi-plus-circle-outline large"></i></a>
+                                    <a href="/Admin/Users" style={{fontSize:"50px", color:"#fff"}}><i className="mdi mdi-plus-circle-outline large"></i></a>
                                     {/* <h6 className="card-text">Increased by 60%</h6> */}
                                     </Link>
                                 </div>
@@ -37,10 +37,10 @@ export class Info extends Component {
                             <div className="card bg-gradient-info card-img-holder text-white">
                                 <div className="card-body">
                                     <img src="assets/images/dashboard/circle.svg" className="card-img-absolute" alt="circle-image" />
-                                    <Link style={{fontSize:"50px", color:"#fff"}} to="/"><h4 className="font-weight-normal mb-3">Quản lý truyện <i className="mdi mdi-bookmark-outline mdi-24px float-right" />
+                                    <Link style={{fontSize:"50px", color:"#fff"}} to="/Admin/Comics"><h4 className="font-weight-normal mb-3">Quản lý truyện <i className="mdi mdi-bookmark-outline mdi-24px float-right" />
                                     </h4>
                                     <h2 className="mb-5">45,6334</h2>
-                                    <a href="/" style={{fontSize:"50px", color:"#fff"}}><i className="mdi mdi-plus-circle-outline large"></i></a>
+                                    <a href="/Admin/Comics" style={{fontSize:"50px", color:"#fff"}}><i className="mdi mdi-plus-circle-outline large"></i></a>
                                     </Link>
                                 </div>
                             </div>
@@ -52,7 +52,7 @@ export class Info extends Component {
                                     <Link style={{fontSize:"50px", color:"#fff"}} to="/Admin/Categorys"><h4 className="font-weight-normal mb-3">Thể loại <i className="mdi mdi-diamond mdi-24px float-right" />
                                     </h4>
                                     <h2 className="mb-5">95,5741</h2>
-                                    <a href="/" style={{fontSize:"50px", color:"#fff"}}><i className="mdi mdi-plus-circle-outline large"></i></a>
+                                    <a href="/Admin/Categorys" style={{fontSize:"50px", color:"#fff"}}><i className="mdi mdi-plus-circle-outline large"></i></a>
                                     </Link>
                                 </div>
                             </div>
