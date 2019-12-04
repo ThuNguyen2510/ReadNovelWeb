@@ -7,12 +7,13 @@ namespace ComicAPI.Models.Entities
 {
     public class Post
     {
-        public int PostID{get;set;}
-        public int UserPostID{get;set;}
+        public int ID{get;set;}
+        public int UserID{get;set;}
         public string Title{get;set;}
         public string PostContent{get;set;}
         public DateTime PostTime{get;set;}
         public ICollection<Answer> Answers{get;set;}
-        public User UserPost{get;set;}
+        public ICollection<LikePost> LikePosts{get;set;}
+        public User User{get;set;}
     }
 }

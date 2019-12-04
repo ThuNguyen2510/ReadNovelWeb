@@ -18,7 +18,7 @@ namespace ComicAPI.Services.UserService
         {
              _context.Users.Add(user);
             _context.SaveChanges();
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public void DeleteUser(int id)
@@ -26,7 +26,7 @@ namespace ComicAPI.Services.UserService
              var user=_context.Users.FirstOrDefault(x=>x.ID==id);
             _context.Users.Remove(user);
              _context.SaveChanges();
-            throw new NotImplementedException();
+          
         }
 
         public User GetUserById(int Id)
@@ -41,9 +41,14 @@ namespace ComicAPI.Services.UserService
                 {
                     ID = e.ID,
                    Content= e.Content,CommentTime=e.CommentTime,Comic= new Comic{ID=e.Comic.ID}
+                }).ToList(),
+                Likes=u.Likes.Select(e=> new Like{
+                    ID=e.ID,
+                    check=e.check,
+                    ComicID=e.ComicID
                 }).ToList()
             }).Where(x=> x.ID==Id).SingleOrDefault();
-            throw new NotImplementedException();
+          
         }
 
         public List<User> GetUsers()
@@ -51,7 +56,7 @@ namespace ComicAPI.Services.UserService
             var users= new List<User>();
             users=_context.Users.ToList();
             return users;
-            throw new NotImplementedException();
+          
         }
 
         public void UpdateUser(int id, User user)
@@ -62,13 +67,13 @@ namespace ComicAPI.Services.UserService
             olduser.Email=user.Email;
             olduser.Role=user.Role;
             _context.SaveChanges();
-            throw new NotImplementedException();
+          
         }
 
         public User UserLogin(string Username,string Password)
         {
             return _context.Users.FirstOrDefault(x=> x.Username==Username && x.Password==Password);
-            throw new NotImplementedException();
+          
         }
     }
 }

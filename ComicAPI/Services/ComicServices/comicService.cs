@@ -18,18 +18,10 @@ namespace ComicAPI.Services.ComicServices
         public void AddNewComic(Comic comic)
         {
             _context.Comics.Add(comic);
-            // if(comic.Chapters.ToList()!=null)
-            // {
-            //     foreach (var i in comic.Chapters)
-            //     {
-            //         _context.Chapters.Add(i);                
-            //         comic.Chapters.Add(i);
-            //     }
-            // }
             _context.SaveChanges();
-            throw new NotImplementedException();
+            
         }
-
+        
         public List<Comic> ComicHot()
         {
             int like=0;
@@ -54,16 +46,15 @@ namespace ComicAPI.Services.ComicServices
                 }).ToList()
             }).Where(e=> e.Likes > like ).ToList();
             return comics;
-            throw new NotImplementedException();
+          
         }
 
-        //delete comic => delete chapter
         public void DeleteComic(int id)
         {
              var comic=_context.Comics.FirstOrDefault(x=>x.ID==id);
             _context.Comics.Remove(comic);
              _context.SaveChanges();
-            throw new NotImplementedException();
+          
         }
 
         public Comic GetComicById(int Id)
@@ -81,7 +72,7 @@ namespace ComicAPI.Services.ComicServices
                     ID=w.ID,Content=w.Content,CommentTime=w.CommentTime,User=w.User
                 }).ToList()
             }).Where(x=>x.ID==Id).SingleOrDefault();
-            throw new NotImplementedException();
+          
         }
         
         public List<Comic> GetComics()
@@ -101,7 +92,7 @@ namespace ComicAPI.Services.ComicServices
                 }).ToList()
             }).ToList();
             return comics;
-            throw new NotImplementedException();
+          
         }
 
         public List<Comic> SearchByName(string keyword)
@@ -109,7 +100,7 @@ namespace ComicAPI.Services.ComicServices
             var comics= new List<Comic>();
             comics=_context.Comics.Where(x=>x.Name.Contains(keyword)).ToList();
             return comics;
-            throw new NotImplementedException();
+          
         }
 
         public void UpdateComic(int id, Comic comic_)
@@ -126,7 +117,7 @@ namespace ComicAPI.Services.ComicServices
             comic.GenreID=comic_.GenreID;
             comic.Description=comic_.Description;
             _context.SaveChanges();
-            throw new NotImplementedException();
+          
         }
     }
 }

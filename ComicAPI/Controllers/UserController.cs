@@ -13,7 +13,7 @@ namespace ComicAPI.Controllers
     [Route("users")]
     [ApiController]
    // [Authorize]
-   // [EnableCors("AllowOrigin")]  
+    [EnableCors("AllowOrigin")]  
     public class UserController : ControllerBase
     {
          private IUserService _userService;

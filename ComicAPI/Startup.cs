@@ -16,6 +16,7 @@ using ComicAPI.Services.UserService;
 using ComicAPI.Services.ComicServices;
 using Microsoft.IdentityModel.Tokens;
 using ComicAPI.Controllers;
+using ComicAPI.Services;
 
 namespace ComicAPI
 {
@@ -59,7 +60,9 @@ namespace ComicAPI
            services.AddScoped<IComicService,comicService>();
            services.AddScoped<IChapService,ChapService>();
            services.AddScoped<IGenreService,GenreService>();
-          services.AddScoped<ICommentService,CommentService>();
+           services.AddScoped<ICommentService,CommentService>();
+           services.AddScoped<ILikeService,LikeService>();
+           services.AddScoped<>();
          }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

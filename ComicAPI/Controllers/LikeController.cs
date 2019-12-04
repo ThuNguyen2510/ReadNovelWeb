@@ -2,16 +2,24 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ComicAPI.Models.Entities;
+using ComicAPI.Services;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Namespace
+namespace ComicAPI.Controllers
 {
-    [Route("posts")]
+    [Route("likes")]
     [ApiController]
     [EnableCors("AllowOrigin")] 
-    public class PostController : ControllerBase
+    public class LikeController : ControllerBase
     {
+
+        ILikeService _likeservice;
+        public LikeController(ILikeService like)
+        {
+            _likeservice=like;
+        }
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
@@ -25,8 +33,9 @@ namespace Namespace
         }
 
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Like like)
         {
+            _likeservice.Like(like);
         }
 
         [HttpPut("{id}")]
@@ -37,6 +46,7 @@ namespace Namespace
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            _likeservice.UnLike(id);
         }
     }
 }
