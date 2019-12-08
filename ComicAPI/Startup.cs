@@ -62,7 +62,9 @@ namespace ComicAPI
            services.AddScoped<IGenreService,GenreService>();
            services.AddScoped<ICommentService,CommentService>();
            services.AddScoped<ILikeService,LikeService>();
-           services.AddScoped<>();
+           services.AddScoped<IPostService,PostService>();
+            services.AddScoped<ILikePostService,LikePostService>();
+            services.AddScoped<IAnswerService,AnswerService>();
          }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

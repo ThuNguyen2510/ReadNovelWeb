@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ComicAPI.Models.Entities;
+using ComicAPI.Services;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,31 +14,39 @@ namespace Namespace
     [EnableCors("AllowOrigin")] 
     public class PostController : ControllerBase
     {
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        IPostService _postservice;
+        public PostController(IPostService ips)
         {
-            return new string[] { "value1", "value2" };
+            _postservice=ips;
+        }
+        [HttpGet]
+        public ActionResult<IEnumerable<Post>> Get()
+        {
+            return _postservice.GetPosts();
         }
 
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<Post> Get(int id)
         {
-            return "value";
+            return _postservice.GetPostByID(id);
         }
 
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Post post)
         {
+            _postservice.AddPost(post);
         }
 
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] Post post)
         {
+            _postservice.UpdatePost(id,post);
         }
 
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            _postservice.DeletePost(id);
         }
     }
 }

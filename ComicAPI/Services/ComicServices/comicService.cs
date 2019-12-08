@@ -57,6 +57,25 @@ namespace ComicAPI.Services.ComicServices
           
         }
 
+        public List<Comic> Filter(int genreid,int status)
+        {
+             List<Comic> comics= new List<Comic>();
+            comics=_context.Comics.Select(x=> new Comic{
+                ID=x.ID,Name=x.Name,Author=x.Author,Update_time=x.Update_time,
+                Likes=x.Likes,Views=x.Views,Status=x.Status,Description=x.Description,
+                Chapter_long=x.Chapter_long,Image=x.Image,GenreID=x.GenreID,
+                Chapters=x.Chapters.Select(e=> new Chapter{
+                    STT=e.STT,
+                    ChapterID=e.ChapterID,ComicID=e.ComicID,Title=e.Title,
+                    Content=e.Content
+                }).ToList(),
+                 Comments=x.Comments.Select(w=> new Comment{
+                    ID=w.ID,Content=w.Content,CommentTime=w.CommentTime,User=w.User
+                }).ToList()
+            }).Where(x=> x.GenreID==genreid&& x.Status==status).ToList();
+            return comics;
+        }
+
         public Comic GetComicById(int Id)
         {
             return _context.Comics.Select(x=> new Comic{
@@ -95,14 +114,34 @@ namespace ComicAPI.Services.ComicServices
           
         }
 
+        public List<Comic> SearchByGenre(int genreid)
+        {
+             List<Comic> comics= new List<Comic>();
+            comics=_context.Comics.Select(x=> new Comic{
+                ID=x.ID,Name=x.Name,Author=x.Author,Update_time=x.Update_time,
+                Likes=x.Likes,Views=x.Views,Status=x.Status,Description=x.Description,
+                Chapter_long=x.Chapter_long,Image=x.Image,GenreID=x.GenreID,
+                Chapters=x.Chapters.Select(e=> new Chapter{
+                    STT=e.STT,
+                    ChapterID=e.ChapterID,ComicID=e.ComicID,Title=e.Title,
+                    Content=e.Content
+                }).ToList(),
+                 Comments=x.Comments.Select(w=> new Comment{
+                    ID=w.ID,Content=w.Content,CommentTime=w.CommentTime,User=w.User
+                }).ToList()
+            }).Where(x=> x.GenreID==genreid).ToList();
+            return comics;
+        }
+
         public List<Comic> SearchByName(string keyword)
         {
             var comics= new List<Comic>();
-            comics=_context.Comics.Where(x=>x.Name.Contains(keyword)).ToList();
+            if(keyword!="")
+            comics=_context.Comics.Where(x=>x.Name.Contains(keyword)|| x.Author.Contains(keyword)).ToList();
             return comics;
           
         }
-
+    
         public void UpdateComic(int id, Comic comic_)
         {
             var comic = _context.Comics.FirstOrDefault(x=>x.ID==id);

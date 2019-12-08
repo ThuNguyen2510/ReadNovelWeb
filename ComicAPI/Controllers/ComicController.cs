@@ -13,7 +13,6 @@ namespace ComicAPI.Controllers
 {
     [Route("comics")]
     [ApiController]
-    //  [Authorize]
     [EnableCors("AllowOrigin")]  
     public class ComicController : ControllerBase
     {
@@ -44,6 +43,18 @@ namespace ComicAPI.Controllers
        public ActionResult<IEnumerable<Comic>> ComicHot()
         {
             return _comicService.ComicHot();
+        }
+        [HttpGet]
+       [Route("searchByGenre/{genreid}")]
+       public ActionResult<IEnumerable<Comic>> SearchByGenre(int genreid)
+        {
+            return _comicService.SearchByGenre(genreid);
+        }
+        [HttpGet]
+       [Route("Filter/{genreid}/{status}")]
+       public ActionResult<IEnumerable<Comic>> Filter(int genreid,int status)
+        {
+            return _comicService.Filter(genreid,status);
         }
         [HttpPost]
         public void Post([FromBody] Comic comic)
