@@ -67,6 +67,7 @@ class Comment extends React.Component{
           <p>
             {cmt.content}
           </p>
+          {(cmt.userID==JSON.parse(localStorage.getItem('logined_user')).id)&&<p>Edit</p>}
         </div>
         
       </li>
