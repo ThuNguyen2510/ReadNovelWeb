@@ -15,6 +15,10 @@ namespace ComicAPI.Services.ComicServices
         void UpdateComic(int id, Comic comic);
         List<Comic> SearchByName(string keyword);
         List<Comic> ComicHot();
+        List<Comic> SearchByGenre(int genreid);
+        List<Comic> Filter (int genreid,int status );
+        List<Comic> ComicFull();
+        List<Comic> ComicUpdating();
     }
 
 }

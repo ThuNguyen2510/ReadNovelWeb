@@ -15,11 +15,11 @@ namespace ComicAPI.Services.ComicServices
         }
         public void AddComment(Comment comment)
         {
-            var User = _context.Users.Where(x=>x.ID==comment.User.ID).SingleOrDefault();
+            var User = _context.Users.Where(x=>x.ID==comment.UserID).SingleOrDefault();
             _context.Comments.Add(comment);
             User.Comment.Add(comment);
-            // var Comic=_context.Comics.Where(x=>x.ID==comment.Comic.ID).SingleOrDefault();
-            // Comic.Comments.Add(comment);
+            var Comic=_context.Comics.Where(x=>x.ID==comment.ComicID).SingleOrDefault();
+            Comic.Comments.Add(comment);
             _context.SaveChanges();
         }
 
@@ -27,7 +27,7 @@ namespace ComicAPI.Services.ComicServices
         {
             _context.Comments.Remove(_context.Comments.FirstOrDefault(x=>x.ID==id));
             _context.SaveChanges();
-            throw new NotImplementedException();
+          
         }
 
         public Comment GetCommentById(int id)
@@ -44,7 +44,7 @@ namespace ComicAPI.Services.ComicServices
                 }
             }).Where(x=> x.ID==id).SingleOrDefault();
             return comment;
-            throw new NotImplementedException();
+          
         }
 
         public List<Comment> GetComments()
@@ -56,10 +56,10 @@ namespace ComicAPI.Services.ComicServices
                 User= new User{
                     ID=c.User.ID,Username=c.User.Username,
                     Image=c.User.Image
+                },
+                Comic=new Comic{
+                    ID=c.Comic.ID
                 }
-                // Comic=new Comic{
-                //     ID=c.Comic.ID
-                // }
                 
             }).ToList();
             return listComm;
@@ -69,11 +69,11 @@ namespace ComicAPI.Services.ComicServices
 
         public void UpdateComment(int id, Comment comment)
         {
-            var old = _context.Comments.SingleOrDefault(x=>x.ID==id);
+            Comment old = _context.Comments.SingleOrDefault(x=>x.ID==id);
             old.Content=comment.Content;
             old.CommentTime=comment.CommentTime;
             _context.SaveChanges();
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }

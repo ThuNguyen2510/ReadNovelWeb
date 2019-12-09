@@ -1,7 +1,7 @@
 import React from 'react';
 import Comic from './Comic';
 import { connect } from 'react-redux';
-import { fetchListComic } from '../actions/ComicActions';
+import { fetchComicUpdateNew } from '../actions/ComicActions';
 class ListComic extends React.Component {
 
         constructor(props)
@@ -9,7 +9,7 @@ class ListComic extends React.Component {
             super(props)
         }
         componentDidMount() {
-            this.props.fetchListComic();
+            this.props.fetchComicUpdateNew();
 
         }
         show() {
@@ -38,7 +38,7 @@ class ListComic extends React.Component {
         }
         const mapStateToProps = (state) => {
             return {
-                list: state.comics
+                list: state.comicnew
             }
         }
 
@@ -46,8 +46,8 @@ class ListComic extends React.Component {
 
         const mapDispatchToProps = (dispatch, props) => {
             return {
-                fetchListComic: () => {
-                    dispatch(fetchListComic())
+                fetchComicUpdateNew: () => {
+                    dispatch(fetchComicUpdateNew())
 
                 }
             }

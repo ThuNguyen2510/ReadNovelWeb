@@ -16,6 +16,6 @@ namespace ComicAPI.Models.Entities
         public ICollection<Post> Posts{get;set;}
         public ICollection<Comment> Comment { get; set; }
         public ICollection<Like> Likes{get;set;}
-        public ICollection<Answer> Answers{get;set;}
+       
     }
 }

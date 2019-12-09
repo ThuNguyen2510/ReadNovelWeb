@@ -11,8 +11,6 @@ class ListChap extends React.Component
     }
     componentDidMount()
     {
-        
-       // this.props.fetchChapters(this.props.comic_id);
     }
     show1()
     {
@@ -46,7 +44,7 @@ class ListChap extends React.Component
     
     render()
     {  let {chaps} =this.props;
-    console.log(this.props);
+    
         return(
             <>
             <div className="row list-chap">

@@ -1,80 +1,29 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
-class Content extends React.Component {
-    render() {
+import {Link,Route} from 'react-router-dom';
+import './Content.css'
+import Hello from './Hello';
+class Content extends React.Component{
+    render(){
         return (
-            <nav className="sidebar sidebar-offcanvas ml-3" id="sidebar">
-                <ul className="nav">
-                    <li className="navbar-brand">
-                        <h4>TVT</h4>
+            <div className="side-bar">
+                <ul className="side sidebar-color navbar-nav">
+                    <li className="nav-item active">
+                        <Link className="navbar-link" to="/Admin"><span className="mb-5" style={{fontSize:"25px"}} >TVT COMIC</span></Link>
                     </li>
-                    <li className="nav-item nav-profile">
-                        <a href="#" className="nav-link">
-                            <div className="nav-profile-image">
-                                <img src="assets/images/faces/face1.jpg" alt="profile" />
-                                <span className="login-status online" />
-                                {/*change to offline or busy as needed*/}
-                            </div>
-                            <div className="nav-profile-text d-flex flex-column">
-                                <p className="font-weight-bold mb-2">David Grey. H</p>
-                                <p className="text-secondary text-small">Project Manager</p>
-                            </div>
-                            <i className="mdi mdi-bookmark-check text-success nav-profile-badge" />
-                        </a>
+                    <li className="nav-item active">
+                        <Link className="nav-link" to="/Admin/Comics">
+                            <i id ="i" className="fas fa-fw fa-tachometer-alt" />
+                            <span>Quản lý truyện</span>
+                        </Link>
                     </li>
-                    <li className="nav-item">
-                        <a className="nav-link float-md-left" href="/Admin">
-                        <i className="mdi mdi-home menu-icon" />
-                            <span className="menu-title ml-2">Dashboard</span>
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link float-md-left" href="/Admin/Users">
-                            <i className="mdi mdi-contacts menu-icon" />
-                            <span className="menu-title ml-2">User</span>
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link float-md-left" href="/Admin/Comics">
-                            <i className="mdi mdi-format-list-bulleted menu-icon" />
-                            <span className="menu-title ml-2">Quản lý truyện</span>
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link float-md-left" href="/Admin/Categorys">
-                            <i className="mdi mdi-table-large menu-icon" />
-                            <span className="menu-title ml-2">Thể loại</span>
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link float-md-left" href="pages/charts/chartjs.html">
-                            <i className="mdi mdi-chart-bar menu-icon" />
-                            <span className="menu-title ml-2">Charts</span>
-                        </a>
-                    </li>                    
-                    <li className="nav-item">
-                        <a className="nav-link float-md-left" data-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages">
-                            <i className="mdi mdi-medical-bag menu-icon" />
-                            <span className="menu-title ml-2">Sample Pages</span>
-                        </a>
-                        <div className="collapse" id="general-pages">
-                            <ul className="nav flex-column sub-menu">
-                                <li className="nav-item"> <a className="nav-link float-md-left" href="pages/samples/blank-page.html"> Blank Page </a></li>
-                                <li className="nav-item"> <a className="nav-link float-md-left" href="pages/samples/login.html"> Login </a></li>
-                                <li className="nav-item"> <a className="nav-link float-md-left" href="pages/samples/register.html"> Register </a></li>
-                                <li className="nav-item"> <a className="nav-link float-md-left" href="pages/samples/error-404.html"> 404 </a></li>
-                                <li className="nav-item"> <a className="nav-link float-md-left" href="pages/samples/error-500.html"> 500 </a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li className="nav-item sidebar-actions">
-                        <span className="nav-link float-md-left">
-                            <a href="/" style={{textDecoration:"none"}}><button className="btn btn-block btn-lg btn-gradient-success mt-4">+ Đăng xuất</button></a>
-                        </span>
+                    <li className="nav-item dropdown">
+                    <Link className="nav-link" to="/Admin/Users">
+                        <i id ="i" className="fas fa-users"></i>
+                        <span>Quản lý User</span>
+                    </Link>
                     </li>
                 </ul>
-            </nav>
-
+            </div>
         );
     }
 }

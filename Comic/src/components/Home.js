@@ -10,7 +10,7 @@ class Home extends React.Component{
     render(){
       
         return(
-            <div className="">
+            <div className="container-fluid">
                 <Header/>
                 <Slider/>
                 <div className="container bg-navy mt-3">

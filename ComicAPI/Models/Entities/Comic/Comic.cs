@@ -19,6 +19,7 @@ namespace ComicAPI.Models.Entities
         public string Image{get;set;}
         public int GenreID { get; set; }
         public ICollection<Chapter> Chapters { get; set; }
+        public ICollection<Like> Likesc { get; set; }
         public ICollection<Comment> Comments{get;set;}
     }
 }

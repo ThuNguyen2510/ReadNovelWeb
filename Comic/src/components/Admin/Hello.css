@@ -1,0 +1,32 @@
+#con {
+    overflow-x: hidden;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 80px;
+}
+
+#row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.card-body-icon {
+    position: absolute;
+    z-index: 0;
+    top: -1.25rem;
+    right: -1rem;
+    opacity: 0.4;
+    font-size: 8rem;
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
+}
+
+#a {
+    opacity: 0.4;
+    font-size: 5rem;
+    -webkit-transform: rotate(10deg);
+    transform: rotate(10deg);
+}
