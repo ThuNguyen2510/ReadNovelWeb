@@ -25,6 +25,7 @@ import UpdateChapter from './components/Admin/UpdateChapter';
 import ShowChapter from './components/Admin/ShowChapter'
 import ShowComic from './components/Admin/ShowComic';
 import ForumNPost from './components/ForumNPost';
+import Admin_Cate from './components/Admin/Admin_Cate';
 const history = createBrowserHistory()
 class App extends React.Component {
   render(){
@@ -63,6 +64,7 @@ class App extends React.Component {
           <Route path='/User/page' exact component={User_page}/> 
           <Route path='/User/book' exact component={User_book}/> 
           <Route path='/User/readbook' exact component={Read}/> 
+          <Route path='/Admin/Categorys' exact component={Admin_Cate}/>
           <Route path='/' component={Home} />
           
           </Switch>        

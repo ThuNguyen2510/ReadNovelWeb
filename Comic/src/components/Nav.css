@@ -14,10 +14,7 @@
     justify-content: space-between;
 }
 
-.wrap-nav {
-    margin-left: 7%;
-    margin-right: 7%;
-}
+.wrap-nav {}
 
 ul.menu {
     list-style-type: none;
