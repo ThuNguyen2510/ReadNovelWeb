@@ -8,22 +8,9 @@ class Full extends React.Component{
     constructor(props)
     {
         super(props)
-        this.Search23 = this.Search23.bind(this);
+      
     }
-    componentDidMount()
-    {
-        this.props.fetchGenres()
-    }
-    componentWillMount()
-    {
-        this.props.fetchGenres()
-
-    }
-    
-    Search23(e)
-    {
-        this.props.fetchComicByCategory(1)
-    }
+   
     render(){
         var con_m21={
             backgroundColor: "#fff",

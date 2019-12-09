@@ -20,7 +20,7 @@ namespace ComicAPI.Services.ComicServices
             _context.Chapters.Add(chap);
             comic.Chapters.Add(chap);            
             _context.SaveChanges();
-            throw new NotImplementedException();
+          
         }
 
         public void DeleteChap(int id)
@@ -28,13 +28,13 @@ namespace ComicAPI.Services.ComicServices
             var chap= _context.Chapters.SingleOrDefault(x=> x.ChapterID==id);
             _context.Chapters.Remove(chap);            
             _context.SaveChanges();
-            throw new NotImplementedException();
+          
         }
 
         public List<Chapter> GetChaps()
         {
             return _context.Chapters.ToList();
-            throw new NotImplementedException();
+          
         }
 
         public List<Chapter> GetChapsofComic(int comicid)
@@ -42,7 +42,7 @@ namespace ComicAPI.Services.ComicServices
             var chaps= new List<Chapter>();
             chaps= _context.Chapters.Where(x=>x.ComicID==comicid).ToList();
             return chaps;
-            throw new NotImplementedException();
+          
         }
 
         public void UpdateChap(int chapid, Chapter chapter)
@@ -52,7 +52,7 @@ namespace ComicAPI.Services.ComicServices
             old.Content=chapter.Content;
             old.STT=chapter.STT;
             _context.SaveChanges();
-            throw new NotImplementedException();
+          
         }
     }
 }

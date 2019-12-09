@@ -4,14 +4,16 @@ using ComicAPI;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ComicAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20191204034940_reset")]
+    partial class reset
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -103,7 +105,7 @@ namespace ComicAPI.Migrations
                         new
                         {
                             ID = 1,
-                            AnswerTime = new DateTime(2019, 12, 4, 10, 59, 15, 227, DateTimeKind.Local).AddTicks(4264),
+                            AnswerTime = new DateTime(2019, 12, 4, 10, 49, 39, 856, DateTimeKind.Local).AddTicks(9791),
                             Content = "Ta đề cử Tối cường thần thoại đế hoàng , Thần khống thiên hạ",
                             PostID = 1,
                             UserID = 1
@@ -111,7 +113,7 @@ namespace ComicAPI.Migrations
                         new
                         {
                             ID = 2,
-                            AnswerTime = new DateTime(2019, 12, 4, 10, 59, 15, 228, DateTimeKind.Local).AddTicks(244),
+                            AnswerTime = new DateTime(2019, 12, 4, 10, 49, 39, 857, DateTimeKind.Local).AddTicks(2767),
                             Content = "Linh vũ thiên hạ , hộ hoa cao thủ tại đô thị , 1 truyện huyền huyễn 1 truyện đô thị",
                             PostID = 1,
                             UserID = 2
@@ -119,7 +121,7 @@ namespace ComicAPI.Migrations
                         new
                         {
                             ID = 3,
-                            AnswerTime = new DateTime(2019, 12, 4, 10, 59, 15, 228, DateTimeKind.Local).AddTicks(1896),
+                            AnswerTime = new DateTime(2019, 12, 4, 10, 49, 39, 857, DateTimeKind.Local).AddTicks(3604),
                             Content = "Sao ta không lên cấp được nhỉ?",
                             PostID = 2,
                             UserID = 3
@@ -127,7 +129,7 @@ namespace ComicAPI.Migrations
                         new
                         {
                             ID = 4,
-                            AnswerTime = new DateTime(2019, 12, 4, 10, 59, 15, 228, DateTimeKind.Local).AddTicks(3158),
+                            AnswerTime = new DateTime(2019, 12, 4, 10, 49, 39, 857, DateTimeKind.Local).AddTicks(4261),
                             Content = "chờ các cao nhân vào chỉ điểm a. chở Dâm Lão huynh đệ lên tiếng a ",
                             PostID = 2,
                             UserID = 1
@@ -231,7 +233,7 @@ namespace ComicAPI.Migrations
                             Likes = 23,
                             Name = "Công Cuộc Bị 999 Em Gái Chinh Phục",
                             Status = 0,
-                            Update_time = new DateTime(2019, 12, 4, 10, 59, 15, 224, DateTimeKind.Local).AddTicks(157),
+                            Update_time = new DateTime(2019, 12, 4, 10, 49, 39, 854, DateTimeKind.Local).AddTicks(3083),
                             Views = 100
                         },
                         new
@@ -245,7 +247,7 @@ namespace ComicAPI.Migrations
                             Likes = 44,
                             Name = "Câu Chuyện Hồ Đồ",
                             Status = 0,
-                            Update_time = new DateTime(2019, 12, 4, 10, 59, 15, 224, DateTimeKind.Local).AddTicks(8856),
+                            Update_time = new DateTime(2019, 12, 4, 10, 49, 39, 855, DateTimeKind.Local).AddTicks(2816),
                             Views = 100
                         },
                         new
@@ -259,7 +261,7 @@ namespace ComicAPI.Migrations
                             Likes = 11,
                             Name = "Truyền Nhân Trừ Ma",
                             Status = 1,
-                            Update_time = new DateTime(2019, 12, 4, 10, 59, 15, 224, DateTimeKind.Local).AddTicks(8870),
+                            Update_time = new DateTime(2019, 12, 4, 10, 49, 39, 855, DateTimeKind.Local).AddTicks(2830),
                             Views = 100
                         },
                         new
@@ -273,7 +275,7 @@ namespace ComicAPI.Migrations
                             Likes = 11,
                             Name = "Yêu Sâu Nặng",
                             Status = 0,
-                            Update_time = new DateTime(2019, 12, 4, 10, 59, 15, 224, DateTimeKind.Local).AddTicks(8872),
+                            Update_time = new DateTime(2019, 12, 4, 10, 49, 39, 855, DateTimeKind.Local).AddTicks(2832),
                             Views = 100
                         },
                         new
@@ -287,7 +289,7 @@ namespace ComicAPI.Migrations
                             Likes = 30,
                             Name = "Thiên Đạo Đồ Thư Quán",
                             Status = 0,
-                            Update_time = new DateTime(2019, 12, 4, 10, 59, 15, 224, DateTimeKind.Local).AddTicks(8874),
+                            Update_time = new DateTime(2019, 12, 4, 10, 49, 39, 855, DateTimeKind.Local).AddTicks(2834),
                             Views = 100
                         },
                         new
@@ -301,7 +303,7 @@ namespace ComicAPI.Migrations
                             Likes = 45,
                             Name = "Tất Cả Bạn Gái Của Tôi Đều Là Lệ Quỷ",
                             Status = 0,
-                            Update_time = new DateTime(2019, 12, 4, 10, 59, 15, 224, DateTimeKind.Local).AddTicks(8876),
+                            Update_time = new DateTime(2019, 12, 4, 10, 49, 39, 855, DateTimeKind.Local).AddTicks(2836),
                             Views = 100
                         },
                         new
@@ -315,7 +317,7 @@ namespace ComicAPI.Migrations
                             Likes = 15,
                             Name = "Bệnh Chiếm Hữu",
                             Status = 0,
-                            Update_time = new DateTime(2019, 12, 4, 10, 59, 15, 224, DateTimeKind.Local).AddTicks(8877),
+                            Update_time = new DateTime(2019, 12, 4, 10, 49, 39, 855, DateTimeKind.Local).AddTicks(2837),
                             Views = 100
                         },
                         new
@@ -329,7 +331,7 @@ namespace ComicAPI.Migrations
                             Likes = 45,
                             Name = "Cả Đời Chỉ Yêu Em",
                             Status = 0,
-                            Update_time = new DateTime(2019, 12, 4, 10, 59, 15, 224, DateTimeKind.Local).AddTicks(8878),
+                            Update_time = new DateTime(2019, 12, 4, 10, 49, 39, 855, DateTimeKind.Local).AddTicks(2838),
                             Views = 100
                         },
                         new
@@ -343,7 +345,7 @@ namespace ComicAPI.Migrations
                             Likes = 20,
                             Name = "Xin Hãy Ôm Em",
                             Status = 0,
-                            Update_time = new DateTime(2019, 12, 4, 10, 59, 15, 224, DateTimeKind.Local).AddTicks(8880),
+                            Update_time = new DateTime(2019, 12, 4, 10, 49, 39, 855, DateTimeKind.Local).AddTicks(2840),
                             Views = 100
                         },
                         new
@@ -357,7 +359,7 @@ namespace ComicAPI.Migrations
                             Likes = 12,
                             Name = "Sư Huynh, Rất Vô Lương",
                             Status = 0,
-                            Update_time = new DateTime(2019, 12, 4, 10, 59, 15, 224, DateTimeKind.Local).AddTicks(8881),
+                            Update_time = new DateTime(2019, 12, 4, 10, 49, 39, 855, DateTimeKind.Local).AddTicks(2841),
                             Views = 100
                         },
                         new
@@ -371,7 +373,7 @@ namespace ComicAPI.Migrations
                             Likes = 5,
                             Name = "Điều Mặc Sư",
                             Status = 0,
-                            Update_time = new DateTime(2019, 12, 4, 10, 59, 15, 224, DateTimeKind.Local).AddTicks(8885),
+                            Update_time = new DateTime(2019, 12, 4, 10, 49, 39, 855, DateTimeKind.Local).AddTicks(2842),
                             Views = 100
                         },
                         new
@@ -385,7 +387,7 @@ namespace ComicAPI.Migrations
                             Likes = 4,
                             Name = "Hồ Ly Muốn Làm Người Mẫu",
                             Status = 0,
-                            Update_time = new DateTime(2019, 12, 4, 10, 59, 15, 224, DateTimeKind.Local).AddTicks(8886),
+                            Update_time = new DateTime(2019, 12, 4, 10, 49, 39, 855, DateTimeKind.Local).AddTicks(2844),
                             Views = 100
                         });
                 });
@@ -430,7 +432,7 @@ namespace ComicAPI.Migrations
                         {
                             ID = 1,
                             ComicID = 11,
-                            CommentTime = new DateTime(2019, 12, 4, 10, 59, 15, 225, DateTimeKind.Local).AddTicks(547),
+                            CommentTime = new DateTime(2019, 12, 4, 10, 49, 39, 855, DateTimeKind.Local).AddTicks(4415),
                             Content = "Truyện này hay lắm dịch giả cố lên nha",
                             UserID = 1
                         },
@@ -438,7 +440,7 @@ namespace ComicAPI.Migrations
                         {
                             ID = 2,
                             ComicID = 10,
-                            CommentTime = new DateTime(2019, 12, 4, 10, 59, 15, 225, DateTimeKind.Local).AddTicks(7040),
+                            CommentTime = new DateTime(2019, 12, 4, 10, 49, 39, 856, DateTimeKind.Local).AddTicks(22),
                             Content = "Giữ tiến độ nha",
                             UserID = 2
                         },
@@ -446,7 +448,7 @@ namespace ComicAPI.Migrations
                         {
                             ID = 3,
                             ComicID = 9,
-                            CommentTime = new DateTime(2019, 12, 4, 10, 59, 15, 225, DateTimeKind.Local).AddTicks(8213),
+                            CommentTime = new DateTime(2019, 12, 4, 10, 49, 39, 856, DateTimeKind.Local).AddTicks(1002),
                             Content = "Không ai dịch tiếp hả ?",
                             UserID = 3
                         },
@@ -454,7 +456,7 @@ namespace ComicAPI.Migrations
                         {
                             ID = 4,
                             ComicID = 11,
-                            CommentTime = new DateTime(2019, 12, 4, 10, 59, 15, 225, DateTimeKind.Local).AddTicks(9241),
+                            CommentTime = new DateTime(2019, 12, 4, 10, 49, 39, 856, DateTimeKind.Local).AddTicks(1689),
                             Content = "Bạo chương nha các bạn",
                             UserID = 1
                         },
@@ -462,7 +464,7 @@ namespace ComicAPI.Migrations
                         {
                             ID = 5,
                             ComicID = 7,
-                            CommentTime = new DateTime(2019, 12, 4, 10, 59, 15, 225, DateTimeKind.Local).AddTicks(9993),
+                            CommentTime = new DateTime(2019, 12, 4, 10, 49, 39, 856, DateTimeKind.Local).AddTicks(2332),
                             Content = "đọc đến chương 73-74 thấy tội anh Cố Yến Trinh mặc dù cùng họ với anh Cố Gia Minh nhưng die oan vãi chỉ định hù dọa anh Nghị ai ngờ họa sát thân",
                             UserID = 2
                         },
@@ -470,7 +472,7 @@ namespace ComicAPI.Migrations
                         {
                             ID = 6,
                             ComicID = 11,
-                            CommentTime = new DateTime(2019, 12, 4, 10, 59, 15, 226, DateTimeKind.Local).AddTicks(943),
+                            CommentTime = new DateTime(2019, 12, 4, 10, 49, 39, 856, DateTimeKind.Local).AddTicks(2971),
                             Content = "dịch rồi mà k ai convert hết @@ truyện hay mà",
                             UserID = 3
                         },
@@ -478,7 +480,7 @@ namespace ComicAPI.Migrations
                         {
                             ID = 7,
                             ComicID = 5,
-                            CommentTime = new DateTime(2019, 12, 4, 10, 59, 15, 226, DateTimeKind.Local).AddTicks(2983),
+                            CommentTime = new DateTime(2019, 12, 4, 10, 49, 39, 856, DateTimeKind.Local).AddTicks(3600),
                             Content = "truyện quá đẳng cấp :) nếu so với mấy thứ yy tự kỷ cứ như là Iphone với Bphone",
                             UserID = 3
                         });
@@ -637,7 +639,7 @@ namespace ComicAPI.Migrations
                         {
                             ID = 1,
                             PostContent = "Mn tim giup minh cuon truyen",
-                            PostTime = new DateTime(2019, 12, 4, 10, 59, 15, 226, DateTimeKind.Local).AddTicks(7410),
+                            PostTime = new DateTime(2019, 12, 4, 10, 49, 39, 856, DateTimeKind.Local).AddTicks(5523),
                             Title = "Tìm truyện sắc hiệp",
                             UserID = 1
                         },
@@ -645,7 +647,7 @@ namespace ComicAPI.Migrations
                         {
                             ID = 2,
                             PostContent = "Tác phẩm các đh hay nhất từng đọc tên là gì. (Trong này có vài tác phẩm để đời ai cần ghé qua)",
-                            PostTime = new DateTime(2019, 12, 4, 10, 59, 15, 226, DateTimeKind.Local).AddTicks(8465),
+                            PostTime = new DateTime(2019, 12, 4, 10, 49, 39, 856, DateTimeKind.Local).AddTicks(6044),
                             Title = "Help me",
                             UserID = 2
                         },
@@ -653,7 +655,7 @@ namespace ComicAPI.Migrations
                         {
                             ID = 3,
                             PostContent = "Có trường hợp nào hộp thiên giới rỗng ko các đh. Ta nhận đc 1 hộp mà mở ra nó lag. Tải lại thì hộp ko còn mà vật phẩm cũng chẳng có",
-                            PostTime = new DateTime(2019, 12, 4, 10, 59, 15, 226, DateTimeKind.Local).AddTicks(8481),
+                            PostTime = new DateTime(2019, 12, 4, 10, 49, 39, 856, DateTimeKind.Local).AddTicks(6053),
                             Title = "Thắc mắc hộp thiên giới",
                             UserID = 3
                         },
@@ -661,7 +663,7 @@ namespace ComicAPI.Migrations
                         {
                             ID = 4,
                             PostContent = "Như trên nha nhiều vợ tí nó ms thú vị ko thì nhạt bỏ mẹ ra các đạo hữu ạ",
-                            PostTime = new DateTime(2019, 12, 4, 10, 59, 15, 226, DateTimeKind.Local).AddTicks(8486),
+                            PostTime = new DateTime(2019, 12, 4, 10, 49, 39, 856, DateTimeKind.Local).AddTicks(6054),
                             Title = "Xin truyện main bá đạo. Quyết đoán ( và main có nhìu vợ)",
                             UserID = 4
                         });

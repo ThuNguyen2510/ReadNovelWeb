@@ -1,5 +1,4 @@
 import axios from 'axios';
-import Comic_detail from '../components/Comic_detail';
 export const fetchListComic = () => {
     
     return dispatch => {
@@ -56,15 +55,15 @@ export const fetchComicHot = () => {
 }
 export const fetchComicUpdateNew = () => {
     return dispatch => {
-        return axios.get('http://127.0.0.1:3000/comics?_sort=Post_DateTime&_order=desc?_start=0&_end=5').then(data => {
+        return axios.get('http://127.0.0.1:3000/comics/comicUpdating').then(data => {
             dispatch(returnComicUpdateNew(data.data))
         })
     }
 }
-export const fetchComicUpdateNew2 = () => {
+export const fetchComicFull = () => {
     return dispatch => {
-        return axios.get('http://127.0.0.1:3000/comics?_sort=Post_DateTime&_order=desc?_start=0&_end=8').then(data => {
-            dispatch(returnComicUpdateNew2(data.data))
+        return axios.get('http://127.0.0.1:3000/comics/comicFull').then(data => {
+            dispatch(returnComicFull(data.data))
         })
     }
 }
@@ -138,7 +137,7 @@ const returnList = (comics) => ({
     type: 'SHOW_LIST',
     list: comics
 });
-const returnOneComic = (comic) => ({
+export const returnOneComic = (comic) => ({
     type: 'SHOW_A_COMIC',
     comic: comic
 })
@@ -150,6 +149,7 @@ const like = (comic) => ({
     type: 'LIKE',
     comic: comic
 })
+
 const returnComicHot = (comics) => ({
     type: 'COMIC_HOT',
     comics: comics
@@ -158,8 +158,8 @@ const returnComicUpdateNew = (comics) => ({
     type: 'COMIC_UPDATE_NEW',
     comics: comics
 })
-const returnComicUpdateNew2 = (comics) => ({
-    type: 'COMIC_UPDATE_NEW_2',
+const returnComicFull = (comics) => ({
+    type: 'SHOW_LIST_FULL',
     comics: comics
 })
 const returnComicByCategory = (comics) => ({

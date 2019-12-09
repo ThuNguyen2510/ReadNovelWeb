@@ -68,6 +68,9 @@ class Comic_detail extends React.Component{
             return a
         })
     }
+    var comicid=this.props.comic.map(a=> {
+        return a.id
+    })
         return (     
         <div className="container-fluid">    
             <Header/>      
@@ -95,7 +98,7 @@ class Comic_detail extends React.Component{
                     </div>
                 </div>
                 <div className="row">   
-                    <Comment listcmt={cmts}/>                
+                    <Comment comicid={comicid} listcmt={cmts}/>                
                 </div>
                 <hr/>                
             </div>   

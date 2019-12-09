@@ -13,7 +13,6 @@ class Comment extends React.Component{
   }
 
   componentDidMount(){
-    this.props.fetchComt(this.props.comic_id);
     this.props.user();
   }
   componentWillMount()
@@ -31,7 +30,7 @@ class Comment extends React.Component{
       var user=JSON.parse(localStorage.getItem('logined_user'));
       var temp= new Date
       var date=temp.getMonth()+"/"+temp.getDate()+"/"+temp.getFullYear()
-      this.props.addComt(user.id,this.props.comic_id,content,date); 
+      this.props.addComt(user.id,this.props.comicid[0],content,date); 
       this.setState({content: " " })
     }
     
@@ -69,6 +68,7 @@ class Comment extends React.Component{
             {cmt.content}
           </p>
         </div>
+        
       </li>
       </>
     )
@@ -115,7 +115,6 @@ const mapStatetoProps = (state) =>{
 }
 const mapDispatchtoProps =(dispatch)=>{
   return {
-    fetchComt: (id) => dispatch(fetchComt(id)),
     addComt: (user_id,comic_id,contend,time) => dispatch(addComt(user_id,comic_id,contend,time)),
     user: () => dispatch(getUserName())
   }
