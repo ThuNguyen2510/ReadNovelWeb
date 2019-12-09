@@ -24,6 +24,7 @@ import AddChapter from './components/Admin/AddChapter';
 import UpdateChapter from './components/Admin/UpdateChapter';
 import ShowChapter from './components/Admin/ShowChapter'
 import ShowComic from './components/Admin/ShowComic';
+import ForumNPost from './components/ForumNPost';
 const history = createBrowserHistory()
 class App extends React.Component {
   render(){
@@ -32,7 +33,8 @@ class App extends React.Component {
       <div className="App">      
         <Router history={history}>
           <Switch> 
-            <Route path='/FDetail'exact  component={ForumDetail}/>
+          <Route path='/Forum-New-Post' exact component={ForumNPost}/>
+          <Route path='/FDetail'exact  component={ForumDetail}/>
           <Route path='/Forum' exact component={Forum} />
           <Route path='/Search' exact component={Filter}/>  
           <Route path="/search/:string" exact component ={Filter}/>

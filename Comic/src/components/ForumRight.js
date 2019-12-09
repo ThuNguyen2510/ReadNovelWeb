@@ -20,7 +20,7 @@ export class ForumRight extends React.Component {
                     <form class="form-inline">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
                         <button class="btnNav" type="submit"><i style={{ color: "green" }} className="fas fa-search btnsearch"></i></button>
-                        <button class="btnNav" type="submit"><i style={{ color: "green" }} className="fas fa-edit"></i></button>
+                        <button class="btnNav" type="submit"><Link to="/Forum-New-Post"><i style={{ color: "green" }} className="fas fa-edit"></i></Link></button>
                     </form>
                 </nav>
                 <table class="table">
