@@ -68,8 +68,8 @@ class AddComic extends React.Component {
                     <div className="col-md-2">
                         <Content />
                     </div>
-                    <div className="col-md-10" style={{ width: "100%", height: "100%" }}>
-                        <div className="content-wrapper" style={{ width: "100%", height: "100%", padding: "0 0" }}>
+                    <div className="col-md-10" style={{ width: "100%", height: "100vh" }}>
+                        <div className="content-wrapper" style={{ width: "100%", height: "100vh", padding: "0 0" }}>
                             <nav aria-label="breadcrumb ">
                                 <ul className="breadcrumb">
                                     <li className="breadcrumb-item active ml-3" aria-current="page">

@@ -82,7 +82,7 @@ class Admin_user extends React.Component {
                             <Content />
                         </div>
                         <div className="col-md-10 col-lg-10">
-                            <div className="card" style={{ width: "100%", backgroundColor:"#f2edf3"}}>
+                            <div className="card" style={{ width: "100%",height:"100vh", backgroundColor:"#f2edf3"}}>
                                 <div className="card-header" style={{backgroundColor:"ghostwhite"}}>
                                     <p><i class="fas fa-table mr-2"></i>Quản lý user</p>
                                 </div>

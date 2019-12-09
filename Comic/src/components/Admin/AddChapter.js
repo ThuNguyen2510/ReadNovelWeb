@@ -4,8 +4,8 @@ import Content from './Content';
 import './Admin_Comic.css';
 import Footer from './footer';
 import { connect } from 'react-redux';
-import "froala-editor/js/froala_editor.pkgd.min.js";
-import "froala-editor/css/froala_editor.pkgd.min.css";
+import 'froala-editor/js/froala_editor.pkgd.min.js';
+import 'froala-editor/css/froala_editor.pkgd.min.css';
 import 'font-awesome/css/font-awesome.css';
 import FroalaEditor from 'react-froala-wysiwyg';
 import { Redirect } from 'react-router-dom'
@@ -57,8 +57,8 @@ class AddChapter extends React.Component {
                     <div className="col-md-2">
                         <Content />
                     </div>
-                    <div className="col-md-10" style={{ width: "100%", height: "100%" }}>
-                    <div className="content-wrapper" style={{ width: "100%", height: "100%", padding: "0 0 0 0" }}>
+                    <div className="col-md-10" style={{ width: "100%", height: "100vh" }}>
+                    <div className="content-wrapper" style={{ width: "100%", height: "100vh", padding: "0 0 0 0" }}>
                     <nav aria-label="breadcrumb ">
                                 <ul className="breadcrumb">
                                     <li className="breadcrumb-item active ml-3" aria-current="page">
@@ -84,8 +84,8 @@ class AddChapter extends React.Component {
                                         </div>
                                     </div>
 
-                                    <div className="mb-3">
-                                        <label for="username" style={{float:"left"}}>Nội dung</label>
+                                    <div className="mb-5">
+                                        <label className="mb-3" for="username" style={{float:"left"}}>Nội dung</label><br/>
                                         {/* <div className="form-group">
                                             <textarea value={this.state.content} onChange={e => this.setState({ content: e.target.value })} className="form-control" id="exampleFormControlTextarea3" rows="4"></textarea>
                                             <input type="file" className=" mt-4" onChange={e => this.selectFile(e.target.files[0])}></input>
