@@ -102,7 +102,7 @@ namespace ComicAPI
                     Image="https://sstruyen.com/assets/img/story//truyen-nhan-tru-ma-ban-trai-toi-la-cuong-thi.jpg",
                     GenreID=2
                  },
-                  new Comic{ID=4, Name="Yêu Sâu Nặng",Status=0,Author="Phong Tử Tam Tam",
+                  new Comic{ID=4, Name="Yêu Sâu Nặng",Status=1,Author="Phong Tử Tam Tam",
                   Description="Cố Minh Sâm giúp Ôn Vãn, lại không ngờ con bé kia lấy oán trả ơn.Mà Ôn Vãn không thẹn với lòng, dám khẳng định: Cô đối với Cố Minh Sâm, chỉ còn kém việc, dâng cái mạng nhỏ này cho anh ta. Kết quả chỉ đổi lấy tờ giấy thỏa thuận li hôn. Quả nhiên, thế giới này vô cùng bất công, người tốt lại chẳng được đền đáp.Dùng một câu để chốt văn án: Kết thúc đoạn hôn nhân hữu danh vô thực  đáng thất vọng, vận đào hoa của Ôn Vãn bỗng nhiên khởi sắc.",
                   Chapter_long=0,Likes=11,Views=100,Update_time=DateTime.Now,
                     Image="https://sstruyen.com/assets/img/story//yeu-sau-nang-e-thieu-am-tham-cung-chieu-vo.jpg",
@@ -120,7 +120,7 @@ namespace ComicAPI
                     Image="https://sstruyen.com/assets/img/story//tat-ca-ban-gai-cua-toi-deu-la-le-quy.1572759769.jpg",
                     GenreID=5
                  },
-                 new Comic{ID=7, Name="Bệnh Chiếm Hữu",Status=0,Author="Tùng Lan",
+                 new Comic{ID=7, Name="Bệnh Chiếm Hữu",Status=1,Author="Tùng Lan",
                     Description=" Sẽ thế nào khi bạn mang trong người song tu thần kinh? Sở hữu khả năng xuyên qua 10 thế giới? Đào hoa vận không thua gì Rito (To love ru)? Lập 1 giàn harem, thủy tinh cung khủng nhất vũ trụ về khoe cho bọn bạn gato chơi.Đỗ Cầm có tất cả nhưng lại thừa 1 điều..... thừa bóng ma tâm lý về phụ nữ.Hãy đón xem công cuộc bị chinh phục của anh chàng đen đủi hay may mắn này nhé",
                     Chapter_long=0,Likes=15,Views=100,Update_time= DateTime.Now,
                     Image="https://sstruyen.com/assets/img/story//benh-chiem-huu.1573147505.jpg",
@@ -132,7 +132,7 @@ namespace ComicAPI
                     Image="https://sstruyen.com/assets/img/story//ca-oi-chi-yeu-em.jpg",
                     GenreID=3
                  },
-                 new Comic{ID=9, Name="Xin Hãy Ôm Em",Status=0,Author="Bắc Chi",
+                 new Comic{ID=9, Name="Xin Hãy Ôm Em",Status=1,Author="Bắc Chi",
                     Description=" Sẽ thế nào khi bạn mang trong người song tu thần kinh? Sở hữu khả năng xuyên qua 10 thế giới? Đào hoa vận không thua gì Rito (To love ru)? Lập 1 giàn harem, thủy tinh cung khủng nhất vũ trụ về khoe cho bọn bạn gato chơi.Đỗ Cầm có tất cả nhưng lại thừa 1 điều..... thừa bóng ma tâm lý về phụ nữ.Hãy đón xem công cuộc bị chinh phục của anh chàng đen đủi hay may mắn này nhé",
                     Chapter_long=0,Likes=20,Views=100,Update_time= DateTime.Now,
                     Image="https://sstruyen.com/assets/img/story//xin-hay-om-em.jpg",
@@ -145,7 +145,7 @@ namespace ComicAPI
                     GenreID=8
                  }
                  ,
-                  new Comic{ID=11, Name="Điều Mặc Sư",Status=0,Author="Phong Tử Tam Tam",
+                  new Comic{ID=11, Name="Điều Mặc Sư",Status=1,Author="Phong Tử Tam Tam",
                   Description="Cố Minh Sâm giúp Ôn Vãn, lại không ngờ con bé kia lấy oán trả ơn.Mà Ôn Vãn không thẹn với lòng, dám khẳng định: Cô đối với Cố Minh Sâm, chỉ còn kém việc, dâng cái mạng nhỏ này cho anh ta. Kết quả chỉ đổi lấy tờ giấy thỏa thuận li hôn. Quả nhiên, thế giới này vô cùng bất công, người tốt lại chẳng được đền đáp.Dùng một câu để chốt văn án: Kết thúc đoạn hôn nhân hữu danh vô thực  đáng thất vọng, vận đào hoa của Ôn Vãn bỗng nhiên khởi sắc.",
                   Chapter_long=0,Likes=5,Views=100,Update_time= DateTime.Now,
                     Image="https://sstruyen.com/assets/img/story//ieu-mac-su.jpg",

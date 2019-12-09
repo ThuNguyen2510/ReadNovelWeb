@@ -8,7 +8,7 @@ import Comic from './Comic'
 import {connect} from 'react-redux';
 import {SearchByName} from '../actions/SearchAction';
 import {fetchGenres} from '../actions/GenreAction';
-import {fetchComicUpdateNew2,fetchComicHot,fetchComicByCategory} from '../actions/ComicActions'
+import {fetchComicHot,fetchComicByCategory} from '../actions/ComicActions'
 class Filter extends React.Component
 {
     constructor(props)
@@ -23,7 +23,7 @@ class Filter extends React.Component
         
         if(window.location.pathname==='/TruyenMoi')
         {
-            this.props.fetchComicUpdateNew2()
+            //this.props.fetchComicUpdateNew2()
         }
         if(window.location.pathname==='/TruyenHot')
         {
@@ -198,7 +198,7 @@ const mapDispatchToProps = (dispatch) => {
       SearchByName:(keyword) =>dispatch(SearchByName(keyword)),
       fetchGenres:() =>dispatch(fetchGenres()),
       fetchComicByCategory:(id)=> dispatch(fetchComicByCategory(id)),
-      fetchComicUpdateNew2:() => dispatch(fetchComicUpdateNew2()) ,
+    //  fetchComicUpdateNew2:() => dispatch(fetchComicUpdateNew2()) ,
       fetchComicHot:() => dispatch(fetchComicHot())
     };
   }
