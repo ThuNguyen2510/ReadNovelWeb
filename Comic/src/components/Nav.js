@@ -53,7 +53,7 @@ class Nav extends React.Component{
                                 <Link to="/">TRUYỆN HOT</Link>
                             </li>
                             <li>
-                                <Link to="/">DIỄN ĐÀN</Link>
+                                <Link to="/Forum">DIỄN ĐÀN</Link>
                             </li>
                         </ul>
                     </div>
