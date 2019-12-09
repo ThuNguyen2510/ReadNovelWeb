@@ -18,7 +18,7 @@ namespace ComicAPI.Services.UserService
         {
              _context.Users.Add(user);
             _context.SaveChanges();
-            //throw new NotImplementedException();
+           
         }
 
         public void DeleteUser(int id)

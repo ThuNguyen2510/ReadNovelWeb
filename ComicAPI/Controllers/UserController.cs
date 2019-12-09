@@ -12,7 +12,7 @@ namespace ComicAPI.Controllers
 {
     [Route("users")]
     [ApiController]
-   // [Authorize]
+    [Authorize]
     [EnableCors("AllowOrigin")]  
     public class UserController : ControllerBase
     {
@@ -37,14 +37,7 @@ namespace ComicAPI.Controllers
         {
             
             return _userService.UserLogin(username,password);
-        }
-        [HttpPost]
-        public void Post([FromBody] User user)
-        {
-            _userService.AddNewUser(user);
-        }
-        
-       
+        }       
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] User user)
         {
