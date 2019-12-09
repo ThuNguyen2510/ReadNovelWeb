@@ -15,7 +15,7 @@ export class ForumDetail extends Component {
                         <Link className="thich"><i className=" fa fa-heart fa-2x"></i></Link>
                         <Link className="ml-2 edit">Sửa</Link>
                         <Link className="ml-2 edit">Xóa</Link>
-                        
+
                     </div>
 
                     <div className="ttac_cmt">
@@ -44,6 +44,8 @@ export class ForumDetail extends Component {
                                                         <strong className="text-success">@MartinoMont</strong>
                                                         <p>
                                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, <a href="#">#consecteturadipiscing </a>.</p>
+                                                        <Link className="pull-right ml-2 edit">Sửa</Link>
+                                                        <Link className="pull-right ml-2 edit">Xóa</Link>
                                                     </div>
                                                 </li>
                                                 <li className="media">

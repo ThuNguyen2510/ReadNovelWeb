@@ -26,28 +26,34 @@ export class ForumRight extends React.Component {
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Chủ thớt</th>
                             <th scope="col">Tiêu đề</th>
+                            <th scope="col">Chủ thớt</th>
+                            <th scope="col"><i className="fa fa-heart" style={{color:"red"}}></i></th>
                             <th scope="col">Comment</th>
                             <th scope="col"><i className="far fa-clock"></i></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row">TuongVi</th>
-                            <td><Link to="/FDetail" className="tieude">Tìm truyện thú vị về nữ cường</Link></td>
+                            
+                            <th><Link to="/FDetail" className="tieude">Tìm truyện thú vị về nữ cường</Link></th>
+                            <td scope="row">TuongVi</td>
+                            <td>37</td>
                             <td>30</td>
                             <td>2h</td>
                         </tr>
                         <tr>
-                            <th scope="row">Nhutthuy</th>
-                            <td><Link to="/FDetail" className="tieude">HÃY CHO TUI BIẾT BỘ MÀ CÓ KẾT THẬT NGƯỢC TÂM NHƯ NÀY</Link></td>
+                            
+                            <th><Link to="/FDetail" className="tieude">HÃY CHO TUI BIẾT BỘ MÀ CÓ KẾT THẬT NGƯỢC TÂM NHƯ NÀY</Link></th>
+                            <td scope="row">Nhutthuy</td>
+                            <td>40</td>
                             <td>44</td>
                             <td>3h</td>
                         </tr>
                         <tr>
-                            <th scope="row">Thư không có Thị nge</th>
-                            <td><Link to="/FDetail" className="tieude">Chỉ tớ với nữ chính ở gia lai</Link></td>
+                        <th><Link to="/FDetail" className="tieude">Chỉ tớ với nữ chính ở gia lai</Link></th>
+                            <td scope="row">Thư không có Thị nge</td>
+                            <td>59</td>
                             <td>78</td>
                             <td>6h</td>
                         </tr>
