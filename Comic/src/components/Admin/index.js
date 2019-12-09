@@ -1,28 +1,27 @@
 import React from 'react';
-import {Link,Route} from 'react-router-dom';
-import Hello from './Hello';
-import Nav from './Nav';
+import { Link, Route } from 'react-router-dom';
 import Content from './Content';
-class index extends React.Component{
-    
-    render(){
-        var meno={
+import Footer from './footer';
+import Info from './Info';
+import './index.css'
+class index extends React.Component {
+    render() {
+        var meno = {
             marginTop: "20px",
         }
-        return(
-            <>
-            <div className="containers">
-                <div className="row">
-                    <div className="col-md-2 col-lg-2" >
-                        <Content/>
+        return (
+            <div id="mmenu_screen">
+                <div className="clear" />
+                <div className="row flex-fill">
+                    <div className="col-md-2" >
+                        <Content />
                     </div>
-                    <div className="col-md-10 col-lg-10 ">
-                        <Nav/>
-                        <Hello/>
+                    <div className="col-md-10 " >
+                        <Info/>
+                        <Footer/>
                     </div>
                 </div>
             </div>
-            </>
         );
     }
 }

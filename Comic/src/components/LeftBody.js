@@ -9,6 +9,16 @@ class LeftBody extends React.Component{
     constructor(props)
     {
         super(props)
+        this.Search23 = this.Search23.bind(this);
+    }
+    componentDidMount()
+    {
+        this.props.fetchGenres()
+    }
+    componentWillMount()
+    {
+        this.props.fetchGenres()
+
     }
     filter()
     {
@@ -16,20 +26,22 @@ class LeftBody extends React.Component{
         localStorage.setItem('checkbox',check)
 
     }
+    Search23(e)
+    {
+        this.props.fetchComicByCategory(1)
+    }
     render(){
         var con_m21={
             backgroundColor: "#fff",
             height: "95%",
             width: "100%"
         }
-        var table_s={
-            textAlign:"center",
-            width:"70%",
-        }
         var li={
             listStyle:"none"
         }
-       
+        var option=this.props.list.map((a,index)=>{
+            return <><option value={a.id} id={a.id}>{a.genre_name}</option></>
+            })
         return(
             <div style={con_m21}>
                <div className="row">
@@ -43,11 +55,14 @@ class LeftBody extends React.Component{
 }
 const mapStateToProps = (state) => {
     return {
+     list: state.genre
     }
   }
   
   const mapDispatchToProps = (dispatch) => {
     return {
+      fetchGenres:() =>dispatch(fetchGenres()),
+      fetchComicByCategory:(id) => dispatch(fetchComicByCategory(id))
     };
   }
   

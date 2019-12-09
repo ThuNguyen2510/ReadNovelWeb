@@ -55,9 +55,9 @@ class RightBody extends React.Component {
                         <div className="widget-content" style={tb_s}>
                             {list}
                         </div>
-                        <span class="c-wg-button-wrap">
+                        {/* <span class="c-wg-button-wrap">
                             <Link style={a_style} className="widget-view-more" to="/TruyenMoi">Xem thêm</Link>
-                        </span>
+                        </span> */}
                     </div>
                 </div>
                 <div className="row">

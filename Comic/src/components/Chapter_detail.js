@@ -116,7 +116,7 @@ SelectSync2(name)
   
     render(){
         return(
-            <div className="container-fluid">
+            <div className="">
                 <Header/>
                 {this.show()}
                 <hr/>

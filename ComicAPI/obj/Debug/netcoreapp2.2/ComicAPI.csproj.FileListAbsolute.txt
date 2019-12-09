@@ -26,3 +26,17 @@ C:\Users\nhutt\AngularJS\ComicAPI\obj\Debug\netcoreapp2.2\ComicAPI.AssemblyInfo.
 C:\Users\nhutt\AngularJS\ComicAPI\obj\Debug\netcoreapp2.2\ComicAPI.RazorTargetAssemblyInfo.cache
 C:\Users\nhutt\AngularJS\ComicAPI\obj\Debug\netcoreapp2.2\ComicAPI.dll
 C:\Users\nhutt\AngularJS\ComicAPI\obj\Debug\netcoreapp2.2\ComicAPI.pdb
+C:\Users\TuongVi\OneDrive\Máy tính\GiaoTiepNguoiMay\AngularJS\ComicAPI\bin\Debug\netcoreapp2.2\ComicAPI.deps.json
+C:\Users\TuongVi\OneDrive\Máy tính\GiaoTiepNguoiMay\AngularJS\ComicAPI\bin\Debug\netcoreapp2.2\ComicAPI.runtimeconfig.json
+C:\Users\TuongVi\OneDrive\Máy tính\GiaoTiepNguoiMay\AngularJS\ComicAPI\bin\Debug\netcoreapp2.2\ComicAPI.runtimeconfig.dev.json
+C:\Users\TuongVi\OneDrive\Máy tính\GiaoTiepNguoiMay\AngularJS\ComicAPI\bin\Debug\netcoreapp2.2\ComicAPI.dll
+C:\Users\TuongVi\OneDrive\Máy tính\GiaoTiepNguoiMay\AngularJS\ComicAPI\bin\Debug\netcoreapp2.2\ComicAPI.pdb
+C:\Users\TuongVi\OneDrive\Máy tính\GiaoTiepNguoiMay\AngularJS\ComicAPI\obj\Debug\netcoreapp2.2\ComicAPI.csprojAssemblyReference.cache
+C:\Users\TuongVi\OneDrive\Máy tính\GiaoTiepNguoiMay\AngularJS\ComicAPI\obj\Debug\netcoreapp2.2\ComicAPI.csproj.CoreCompileInputs.cache
+C:\Users\TuongVi\OneDrive\Máy tính\GiaoTiepNguoiMay\AngularJS\ComicAPI\obj\Debug\netcoreapp2.2\ComicAPI.RazorAssemblyInfo.cache
+C:\Users\TuongVi\OneDrive\Máy tính\GiaoTiepNguoiMay\AngularJS\ComicAPI\obj\Debug\netcoreapp2.2\ComicAPI.RazorAssemblyInfo.cs
+C:\Users\TuongVi\OneDrive\Máy tính\GiaoTiepNguoiMay\AngularJS\ComicAPI\obj\Debug\netcoreapp2.2\ComicAPI.AssemblyInfoInputs.cache
+C:\Users\TuongVi\OneDrive\Máy tính\GiaoTiepNguoiMay\AngularJS\ComicAPI\obj\Debug\netcoreapp2.2\ComicAPI.AssemblyInfo.cs
+C:\Users\TuongVi\OneDrive\Máy tính\GiaoTiepNguoiMay\AngularJS\ComicAPI\obj\Debug\netcoreapp2.2\ComicAPI.RazorTargetAssemblyInfo.cache
+C:\Users\TuongVi\OneDrive\Máy tính\GiaoTiepNguoiMay\AngularJS\ComicAPI\obj\Debug\netcoreapp2.2\ComicAPI.dll
+C:\Users\TuongVi\OneDrive\Máy tính\GiaoTiepNguoiMay\AngularJS\ComicAPI\obj\Debug\netcoreapp2.2\ComicAPI.pdb
