@@ -5,6 +5,9 @@ class Content extends React.Component {
         return (
             <nav className="sidebar sidebar-offcanvas ml-3" id="sidebar">
                 <ul className="nav">
+                    <li className="navbar-brand">
+                        <h4>TVT</h4>
+                    </li>
                     <li className="nav-item nav-profile">
                         <a href="#" className="nav-link">
                             <div className="nav-profile-image">
