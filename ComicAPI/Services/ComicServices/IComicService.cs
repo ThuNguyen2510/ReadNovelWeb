@@ -17,8 +17,6 @@ namespace ComicAPI.Services.ComicServices
         List<Comic> ComicHot();
         List<Comic> SearchByGenre(int genreid);
         List<Comic> Filter (int genreid,int status );
-        List<Comic> ComicFull();
-        List<Comic> ComicUpdating();
     }
 
 }

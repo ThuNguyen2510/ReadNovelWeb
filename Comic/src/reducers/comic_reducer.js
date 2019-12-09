@@ -7,8 +7,9 @@ export default function comics(state = initialState, action) {
             return [...action.comics]
         case 'SEARCH_BY_NAME':
             return [...action.comics]
-        case 'SHOW_LIST_FULL':
-            return [...action.comics]    
+        case 'SHOW_LIST_BY_CATEGORY':
+            return [...action.list]
+
         default:
             return [...state];
     }

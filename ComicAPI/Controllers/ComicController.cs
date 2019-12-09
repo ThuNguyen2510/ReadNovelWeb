@@ -44,17 +44,6 @@ namespace ComicAPI.Controllers
         {
             return _comicService.ComicHot();
         }
-         [HttpGet]
-       [Route("comicFull")]
-       public ActionResult<IEnumerable<Comic>> comicFull()
-        {
-            return _comicService.ComicFull();
-        }
-        [Route("comicUpdating")]
-       public ActionResult<IEnumerable<Comic>> comicUpdating()
-        {
-            return _comicService.ComicUpdating();
-        }
         [HttpGet]
        [Route("searchByGenre/{genreid}")]
        public ActionResult<IEnumerable<Comic>> SearchByGenre(int genreid)
