@@ -8,7 +8,7 @@ namespace ComicAPI.Services.ComicServices
 {
     public interface IComicService
     {
-        void AddNewComic(Comic comic);
+         void AddNewComic(Comic comic);
         void DeleteComic(int id);
         Comic GetComicById(int Id);
         List<Comic> GetComics();
@@ -17,6 +17,8 @@ namespace ComicAPI.Services.ComicServices
         List<Comic> ComicHot();
         List<Comic> SearchByGenre(int genreid);
         List<Comic> Filter (int genreid,int status );
+        List<Comic> ComicFull();
+        List<Comic> ComicUpdating();
     }
 
 }
