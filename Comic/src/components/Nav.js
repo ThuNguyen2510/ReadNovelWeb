@@ -30,7 +30,7 @@ class Nav extends React.Component{
     var option=this.props.list.map((a,index)=>{
     return(
         <li className="cate ml-5">
-        <a   id={index}>{a.genre_name}</a><br/>
+        <Link   id={index} style={{color:"gray"}}>{a.genre_name}</Link><br/>
         </li>
     )
     });

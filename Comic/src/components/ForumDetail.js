@@ -15,7 +15,7 @@ export class ForumDetail extends Component {
                         <Link className="thich"><i className=" fa fa-heart fa-2x"></i></Link>
                         <Link className="ml-2 edit">Sửa</Link>
                         <Link className="ml-2 edit">Xóa</Link>
-                        <hr></hr>
+                        
                     </div>
 
                     <div className="ttac_cmt">
