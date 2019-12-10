@@ -22,14 +22,14 @@ export class Admin_forum extends Component {
         var show= list.map((a)=>{
             return(<>
                 <tr>
-                    <th>{a.user}</th>
-                    <th>{a.post}</th>
-                    <th>
+                    <td>{a.user}</td>
+                    <td>{a.post}</td>
+                    <td>
                         <ul className="ml-5">
                         <li id="but" ><Link ><i class="far fa-eye ml-5"></i></Link></li>
                         <li id="but" ><button><i id="del" class="far fa-minus-square"></i></button></li>
                     </ul>
-                    </th>
+                    </td>
                 </tr>
             </>)
         })

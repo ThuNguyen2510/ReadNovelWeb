@@ -25,10 +25,10 @@ class Sidebar extends React.Component{
                                 </li>
                                 
                                 <li className="nav-item">
-                                    <a id="navlink" className="nav-link" href="#">
+                                    <Link id="navlink" className="nav-link" to='/User/forum'>
                                         <span data-feather="users" />
-                                        Customers
-                                    </a>
+                                        Diễn đàn
+                                    </Link>
                                 </li>
                                 <li className="nav-item">
                                     <a id="navlink" className="nav-link" href="#">
