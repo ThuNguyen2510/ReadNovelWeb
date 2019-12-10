@@ -39,7 +39,7 @@ class Nav extends React.Component{
             <div  id="header">             
                 <div className="wrap-nav" >
                     <div className="second-nav">
-                        <ul className="menu">
+                        <ul className="menu ml-5">
                             <li>
                                 <i  style={{marginRight:"-15px"}}  className="fas fa-home"></i><Link to="/">TRANG CHỦ</Link>
                             </li>

@@ -64,7 +64,7 @@ class Admin_Comic extends React.Component {
                         <div className="col-md-2 col-lg-2">
                             <Content />
                         </div>
-                        <div className="col-md-10 col-lg-10">
+                        <div className="col-md-10 col-lg-10" style={{height: "100%"}}>
                             <div className="card" style={{ width: "100%", backgroundColor:"#f2edf3"}}>
                                 <div className="card-header" style={{backgroundColor:"ghostwhite"}}>
                                     <p><i class="fas fa-table mr-2"></i>Quản lý truyện</p>

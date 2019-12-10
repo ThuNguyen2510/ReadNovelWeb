@@ -23,8 +23,8 @@ export class Info extends Component {
                         <div className="col-md-3 stretch-card grid-margin">
                             <div className="card bg-gradient-danger card-img-holder text-white">
                                 <div className="card-body">
-                                    <img src="assets/images/dashboard/circle.svg" className="card-img-absolute" alt="circle-image" />
-                                    <Link style={{fontSize:"50px", color:"#fff"}} to="/Admin/Users"> <h4 className="font-weight-normal mb-3">Thành viên <i className="mdi mdi-chart-line mdi-24px float-right" />
+                                    {/* <img src="assets/images/dashboard/circle.svg" className="card-img-absolute" alt="circle-image" /> */}
+                                    <Link className="text-decoration-none" style={{fontSize:"50px", color:"#fff"}} to="/Admin/Users"> <h4 className="font-weight-normal mb-3">Thành viên <i className="mdi mdi-chart-line mdi-24px float-right" />
                                     </h4>
                                     <h2 className="mb-5">150 </h2>
                                     <a href="/Admin/Users" style={{fontSize:"50px", color:"#fff"}}><i className="mdi mdi-plus-circle-outline large"></i></a>
@@ -36,8 +36,8 @@ export class Info extends Component {
                         <div className="col-md-3 stretch-card grid-margin">
                             <div className="card bg-gradient-info card-img-holder text-white">
                                 <div className="card-body">
-                                    <img src="assets/images/dashboard/circle.svg" className="card-img-absolute" alt="circle-image" />
-                                    <Link style={{fontSize:"50px", color:"#fff"}} to="/Admin/Comics"><h4 className="font-weight-normal mb-3">Quản lý truyện <i className="mdi mdi-bookmark-outline mdi-24px float-right" />
+                                    {/* <img src="assets/images/dashboard/circle.svg" className="card-img-absolute" alt="circle-image" /> */}
+                                    <Link className="text-decoration-none" style={{fontSize:"50px", color:"#fff"}} to="/Admin/Comics"><h4 className="font-weight-normal mb-3">Quản lý truyện <i className="mdi mdi-bookmark-outline mdi-24px float-right" />
                                     </h4>
                                     <h2 className="mb-5">45,6334</h2>
                                     <a href="/Admin/Comics" style={{fontSize:"50px", color:"#fff"}}><i className="mdi mdi-plus-circle-outline large"></i></a>
@@ -48,8 +48,8 @@ export class Info extends Component {
                         <div className="col-md-3 stretch-card grid-margin">
                             <div className="card bg-gradient-success card-img-holder text-white">
                                 <div className="card-body">
-                                    <img src="assets/images/dashboard/circle.svg" className="card-img-absolute" alt="circle-image" />
-                                    <Link style={{fontSize:"50px", color:"#fff"}} to="/Admin/Categorys"><h4 className="font-weight-normal mb-3">Thể loại <i className="mdi mdi-diamond mdi-24px float-right" />
+                                    {/* <img src="assets/images/dashboard/circle.svg" className="card-img-absolute" alt="circle-image" /> */}
+                                    <Link className="text-decoration-none" style={{fontSize:"50px", color:"#fff"}} to="/Admin/Categorys"><h4 className="font-weight-normal mb-3">Thể loại <i className="mdi mdi-diamond mdi-24px float-right" />
                                     </h4>
                                     <h2 className="mb-5">95,5741</h2>
                                     <a href="/Admin/Categorys" style={{fontSize:"50px", color:"#fff"}}><i className="mdi mdi-plus-circle-outline large"></i></a>
@@ -60,11 +60,11 @@ export class Info extends Component {
                         <div className="col-md-3 stretch-card grid-margin">
                             <div className="card bg-gradient-primary card-img-holder text-white">
                                 <div className="card-body">
-                                    <img src="assets/images/dashboard/circle.svg" className="card-img-absolute" alt="circle-image" />
-                                    <Link style={{fontSize:"50px", color:"#fff"}} to="/Admin/Categorys"><h4 className="font-weight-normal mb-3">Diễn đàn <i className="mdi mdi-diamond mdi-24px float-right" />
+                                    {/* <img src="assets/images/dashboard/circle.svg" className="card-img-absolute" alt="circle-image" /> */}
+                                    <Link className="text-decoration-none" style={{fontSize:"50px", color:"#fff"}} to="/Admin/Forums"><h4 className="font-weight-normal mb-3">Diễn đàn <i className="mdi mdi-folder mdi-24px float-right" />
                                     </h4>
                                     <h2 className="mb-5">95,5741</h2>
-                                    <a href="/Admin/Categorys" style={{fontSize:"50px", color:"#fff"}}><i className="mdi mdi-plus-circle-outline large"></i></a>
+                                    <a href="/Admin/Forums" style={{fontSize:"50px", color:"#fff"}}><i className="mdi mdi-plus-circle-outline large"></i></a>
                                     </Link>
                                 </div>
                             </div>

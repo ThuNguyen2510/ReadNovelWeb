@@ -13,7 +13,7 @@ class Content extends React.Component {
                             <div className="nav-profile-image">
                                 <img src="assets/images/faces/face1.jpg" alt="profile" />
                                 <span className="login-status online" />
-                                {/*change to offline or busy as needed*/}
+                                {/*change to cd  or busy as needed*/}
                             </div>
                             <div className="nav-profile-text d-flex flex-column">
                                 <p className="font-weight-bold mb-2">David Grey. H</p>
