@@ -10,7 +10,7 @@ class Home extends React.Component{
     render(){
       
         return(
-            <div className="container-fluid">
+            <>
                 <Header/>
                 <Slider/>
                 <div className="container bg-navy mt-3">
@@ -34,7 +34,7 @@ class Home extends React.Component{
                     <hr/>
                 </div>
                 <Footer/>
-            </div>
+            </>
         )
     }
 }
