@@ -59,7 +59,7 @@ class App extends React.Component {
           <Route path='/Comic/:index/Edit' component={Update_Comic}/> 
           <Route path='/Comic/:index/Show' component={ShowComic}/> 
           <Route path='/Comic/:index/Delete' component={Admin_Comic}/> 
-          <Route path='/Comic/:index/Chap/:id' component={AddChapter}/> 
+          {/* <Route path='/Comic/:index/Chap/:id' component={AddChapter}/>  */}
           <Route path="/Comics/trang:index" component={Admin_Comic}/>
           <Route path='/Admin/Users' exact component={Admin_user}/>
           <Route path='/Users/Add' exact component={Admin_user}/>

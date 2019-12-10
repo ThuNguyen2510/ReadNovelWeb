@@ -96,7 +96,7 @@ SelectSync2(name)
             content=this.props.comic[j].chapters[i].content
             id=this.props.comic[j].chapters[i].stt
         }
-        return(
+        return( 
         <div >
             <div className="container nav-content"> 
                 <Link id="home" to="/"><i className="fas fa-home"></i> TRANG CHỦ </Link> <i className="fas fa-angle-right"> </i>

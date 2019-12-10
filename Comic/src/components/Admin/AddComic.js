@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
 import Content from './Content';
-import './Admin_Comic.css';
+import './Admin_Comic.css'; 
 import { connect } from 'react-redux';
 import { fetchGenres } from '../../actions/GenreAction';
 import { addComic } from '../../actions/ComicActions';
@@ -107,7 +107,7 @@ class AddComic extends React.Component {
                                                             </div>
                                                         </div>
                                                         <div className="mb-3">
-                                                            <label><Link to="/Comic/"><i class="fas fa-plus"></i>Thêm chương </Link></label>
+                                                            <label><Link to={"/Comic/"+this.props.match.params.index+"/Chap"}><i class="fas fa-plus"></i>Thêm chương </Link></label>
                                                         </div>
                                                     </form>
                                                 </div>
