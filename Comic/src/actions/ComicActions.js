@@ -15,12 +15,8 @@ export const fetchListComic = () => {
 }
 export const fetchComicByCategory = (genre_id) => {
     return dispatch => {
-        if (genre_id == 0) {
-            return axios.get('http://127.0.0.1:3000/comics').then(data => {
-                dispatch(returnList(data.data))
-            })
-        } else
-            return axios.get('http://127.0.0.1:3000/comics?Genre_id=' + genre_id).then(data => {
+       
+            return axios.get('http://127.0.0.1:3000/comics/searchByGenre/' + genre_id).then(data => {
                 dispatch(returnComicByCategory(data.data))
             })
     }

@@ -61,9 +61,7 @@ function callLoginApi(username, password, callback) {
           const token_=data.data
           localStorage.setItem("token",token_);
           console.log(token_)
-      }
-    )
-
+          
     axios.get('http://127.0.0.1:3000/users/check/'+username+'/'+password,
     { headers: {
         "Authorization":'Bearer '+ localStorage.getItem("token"),
@@ -73,7 +71,7 @@ function callLoginApi(username, password, callback) {
         console.log(d)
         setTimeout(() => {
           if (password === d.data.password) {
-            localStorage.clear()
+           
             localStorage.setItem('logined_user', JSON.stringify(d.data))
           return callback(null);
           } else {
@@ -81,6 +79,9 @@ function callLoginApi(username, password, callback) {
           }
       }, 1000);
       })
+      }
+    )
+
           
 }
 

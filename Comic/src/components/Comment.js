@@ -1,6 +1,6 @@
 import React from 'react';
 import './Comment.css';
-import {Link} from 'react-router-dom';
+import {Link,Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {fetchComt} from '../actions/CommentAction';
 import {addComt} from '../actions/CommentAction';
@@ -23,7 +23,10 @@ class Comment extends React.Component{
   {
     if(JSON.parse(localStorage.getItem('logined_user'))===null)
     {
-      alert("vui lòng đăng nhập để tương tác")
+      if(window.confirm("vui lòng đăng nhập để tương tác")){
+        //this.props.history.push("/Signin")
+      }
+
     }else{
       e.preventDefault();
       let {content} =this.state;

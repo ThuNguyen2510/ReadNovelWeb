@@ -7,53 +7,29 @@ import Footer from  './Footer';
 import Comic from './Comic'
 import {connect} from 'react-redux';
 import {SearchByName} from '../actions/SearchAction';
-import {fetchGenres} from '../actions/GenreAction';
 import {fetchComicHot,fetchComicByCategory} from '../actions/ComicActions'
 class Filter extends React.Component
 {
     constructor(props)
     {
         super(props)
-        
+        this.search=this.search.bind(this);
     }
     componentDidMount()
     {
        
-        this.props.fetchGenres()
-        
-        if(window.location.pathname==='/TruyenMoi')
-        {
-           // this.props.fetchComicUpdateNew2()
-        }
-        if(window.location.pathname==='/TruyenHot')
-        {
+        // if(window.location.pathname==='/TruyenHot')
+        // {
             
-            this.props.fetchComicHot()
+        //     this.props.fetchComicHot()
             
-        }else
-        {
-            this.props.SearchByName(localStorage.getItem('searchByName'))
-        }
+        // }else
+        // {
+        //     this.props.SearchByName(localStorage.getItem('searchByName'))
+        // }
         
     }
-    componentWillMount()
-    {
-        this.props.fetchGenres()
-        
-        if(window.location.pathname==='/TruyenMoi')
-        {
-            this.props.fetchComicUpdateNew2()
-        }
-        if(window.location.pathname==='/TruyenHot')
-        {
-            
-            this.props.fetchComicHot()
-            
-        }else
-        {
-            this.props.SearchByName(localStorage.getItem('searchByName'))
-        }
-    }
+   
     filter(comics)
     {
         comics.length=0;
@@ -62,6 +38,23 @@ class Filter extends React.Component
              name={this.props.comicsfilter[i].Name} author={this.props.comicsfilter[i].Author}
               follow={this.props.comicsfilter[i].Number_of_Read} like={this.props.comicsfilter[i].Number_of_Like}/>)
         
+    }
+    search(e)
+    {
+        console.log("mdk")
+    }
+    getGenreId(genre)
+    {
+        console.log(genre)
+        for(var i=0;i<this.props.list.length;i++)
+        {
+            console.log(this.props.list[i].genre_name)
+            if(this.props.list[i].genre_name==genre)
+            {
+                return this.props.list[i].genreID
+            }
+            
+        }
     }
     render()
     { 
@@ -82,25 +75,12 @@ class Filter extends React.Component
         listStyle:"none"
     }
     var option=this.props.list.map((a,index)=>{
-        return <><option value={a.id} id={index}>{a.genre_name}</option></>
+        return <><option value={a.genreID} id={a.genreID}>{a.genre_name}</option></>
         })
     var comics=[]    
-    if((window.location.pathname!=='/TruyenMoi'||window.location.pathname!=='/TruyenHot')&&this.props.result.length>0){
-      
-         comics=this.props.result.map(a=>{
-        return <Comic  id={a.id} Src={a.Image} name={a.Name} author={a.Author} follow={a.Number_of_Read} like={a.Number_of_Like} />
-    })  }
-     if(window.location.pathname==='/TruyenMoi'&&this.props.new.length>0){
-       
-        comics=this.props.new.map(a=>{
-        return <Comic  id={a.id} Src={a.Image} name={a.Name} author={a.Author} follow={a.Number_of_Read} like={a.Number_of_Like}/>})
-    }
-     if(window.location.pathname==='/TruyenHot'&& this.props.hot.length>0)
-    {
-
-        comics=this.props.hot.map(a=>{
-        return <Comic  id={a.id} Src={a.Image} name={a.Name} author={a.Author} follow={a.Number_of_Read} like={a.Number_of_Like}/>})
-    }
+        comics=this.props.result.map(a=>{
+            return <Comic  id={a.id} Src={a.image} name={a.name} author={a.author} follow={a.views} like={a.likes}/>
+        })
         return(
             <div className="container-fluid">
             <Header/>
@@ -117,11 +97,10 @@ class Filter extends React.Component
                             <tr>
                             <td> 
                           
-                                <select onChange={e=>this.props.fetchComicByCategory(e.target.value)} class="mdb-select md-form colorful-select dropdown-primary">
+                                <select onChange={e=>localStorage.setItem('genreid',(e.target.value))} class="mdb-select md-form colorful-select dropdown-primary">
                                     <option >Thể Loại </option>
                                     {option}
-                                    {this.filter(comics)}
-                                    
+                                                                       
                             </select>
                             </td>
                             <td>
@@ -131,7 +110,7 @@ class Filter extends React.Component
                                 <input type="checkbox" />Truyện Full
                             </td>
                             <td>
-                                <button type="submit" className="btn btn-search"><i class="fa fa-search fa-fw"></i>Tìm truyện</button>
+                                <button onClick={this.search} className="btn btn-search"><i class="fa fa-search fa-fw"></i>Tìm truyện</button>
                             </td>
                             </tr>                                                
                         </table>
@@ -173,10 +152,11 @@ class Filter extends React.Component
                         </div>
                     </div>
                     <hr/>
-                    <div className="row mt-2">
+                   
+                </div>
+                <div className="row mt-2">
                         <Footer/>
                     </div>
-                </div>
             </div>
             </div>
         );
@@ -186,20 +166,15 @@ class Filter extends React.Component
 const mapStateToProps = (state) => {
     return {
      result:state.search,
-     list: state.genre,
-     new: state.comicnew,
-     hot:state.comichot,
-     comicsfilter:state.comics
+     list: state.genre
     }
   }
   
 const mapDispatchToProps = (dispatch) => {
     return {
       SearchByName:(keyword) =>dispatch(SearchByName(keyword)),
-      fetchGenres:() =>dispatch(fetchGenres()),
-      fetchComicByCategory:(id)=> dispatch(fetchComicByCategory(id)),
-    //  fetchComicUpdateNew2:() => dispatch(fetchComicUpdateNew2()) ,
-      fetchComicHot:() => dispatch(fetchComicHot())
+      fetchComicHot:() => dispatch(fetchComicHot()),
+      fetchComicByCategory:(id)=> dispatch(fetchComicByCategory(id))
     };
   }
   
