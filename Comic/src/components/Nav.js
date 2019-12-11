@@ -3,7 +3,8 @@ import './Nav.css';
 import {Link} from "react-router-dom";
 import 'react-awesome-slider/dist/styles.css';
 import {connect} from 'react-redux';
-import {fetchGenres} from '../actions/GenreAction'
+import {fetchGenres} from '../actions/GenreAction';
+import {fetchComicHot,fetchComicByCategory} from '../actions/ComicActions';
 class Nav extends React.Component{
     
       constructor(props)
@@ -22,7 +23,7 @@ class Nav extends React.Component{
     var option=this.props.list.map((a,index)=>{
     return(
         <li className="cate ml-5">
-        <Link style={{color:"Black"}} to="/Search">{a.genre_name}</Link><br/>
+        <Link style={{color:"Black"}} onClick={e=> this.props.fetchComicByCategory(a.genreID)} to="/Search">{a.genre_name}</Link><br/>
         </li>
     )
     });
@@ -42,7 +43,7 @@ class Nav extends React.Component{
                                 </ul>
                             </li>
                             <li>
-                                <Link to="/TruyenHot">TRUYỆN HOT</Link>
+                                <Link to="/TruyenHot" onClick={e=> this.props.fetchComicHot()}>TRUYỆN HOT</Link>
                             </li>
                             <li>
                                 <Link to="/Forum">DIỄN ĐÀN</Link>
@@ -66,6 +67,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchGenres:() =>dispatch(fetchGenres()),
+    fetchComicHot:()=> dispatch(fetchComicHot()),
+    fetchComicByCategory:(id)=> dispatch(fetchComicByCategory(id))
   };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Nav);

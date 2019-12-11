@@ -63,6 +63,28 @@ export const fetchComicFull = () => {
         })
     }
 }
+export const filter = (genre_id,status) => {
+    if(genre_id==0)
+    {
+        return dispatch => {
+            return axios.get('http://127.0.0.1:3000/comics', { headers: {
+                "Authorization":'Bearer '+ localStorage.getItem("token"),
+                'Content-Type': 'application/json',
+              }}).then(data => {
+                
+                dispatch(returnList(data.data))
+            }).catch(error => {
+                console.log(error)
+            })
+        }
+    }
+    else
+    return dispatch => {
+        return axios.get('http://127.0.0.1:3000/comics/Filter/'+genre_id+"/"+status).then(data => {
+            dispatch(returnFilter(data.data))
+        })
+    }
+}
 
 export const likeComic = (comic_id, Number_of_Like) => {
     return dispatch => {
@@ -162,6 +184,11 @@ const returnComicByCategory = (comics) => ({
     type: 'LIST_COMIC_BY_CATEGORY',
     comics
 })
+const returnFilter = (comics) => ({
+    type: 'FILTER',
+    comics
+})
+
 const addcomic = () => ({
     type: 'ADD_COMIC',
 
