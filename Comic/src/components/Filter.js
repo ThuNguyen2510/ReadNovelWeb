@@ -173,7 +173,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
       SearchByName:(keyword) =>dispatch(SearchByName(keyword)),
-      fetchComicHot:() => dispatch(fetchComicHot()),
       fetchComicByCategory:(id)=> dispatch(fetchComicByCategory(id))
     };
   }
