@@ -2,36 +2,35 @@ import React, { Component } from 'react';
 import { Link, Route } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import Nav from './Nav';
+import {getPost} from '../../actions/ManagerUserAction';
+import {connect} from 'react-redux';
 export class User_forum extends Component {
+    constructor(props){
+        super(props)
+    }
+    componentDidMount()
+    {
+        var user=JSON.parse(localStorage.getItem('logined_user'))
+        this.props.getPost(user.id)
+    }
     render() {
 
-        var list =[
-            {time: "2019/10/10", post:"tim truyen ne"},
-            {time: "2019/1/2", post:"ae giup do"},
-            {time: "2019/6/11", post:"can tim truyen..."},
-            {time: "2019/7/12", post:"tim truyen ne"},
-            {time: "2019/7/12", post:"ae giup do"},
-            {time: "2019/7/12", post:"can tim truyen..."},
-            {time: "2019/7/12", post:"tim truyen ne"},
-            {time: "2019/7/12", post:"ae giup do"},
-            {time: "2019/6/11", post:"can tim truyen..."},
-            {time: "2019/6/11", post:"tim truyen ne"},
-            {time: "2019/10/10", post:"ae giup do"},
-            {time: "2019/10/10", post:"can tim truyen..."}
-        ]
-        var show = list.map(a=>{
-            return (
+        var list =[];
+        console.log(this.props.post);
+        for(var i = 0; i< this.props.post.length; i++){
+            list.push(
                 <>
-                    <tr>
-                        <td>{a.post}</td>
-                        <td>{a.time}</td>
+                 <tr>
+                        <td>{this.props.post[i].title}</td>
+                        <td>{this.props.post[i].postTime}</td>
                         <td>
                             <Link to=''><button className="btn btn-gradient-info">Xem</button></Link>
                         </td>
                     </tr>
                 </>
             )
-        })
+        }
+        console.log("vi " +list);
         return (
             <div>
                 <div className="row">
@@ -53,7 +52,7 @@ export class User_forum extends Component {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {show}
+                                            {list}
                                         </tbody>
                                     </table>
                                 </div>
@@ -66,4 +65,15 @@ export class User_forum extends Component {
     }
 }
 
-export default User_forum;
+const mapStateToProps = (state) => {
+    return {
+        post: state.user1
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getPost :(id) => dispatch(getPost(id))
+        }
+    }
+
+export default connect(mapStateToProps, mapDispatchToProps)(User_forum);

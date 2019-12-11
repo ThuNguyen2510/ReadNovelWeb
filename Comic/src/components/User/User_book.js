@@ -4,8 +4,30 @@ import { Link, Route } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import Nav from './Nav';
 import Book from './Book';
+import {getLike} from '../../actions/ManagerUserAction';
+import {connect} from 'react-redux';
+import Comic from '../Comic';
 class User_book extends React.Component{
+    constructor(props)
+    {
+        super(props)
+    }
+    componentDidMount()
+    {
+        var user=JSON.parse(localStorage.getItem('logined_user'))
+        this.props.getLike(user.id)
+        
+    }
     render(){
+        
+        console.log(this.props.like.length)  
+        console.log(this.props.posts)  
+        var likescm= []
+        for(var i=0;i<this.props.like.length;i++)
+        {
+            likescm.push( <Comic id = {this.props.like[i].comic.id} Src = {this.props.like[i].comic.image} author={this.props.like[i].comic.author} />)
+        }
+        // console.log(likes)
         return(
             <>
                 <div className="row">
@@ -17,7 +39,7 @@ class User_book extends React.Component{
                             <Nav br="Tủ sách"/>
                         </div> 
                         <div>
-                            <Book/>
+                            {likescm}
                         </div>                       
                     </div>  
                 </div>
@@ -25,4 +47,15 @@ class User_book extends React.Component{
         )
     }
 }
-export default User_book;
+const mapStateToProps = (state) => {
+    return {
+        like: state.user1
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getLike :(id) => dispatch(getLike(id))
+        }
+    }
+
+export default connect(mapStateToProps, mapDispatchToProps) (User_book);

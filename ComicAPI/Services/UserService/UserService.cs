@@ -37,6 +37,7 @@ namespace ComicAPI.Services.UserService
                 Password=u.Password,
                 Image=u.Image,
                 Email=u.Email,Role=u.Role,
+                Posts=u.Posts.ToList(),
                 Comment=u.Comment.Select(e=> new Comment
                 {
                     ID = e.ID,
@@ -45,8 +46,10 @@ namespace ComicAPI.Services.UserService
                 Likes=u.Likes.Select(e=> new Like{
                     ID=e.ID,
                     check=e.check,
-                    ComicID=e.ComicID
-                }).ToList()
+                    ComicID=e.ComicID,
+                    Comic=e.Comic,
+                }).ToList(),
+                
             }).Where(x=> x.ID==Id).SingleOrDefault();
           
         }
