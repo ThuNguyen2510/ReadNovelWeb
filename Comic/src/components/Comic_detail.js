@@ -72,7 +72,7 @@ class Comic_detail extends React.Component{
         return a.id
     })
         return (     
-        <div className="container-fluid">    
+        <div className="">    
             <Header/>      
             <div className="container mt-4">
                 <div className="row">
@@ -98,9 +98,10 @@ class Comic_detail extends React.Component{
                     </div>
                 </div>
                 <div className="row">   
-                    <Comment comicid={comicid} listcmt={cmts}/>                
-                </div>
-                <hr/>                
+                    <div className="col-md-12">
+                    <Comment comicid={comicid} listcmt={cmts}/>
+                    </div>                
+                </div>              
             </div>   
             <div className="row">  
                 <Footer/>                

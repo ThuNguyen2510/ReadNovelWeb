@@ -15,17 +15,13 @@ class User_page extends React.Component{
                         <Sidebar/>
                     </div>
                     <div className="col-xs-8 col-sm-6 col-md-10">
-                        <div className="ml-sm-2">
+                        <div className="">
                             <Nav br="Thông tin"/>
                             <div className="row">
                                 <Info/>
                             </div>
                         </div>                        
                     </div>
-                    
-                </div>
-                <div className="row">
-                
                 </div>
                 
             </>

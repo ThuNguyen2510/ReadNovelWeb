@@ -19,12 +19,15 @@ import ForumDetail from './components/ForumDetail';
 import Admin_user from './components/Admin/Admin_user';
 import User_page from './components/User/User_page';
 import User_book from './components/User/User_book';
+import User_forum from './components/User/User_forum';
 import Read from './components/User/ReadBook';
 import AddChapter from './components/Admin/AddChapter';
 import UpdateChapter from './components/Admin/UpdateChapter';
 import ShowChapter from './components/Admin/ShowChapter'
 import ShowComic from './components/Admin/ShowComic';
 import ForumNPost from './components/ForumNPost';
+import Admin_Cate from './components/Admin/Admin_Cate';
+import Admin_forum from './components/Admin/Admin_forum';
 const history = createBrowserHistory()
 class App extends React.Component {
   render(){
@@ -56,13 +59,16 @@ class App extends React.Component {
           <Route path='/Comic/:index/Edit' component={Update_Comic}/> 
           <Route path='/Comic/:index/Show' component={ShowComic}/> 
           <Route path='/Comic/:index/Delete' component={Admin_Comic}/> 
-          <Route path='/Comic/:index/Chap/:id' component={AddChapter}/> 
+          {/* <Route path='/Comic/:index/Chap/:id' component={AddChapter}/>  */}
           <Route path="/Comics/trang:index" component={Admin_Comic}/>
           <Route path='/Admin/Users' exact component={Admin_user}/>
           <Route path='/Users/Add' exact component={Admin_user}/>
           <Route path='/User/page' exact component={User_page}/> 
           <Route path='/User/book' exact component={User_book}/> 
+          <Route path='/User/forum' exact component={User_forum}/>
           <Route path='/User/readbook' exact component={Read}/> 
+          <Route path='/Admin/Categorys' exact component={Admin_Cate}/>
+          <Route path='/Admin/Forums' exact component={Admin_forum}/>
           <Route path='/' component={Home} />
           
           </Switch>        
