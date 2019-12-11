@@ -11,8 +11,7 @@ class ListChap extends React.Component
     }
     componentDidMount()
     {
-        
-       // this.props.fetchChapters(this.props.comic_id);
+       
     }
     show1()
     {
@@ -66,14 +65,11 @@ class ListChap extends React.Component
 }
 const mapStateToProps = (state) => {
     return {
-    // chaps: state.chapters,  
-
     };
   }
   
   const mapDispatchToProps = (dispatch) => {
     return {
-        fetchChapters: (id) => dispatch(fetchChapters(id)),     
     };
   }
   

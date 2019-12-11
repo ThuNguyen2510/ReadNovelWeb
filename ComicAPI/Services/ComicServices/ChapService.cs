@@ -37,10 +37,10 @@ namespace ComicAPI.Services.ComicServices
           
         }
 
-        public List<Chapter> GetChapsofComic(int comicid)
+        public List<Chapter> GetChapsofComic(int id)
         {
             var chaps= new List<Chapter>();
-            chaps= _context.Chapters.Where(x=>x.ComicID==comicid).ToList();
+            chaps= _context.Chapters.Where(x=>x.ChapterID==id).ToList();
             return chaps;
           
         }
