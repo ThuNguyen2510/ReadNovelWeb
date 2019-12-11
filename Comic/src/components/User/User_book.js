@@ -25,7 +25,7 @@ class User_book extends React.Component{
         var likescm= []
         for(var i=0;i<this.props.like.length;i++)
         {
-            likescm.push( <Comic id = {this.props.like[i].comic.id} Src = {this.props.like[i].comic.image} author={this.props.like[i].comic.author} />)
+            likescm.push( <Comic id = {this.props.like[i].comic.id} name={this.props.like[i].comic.name} Src = {this.props.like[i].comic.image} author={this.props.like[i].comic.author} />)
         }
         // console.log(likes)
         return(
@@ -38,7 +38,7 @@ class User_book extends React.Component{
                         <div className="ml-sm-2">
                             <Nav br="Tủ sách"/>
                         </div> 
-                        <div>
+                        <div className="mt-3">
                             {likescm}
                         </div>                       
                     </div>  

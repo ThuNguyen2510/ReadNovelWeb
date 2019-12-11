@@ -20,13 +20,13 @@ export class User_forum extends Component {
         for(var i = 0; i< this.props.post.length; i++){
             list.push(
                 <>
-                 <tr>
-                        <td>{this.props.post[i].title}</td>
-                        <td>{this.props.post[i].postTime}</td>
-                        <td>
-                            <Link to=''><button className="btn btn-gradient-info">Xem</button></Link>
-                        </td>
-                    </tr>
+                <tr>
+                    <td>{this.props.post[i].title}</td>
+                    <td>{this.props.post[i].postTime}</td>
+                    <td>
+                        <Link to='/FDetail'><button className="btn btn-gradient-info">Xem</button></Link>
+                    </td>
+                </tr>
                 </>
             )
         }
