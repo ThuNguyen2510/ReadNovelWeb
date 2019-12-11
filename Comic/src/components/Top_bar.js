@@ -11,16 +11,12 @@ class Nav extends React.Component{
       constructor(props)
       {
         super(props)
-        this.state={
-          flag:false,
-          login:false
-        }
+        this.state={   }
         this.handleClick=this.handleClick.bind(this)
       }
      
     componentDidMount()
     {   
-      this.props.fetchGenres()
       this.props.logout()
     }
     render(){
@@ -32,14 +28,14 @@ class Nav extends React.Component{
                     <div className="row level" style={{backgroundColor:"#fff"}}>
                         <div className="d-flex justify-content-start">
                             <Link className="logo ml-5"  to="/">
-                                {/* <img className="img" style={{width:"100px"}} src = {require('../TVT.PNG')} alt = "logo"></img> */}
                                 <button id="logo_but">TVT</button>
                             </Link>      
                         </div>                      
                         <div className="input-group  d-flex justify-content-center " style={{width:"500px"}}>
-                            <input className="form-control py-2 border-right-0 border-radius-25" type="search" placeholder="Bạn đang tìm kiếm điều gì?"  id="ip1" />
+                            <input value={search} onChange={e => this.setState({search: e.target.value}) }className="form-control py-2 border-right-0 border-radius-25" type="search" placeholder="Bạn đang tìm kiếm điều gì?"  id="ip1" />
                             <span className="input-group-append">
-                            <Link  onClick={this.handleClick} to={"/search/"+search} className="btn" id="ip2" ><i style={{color:"#fff"}} className="fas fa-search btnsearch"></i></Link>
+          
+                            <Link  onClick={this.handleClick} to={"/Search/"+search} className="btn" id="ip2" ><i style={{color:"#fff"}} className="fas fa-search btnsearch"></i></Link>
                             </span>
                         </div>                          
                         <div className="d-flex justify-content-end">
@@ -57,9 +53,6 @@ class Nav extends React.Component{
     
     handleClick()
       {
-        this.setState({
-          flag:true
-        });
         this.props.SearchByName(this.state.search)
       }
   
@@ -118,14 +111,13 @@ class Nav extends React.Component{
 }
 const mapStateToProps = (state) => {
   return {
-   list: state.genre
+   
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     logout:() =>dispatch(logout()),
-    fetchGenres:() =>dispatch(fetchGenres()),
     SearchByName:(keyword) =>dispatch(SearchByName(keyword))
 
   };

@@ -55,33 +55,36 @@ function log_out(isLoginSuccess) {
 }
 
 function callLoginApi(username, password, callback) {
-
-    axios.get('http://127.0.0.1:3000/api/login/' + username)
-        .then(
-            data => {
-                const token_ = data.data
-                localStorage.setItem("token", token_);
-                console.log(token_)
-            }
-        )
-
-    axios.get('http://127.0.0.1:3000/users/check/' + username + '/' + password, {
-        headers: {
-            "Authorization": 'Bearer ' + localStorage.getItem("token"),
-            'Content-Type': 'application/json',
-        }
-    }).then(d => {
+ 
+  axios.get('http://127.0.0.1:3000/api/login/'+username)
+    .then(
+        data =>
+      {         
+          const token_=data.data
+          localStorage.setItem("token",token_);
+          console.log(token_)
+          
+    axios.get('http://127.0.0.1:3000/users/check/'+username+'/'+password,
+    { headers: {
+        "Authorization":'Bearer '+ localStorage.getItem("token"),
+        'Content-Type': 'application/json',
+      }}).then(d=>
+      {
         console.log(d)
         setTimeout(() => {
-            if (password === d.data.password) {
-                localStorage.setItem('logined_user', JSON.stringify(d.data))
-                return callback(null);
-            } else {
-                return callback(new Error('Invalid email and password'));
-            }
-        }, 1000);
-    })
+          if (password === d.data.password) {
+           
+            localStorage.setItem('logined_user', JSON.stringify(d.data))
+          return callback(null);
+          } else {
+          return callback(new Error('Invalid email and password'));
+          }
+      }, 1000);
+      })
+      }
+    )
 
+          
 }
 
 export default function reducer(state = {
