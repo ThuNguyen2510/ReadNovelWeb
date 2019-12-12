@@ -16,6 +16,12 @@ import comt from './comt_reducer';
 import user from './LoadUserReducer';
 import likedcomic from './likedcomic_reducer';
 import user1 from './user_page_reducer';
+import lpost from './postF_reducer';
+import apost from './a_post_reducer';
+import apost_in from './a_post_reducer copy';
+import answer from './a_post_answer_reducer';
+import answer_usname from './a_post_answer_reducer copy';
+import newpost from './new_post_reducer';
 const appReducers = combineReducers({
     comics,
     comic,
@@ -33,5 +39,11 @@ const appReducers = combineReducers({
     user,
     likedcomic,
     user1,
+    lpost,
+    apost,
+    apost_in,
+    answer,
+    answer_usname,
+    newpost
 });
 export default appReducers;

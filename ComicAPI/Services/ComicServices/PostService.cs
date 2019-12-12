@@ -29,12 +29,28 @@ namespace ComicAPI.Services
 
         public Post GetPostByID(int id)
         {
-           return _context.Posts.Where(x=>x.ID==id).SingleOrDefault();
+           return _context.Posts.Where(x=>x.ID==id).Select(y=> new Post{
+               ID=y.ID,
+               Title=y.Title,
+               LikePosts=y.LikePosts,
+               Answers=y.Answers,
+               PostContent=y.PostContent,
+               User=y.User,
+               PostTime=y.PostTime               
+           }).SingleOrDefault();
         }
 
         public List<Post> GetPosts()
         {
-            List<Post> posts = _context.Posts.ToList();
+            List<Post> posts = _context.Posts.Select(x=> new Post{
+                ID=x.ID,
+                Title=x.Title,
+                User=x.User,
+                PostContent=x.PostContent,
+                PostTime=x.PostTime,
+                LikePosts=x.LikePosts,
+                Answers=x.Answers.ToList()
+            }).ToList();
             return posts;
 
         }

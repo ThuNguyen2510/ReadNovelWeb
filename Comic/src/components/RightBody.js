@@ -65,6 +65,7 @@ class RightBody extends React.Component {
     }
 }
 
+
 const mapStateToProps = (state) => {
     return {
         gens: state.genre,

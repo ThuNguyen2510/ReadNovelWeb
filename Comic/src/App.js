@@ -53,7 +53,7 @@ class App extends React.Component {
           <Route path = '/Colaborator/add/comic' exact component = {Colab_AddComic}/>
           <Route path = '/Colaborator/add/chap' exact component = {Colab_AddChapter} />
           <Route path='/Forum-New-Post' exact component={ForumNPost}/>
-          <Route path='/FDetail'exact  component={ForumDetail}/>
+          <Route path='/FDetail/:id'exact  component={ForumDetail}/>
           <Route path='/Forum' exact component={Forum} />
           <Route path='/Search' exact component={Filter}/>  
           <Route path="/search/:string" exact component ={Filter}/>
