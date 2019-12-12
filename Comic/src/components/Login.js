@@ -120,6 +120,11 @@ class Login extends React.Component{
         
         return  <Redirect to="/Admin" />
       }
+      else if(user.role==2)
+      {
+        
+        return  <Redirect to="/Collaborator" />
+      }
      
     }
     onSubmit(e) {
