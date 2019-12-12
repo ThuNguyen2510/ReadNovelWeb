@@ -36,7 +36,7 @@ class App extends React.Component {
         <Router history={history}>
           <Switch> 
           <Route path='/Forum-New-Post' exact component={ForumNPost}/>
-          <Route path='/FDetail'exact  component={ForumDetail}/>
+          <Route path='/FDetail/:id'exact  component={ForumDetail}/>
           <Route path='/Forum' exact component={Forum} />
           <Route path='/Search' exact component={Filter}/>  
           <Route path="/search/:string" exact component ={Filter}/>

@@ -62,7 +62,13 @@ namespace ComicAPI
                 new Genre{ GenreID=6,Genre_name="Lịch sử" },
                 new Genre{ GenreID=7,Genre_name="Cổ đại" },
                 new Genre{ GenreID=8,Genre_name="Sắc hiệp" },
-                new Genre{ GenreID=9,Genre_name="Võng du" }
+                new Genre{ GenreID=9,Genre_name="Võng du" },
+                new Genre{ GenreID=10,Genre_name="Đô thị" },
+                new Genre{ GenreID=11,Genre_name="Quân sự" },
+                new Genre{ GenreID=12,Genre_name="Linh dị" },
+                new Genre{ GenreID=13,Genre_name="Huyền huyễn" },
+                new Genre{ GenreID=14,Genre_name="Dị năng" },
+                new Genre{ GenreID=15,Genre_name="Truyện ngược" }
              };
              modelBuilder.Entity<Genre>().HasData(genres);
                var chapters =new Chapter[]

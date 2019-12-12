@@ -1,8 +1,29 @@
 import React from 'react';
 import './ForumRight.css';
 import {Link} from 'react-router-dom';
+import {fetchPosts} from '../actions/PostFAction';
+import {connect} from 'react-redux';
 export class ForumRight extends React.Component {
+    constructor(props)
+    {
+        super(props)
+    }
+    componentDidMount()
+    {
+        this.props.fetchPosts();
+    }
     render() {
+        var list=this.props.posts.map((value_,index)=>{
+            return<>
+                <tr>
+                <th><Link to={"/FDetail/"+ value_.id} className="tieude">{value_.title}</Link></th>
+                            <td scope="row">{value_.user.username}</td>
+                            <td>{value_.likePosts.length}</td>
+                            <td>{value_.answers.length}</td>
+                            <td>{value_.postTime}</td>
+                </tr>
+            </>
+        })
         return (
             <>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -34,34 +55,24 @@ export class ForumRight extends React.Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            
-                            <th><Link to="/FDetail" className="tieude">Tìm truyện thú vị về nữ cường</Link></th>
-                            <td scope="row">TuongVi</td>
-                            <td>37</td>
-                            <td>30</td>
-                            <td>2h</td>
-                        </tr>
-                        <tr>
-                            
-                            <th><Link to="/FDetail" className="tieude">HÃY CHO TUI BIẾT BỘ MÀ CÓ KẾT THẬT NGƯỢC TÂM NHƯ NÀY</Link></th>
-                            <td scope="row">Nhutthuy</td>
-                            <td>40</td>
-                            <td>44</td>
-                            <td>3h</td>
-                        </tr>
-                        <tr>
-                        <th><Link to="/FDetail" className="tieude">Chỉ tớ với nữ chính ở gia lai</Link></th>
-                            <td scope="row">Thư không có Thị nge</td>
-                            <td>59</td>
-                            <td>78</td>
-                            <td>6h</td>
-                        </tr>
+
+                        {list}
                     </tbody>
                 </table>
             </>
         );
     }
 }
-
-export default ForumRight;
+const mapStateToProps =(state)=>
+{
+    return{
+        posts: state.lpost,
+    };
+}
+const mapDispatchToProps = (dispatch)=>
+{
+    return {
+        fetchPosts: ()=>dispatch(fetchPosts()),
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(ForumRight);
