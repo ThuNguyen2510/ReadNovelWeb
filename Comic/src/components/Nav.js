@@ -32,19 +32,19 @@ class Nav extends React.Component{
                 <div className="wrap-nav" >
                     <div className="second-nav">
                         <ul className="menu ml-5">
-                            <li>
+                            <li className="nav-item">
                                 <i  style={{marginRight:"-15px"}}  className="fas fa-home"></i><Link to="/">TRANG CHỦ</Link>
                             </li>
-                            <li className=" dropdown">
+                            <li className=" nav-item dropdown">
                                 <Link className="dropdown" to="/">THỂ LOẠI</Link><i className="fas fa-caret-down" style={{marginLeft:"-10px"}} ></i>
                                 <ul className="dropdown-content">
                                     {option}
                                 </ul>
                             </li>
-                            <li>
+                            <li className="nav-item">
                                 <Link to="/TruyenHot">TRUYỆN HOT</Link>
                             </li>
-                            <li>
+                            <li className="nav-item">
                                 <Link to="/Forum">DIỄN ĐÀN</Link>
                             </li>
                         </ul>

@@ -151,7 +151,7 @@ class Update_Comic extends React.Component {
             this.props.updateComic(this.props.match.params.index, Name, Author, parseInt(genre_id), des, Image, date, chap_number, status)
 
             alert("Success")
-            this.props.history.push('/Admin/Comics')
+            this.props.history.push('/Colab/comics')
         }
     }
     render() {
@@ -182,7 +182,7 @@ class Update_Comic extends React.Component {
                         <div className="row">
                             <div className="col-md-7">
                                 <button type="button" onClick={this.Save} className="btn btn-pill btn-warning">Save</button>
-                                <button type="button" onClick={e => this.props.history.push('/Admin/Comics')} class="btn btn-square btn-secondary">Cancel</button>
+                                <button type="button" onClick={e => this.props.history.push('/Colab/comics')} class="btn btn-square btn-secondary">Cancel</button>
                             </div>
                         </div>
 
