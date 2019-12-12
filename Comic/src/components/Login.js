@@ -123,7 +123,7 @@ class Login extends React.Component{
       else if(user.role==2)
       {
         
-        return  <Redirect to="/Collaborator" />
+        return  <Redirect to="/Colaborator" />
       }
      
     }
