@@ -31,19 +31,19 @@ class Colab_Comic extends React.Component {
     }
     show() {
         return this.props.list.map((a) =>           
-            <tr>
-                <td>
+            <tr className="row w-100">
+                <td className="col-md-3">
                     <img src={a.Image} className="mr-2" alt="image" /><br/>
                     <Link to={"/Comic/" + a.id + "/Show"}>{a.Name}</Link>
                 </td>
-                <td> {this.findGenre(a.Genre_id)} </td>
-                <td>
+                <td className="col-md-3"> {this.findGenre(a.Genre_id)} </td>
+                <td className="col-md-3">
                 {a.Author}
                 </td>
-                <td> 
+                <td className="col-md-3"> 
                     <ul className="ml-5">
-                        <li id="but" ><Link to={"/Comic/" + a.ID + "/Show"}><i class="far fa-eye"></i></Link></li>
-                        <li id="but" ><button onClick={e => { if (window.confirm("Are you sure??")) this.props.deleteComic(a.id) }} ><i id="del" class="far fa-minus-square"></i></button></li>
+                        <li id="but" ><Link to={"/Comic/" + a.ID + "/Show"}><button className=" btn-gradient-primary">Xem</button></Link></li>
+                        <li id="but" ><button className=" btn-gradient-danger" onClick={e => { if (window.confirm("Are you sure??")) this.props.deleteComic(a.id) }} >Xóa</button></li>
                     </ul> 
                 </td>
             </tr>
@@ -92,11 +92,11 @@ class Colab_Comic extends React.Component {
                                                             <div className="table-responsive">
                                                                 <table className="table">
                                                                     <thead>
-                                                                        <tr>
-                                                                            <th> Tên truyện </th>
-                                                                            <th> Thể loại </th>
-                                                                            <th> Tác giả </th>
-                                                                            <th> Action </th>
+                                                                        <tr className="row w-100">
+                                                                            <th className="col-md-3"> Tên truyện </th>
+                                                                            <th className="col-md-3"> Thể loại </th>
+                                                                            <th className="col-md-3"> Tác giả </th>
+                                                                            <th className="col-md-3"> Action </th>
                                                                             
                                                                         </tr>
                                                                     </thead>

@@ -21,13 +21,13 @@ export class Admin_forum extends Component {
         ]
         var show= list.map((a)=>{
             return(<>
-                <tr>
-                    <td>{a.user}</td>
-                    <td>{a.post}</td>
-                    <td>
+                <tr  className="row w-100">
+                    <td className="col-md-4">{a.user}</td>
+                    <td className="col-md-4">{a.post}</td>
+                    <td className="col-md-4">
                         <ul className="ml-5">
-                        <li id="but" ><Link ><i class="far fa-eye ml-5"></i></Link></li>
-                        <li id="but" ><button><i id="del" class="far fa-minus-square"></i></button></li>
+                        <li id="but" ><Link ><button className = "btn btn-gradient-primary">Xem</button></Link></li>
+                        <li id="but" ><button className="btn btn-gradient-danger">Xóa</button></li>
                     </ul>
                     </td>
                 </tr>
@@ -66,10 +66,10 @@ export class Admin_forum extends Component {
                                     <div className="table-responsive">
                                         <table className="table">
                                             <thead>
-                                                <tr>
-                                                    <th>Bài đăng</th>
-                                                    <th>Người đăng</th>
-                                                    <th>Action</th>
+                                                <tr className="row w-100">
+                                                    <th className="col-md-4">Bài đăng</th>
+                                                    <th className="col-md-4">Người đăng</th>
+                                                    <th className="col-md-4">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
