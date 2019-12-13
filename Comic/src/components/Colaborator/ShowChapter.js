@@ -46,7 +46,7 @@ class ShowChapter extends React.Component{
             s.push(
                 <div className="row ">
                 <div className="col-md-2">
-                    <Content/>
+                    <Content role={JSON.parse(localStorage.getItem('logined_user')).role} />
                 </div>
                 <div className="col-md-10">
                     <Nav/>                    
@@ -81,8 +81,8 @@ class ShowChapter extends React.Component{
                         <div className="row">
                             <div className="col-md-7"></div>
                             <div className="col-md-5">
-                                <Link type="button" to={"/Comic/"+this.props.match.params.index+"/Chapter/"+this.props.match.params.id+"/Update"} class="btn btn-pill btn-warning">Edit</Link>
-                                <Link type="button" onClick={e=>this.props.history.goBack()} class="btn btn-square btn-secondary">Cancel</Link>
+                                <Link type="button" to={"/Comic/"+this.props.match.params.index+"/Chapter/"+this.props.match.params.id+"/Show"} class="btn btn-pill btn-warning">Edit</Link>
+                                <Link type="button" to={"/Comic/"+this.props.match.params.index} class="btn btn-square btn-secondary">Cancel</Link>
                             </div>
                         </div>
                     </div>               

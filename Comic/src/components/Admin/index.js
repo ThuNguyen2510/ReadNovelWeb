@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
-import Content from './Content';
+import Content from '../Colaborator/Content';
 import Footer from './footer';
-import Info from './Info';
+import Info from '../Colaborator/Info';
 import './index.css'
 class index extends React.Component {
     render() {
@@ -14,7 +14,7 @@ class index extends React.Component {
                 <div className="clear" />
                 <div className="row flex-fill">
                     <div className="col-md-2" >
-                        <Content />
+                        <Content role={JSON.parse(localStorage.getItem('logined_user')).role} />
                     </div>
                     <div className="col-md-10 " >
                         <Info/>

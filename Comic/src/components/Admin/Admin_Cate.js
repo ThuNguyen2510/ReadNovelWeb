@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchGenres } from '../../actions/GenreAction';
 import Footer from './footer';
-import Content from './Content';
+import Content from '../Colaborator/Content';
 import { Link, Route } from 'react-router-dom';
 
-export class Admin_Cate extends Component {
+export class Colab_Cate extends Component {
     constructor(props) {
         super(props)
     }
@@ -20,7 +20,7 @@ export class Admin_Cate extends Component {
                         {value_.genre_name}
                     </td>
                     <td>
-                        <button type="button" className="btn btn-gradient-danger btn-fw">Xóa</button>
+                        <button type="button" className="btn btn-gradient-danger btn-fw">Show</button>
                     </td>
                 </tr>
             </>
@@ -29,26 +29,21 @@ export class Admin_Cate extends Component {
             <div >
                 <div className="row" >
                     <div className="col-md-2">
-                        <Content />
+                        <Content role={JSON.parse(localStorage.getItem('logined_user')).role}/>
                     </div>
                     <div className="col-md-10" style={{ width: "100%", height: "100%" }}>
                         <div className="content-wrapper" style={{ width: "100%", height: "100%", padding: "0 0" }}>
                             <nav aria-label="breadcrumb ">
                                 <ul className="breadcrumb">
                                     <li className="breadcrumb-item active ml-3" aria-current="page">
-                                        <span />Admin/Quản lý thể loại <i className="mdi mdi-alert-circle-outline icon-sm text-primary align-middle" />
+                                        <span />Quản lý thể loại <i className="mdi mdi-alert-circle-outline icon-sm text-primary align-middle" />
                                     </li>
                                 </ul>
                             </nav>
                             <div className="row>">
                                 <div className="col-sm-12 col-md-6 ml-5 grid-margin">
                                     <div className="input-group" >
-                                        <input type="search" id="adsearch" value="" className="form-control" placeholder="Tìm thể loại..." />
-                                        <span className="input-group-btn">
-                                            <button id="adbut" className="btn btn-primary" type="submit" >
-                                                <i className="fas fa-search"></i>
-                                            </button>
-                                        </span>
+                                    <div id="addcomic"> <Link to="/Comics/AddCategory"><i class="fas fa-plus"></i>Thêm Thể Loại </Link></div>
                                     </div>
                                 </div>
                             </div>
@@ -88,4 +83,4 @@ const mapDispatchToProps = (dispatch) => {
         fetchGenres: () => dispatch(fetchGenres()),
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Admin_Cate);
+export default connect(mapStateToProps, mapDispatchToProps)(Colab_Cate);

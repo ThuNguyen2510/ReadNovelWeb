@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
-import Content from './Content';
-import './Admin_Comic.css';
+import Content from '../Colaborator/Content';
+import '../Colaborator/Colab_Comic.css';
 import Footer from './footer';
 import { connect } from 'react-redux';
-import { fetchListComic, deleteComic } from '../../actions/ComicActions';
+import { fetchListComic, deleteComic ,fetchOneComic} from '../../actions/ComicActions';
 import { fetchGenres } from '../../actions/GenreAction';
-import { SearchByName } from '../../actions/SearchAction'
+import { SearchByName } from '../../actions/SearchAction';
 class Admin_Comic extends React.Component {
     constructor(props) {
         super(props);
@@ -19,10 +19,15 @@ class Admin_Comic extends React.Component {
         this.props.fetchListComic()
         this.props.fetchGenres()
     }
+    componentWillMount()
+    {
+        this.props.fetchListComic()
+        this.props.fetchGenres()
+    }
     findGenre(id) {
         var gen = ""
         for (var i = 0; i < this.props.gens.length; i++) {
-            if (this.props.gens[i].id === id) {
+            if (this.props.gens[i].genreID === id) {
                 gen = this.props.gens[i].genre_name
                 break;
             }
@@ -30,20 +35,22 @@ class Admin_Comic extends React.Component {
         return gen;
     }
     show() {
+        
         return this.props.list.map((a) =>           
             <tr>
                 <td>
-                    <img src={a.Image} className="mr-2" alt="image" /><br/>
-                    <Link to={"/Comic/" + a.id + "/Show"}>{a.Name}</Link>
+                    <img src={a.image} className="mr-2" alt="image" /><br/>
+                    <Link onClick={e=> {this.props.fetchOneComic(a.id);}} to={"/Comic/" + a.id + "/Show"}>{a.name}</Link>
                 </td>
-                <td> {this.findGenre(a.Genre_id)} </td>
+                <td> {this.findGenre(a.genreID)} </td>
                 <td>
-                {a.Author}
+                {a.author}
                 </td>
                 <td> 
                     <ul className="ml-5">
-                        <li id="but" ><Link to={"/Comic/" + a.ID + "/Show"}><i class="far fa-eye"></i></Link></li>
-                        <li id="but" ><button onClick={e => { if (window.confirm("Are you sure??")) this.props.deleteComic(a.id) }} ><i id="del" class="far fa-minus-square"></i></button></li>
+                        <li id="but" ><Link  to={"/Comic/" + a.id + "/Show"} onClick={e=> {this.props.fetchOneComic(a.id);}}> <i class="far fa-eye" ></i></Link></li>
+                        <li id="but" ><Link onClick={e=> {this.props.fetchOneComic(a.id);}} to={"/Comic/" + a.id + "/Show"}><i class="far fa-edit" style={{color:"purple"}}></i></Link></li>
+                        <li id="but" ><Link onClick={e => { if (window.confirm("Are you sure??")) this.props.deleteComic(a.id) }} ><i id="del" class="far fa-trash-alt"></i></Link></li>
                     </ul> 
                 </td>
             </tr>
@@ -62,7 +69,7 @@ class Admin_Comic extends React.Component {
                 <div className="containers">
                     <div className="row" >
                         <div className="col-md-2 col-lg-2">
-                            <Content />
+                            <Content role={1}/>
                         </div>
                         <div className="col-md-10 col-lg-10" style={{height: "100%"}}>
                             <div className="card" style={{ width: "100%", backgroundColor:"#f2edf3"}}>
@@ -149,7 +156,8 @@ const mapDispatchToProps = (dispatch) => {
         fetchListComic: () => dispatch(fetchListComic()),
         fetchGenres: () => dispatch(fetchGenres()),
         deleteComic: (id) => dispatch(deleteComic(id)),
-        SearchByName: (key) => dispatch(SearchByName(key))
+        SearchByName: (key) => dispatch(SearchByName(key)),
+        fetchOneComic:(id)=> dispatch(fetchOneComic(id))
 
     };
 }
