@@ -3,19 +3,29 @@ import './ForumDetail.css';
 import Header from './Header';
 import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
-import {fetchAPost} from '../actions/PostFAction';
+import {fetchAPost,addAnswer} from '../actions/PostFAction';
 import {getUserName} from '../actions/LoadUserAction';
 export class ForumDetail extends Component {
     constructor(props)
     {
         super(props)
+        this.state={}
     }
     componentDidMount()
     {
         this.props.getUserName();
         this.props.fetchAPost(this.props.match.params.id);
+        this.handleOnclick =this.handleOnclick.bind(this);
         
-        
+    }
+    handleOnclick(e){
+        e.preventDefault();
+    let{content}=this.state;
+    var us_=JSON.parse(localStorage.getItem('logined_user'));
+    var temp= new Date
+    var date=temp.getMonth()+"/"+temp.getDate()+"/"+temp.getFullYear()
+    this.props.addAnswer(us_.id,this.props.post.id,content,date)
+    this.setState({content:" "})
     }
     getun(id)
     {
@@ -44,7 +54,7 @@ export class ForumDetail extends Component {
         p.push(
             <>
             <h3 className="title mt-3">{this.props.post.title}</h3>
-                <img src={userinf.image}></img>
+                <img src={userinf.image} style={{width: "200px"}}></img>
                 <h4>{userinf.username}</h4>
                 <div className="naiyou" >
                     <p>{this.props.post.postContent}</p>
@@ -83,7 +93,7 @@ export class ForumDetail extends Component {
         return l;
     }
     render() {
-       
+        let {content}=this.state;
         return (
             <>
                 <Header />
@@ -98,9 +108,9 @@ export class ForumDetail extends Component {
                                             Comment panel
               </div>
                                         <div className="panel-body">
-                                            <textarea className="form-control" placeholder="write a comment..." rows={3} defaultValue={""} />
+                                            <textarea className="form-control" placeholder="write a comment..." rows={3} defaultValue={""} onChange={e=> this.setState({content: e.target.value})} value={content} required/>
                                             <br />
-                                            <button type="button" className="btn btn-info pull-right">Post</button>
+                                            <button type="button" className="btn btn-info pull-right"onClick={this.handleOnclick}>Post</button>
                                             <div className="clearfix" />
                                             <hr />
                                             <ul className="media-list">
@@ -132,6 +142,7 @@ const mapDispatchToProps =(dispatch) =>{
     return {
         fetchAPost:(id) => dispatch(fetchAPost(id)),
         getUserName:()=>dispatch(getUserName()),
+        addAnswer:(userid,postid,content,time)=>dispatch(addAnswer(userid,postid,content,time))
     }
 }
 // mi ghi dispatch truoc state

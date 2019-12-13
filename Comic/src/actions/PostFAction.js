@@ -24,6 +24,26 @@ export const fetchAPost = (Id) => {
         )
     }
 }
+export const addAnswer = (userid, postid, content, time) => {
+    return dispatch => {
+        return axios.post('http://127.0.0.1:3000/answers', { userid, postid, content, time }).then(
+            data => {
+                dispatch(addNewAnswer())
+                return axios.get('http://127.0.0.1:3000/posts/' + postid).then(
+                    d => {
+                        const p = d.data
+                        dispatch(returnAPost(p))
+                        dispatch(returnAPostLikes(p.likePosts))
+                        dispatch(returnAPostUser(p.user))
+                        dispatch(returnAPostAnswers(p.answers))
+                        dispatch(userInfo1(p.user))
+                    }
+                )
+            }
+
+        )
+    }
+}
 const returnListPost = (lpost) => ({
     type: 'GET-LIST-POST',
     posts: lpost
@@ -47,4 +67,7 @@ const returnAPostAnswers = (answers) => ({
 const userInfo1 = (user) => ({
     type: "GET-USER-NAME1",
     user_: user
+})
+const addNewAnswer = () => ({
+    type: "ADD-NEW-ANSWER"
 })
