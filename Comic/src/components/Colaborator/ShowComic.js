@@ -44,7 +44,7 @@ class ShowComic extends React.Component {
         if (this.props.comic.length > 0)
             for (var i = 0; i < this.props.comic.length - 1; i++) {
                 localStorage.setItem('a_comic_edit', JSON.stringify(this.props.comic[i]))
-                console.log("DJ")
+                
                 s.push(<>
                     <div className="row" id="row">
                         <div className="col-md-7 ml-3 order-md-1">
@@ -53,14 +53,14 @@ class ShowComic extends React.Component {
                                     <label for="username">Tên truyện</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend"></div>
-                                        <input type="text" class="form-control" id="username" value={this.props.comic[i].Name} required=""></input>
+                                        <input type="text" class="form-control" id="username" value={this.props.comic[i].name} required=""></input>
                                     </div>
                                 </div>
                                 <div className="mb-3">
                                     <label for="username">Tác giả</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend"> </div>
-                                        <input type="text" class="form-control" id="username" value={this.props.comic[i].Author} required=""></input>
+                                        <input type="text" class="form-control" id="username" value={this.props.comic[i].author} required=""></input>
                                     </div>
                                 </div>
                                 <div className="mb-3">
@@ -72,13 +72,13 @@ class ShowComic extends React.Component {
                                 <div className=" mb-3">
                                     <label for="cc-expiration">Trạng thái</label>
                                     <select onChange={(e) => this.setState({ status: e.target.value })} className="custom-select d-block w-100" id="country" required="">
-                                        {this.tus(this.props.comic[i].Status)}
+                                        {this.tus(this.props.comic[i].status)}
                                     </select>
                                 </div>
                                 <div className="mb-3">
                                     <label for="username">Mô tả</label>
                                     <div className="form-group">
-                                        <textarea className="form-control" id="exampleFormControlTextarea3" value={this.props.comic[i].Description} rows="4"></textarea>
+                                        <textarea className="form-control" id="exampleFormControlTextarea3" value={this.props.comic[i].description} rows="4"></textarea>
                                     </div>
                                 </div>
 
@@ -139,7 +139,7 @@ class ShowComic extends React.Component {
             <>
                 <div className="row ">
                     <div className="col-md-2">
-                        <Content />
+                        <Content role={JSON.parse(localStorage.getItem('logined_user')).role} />
                     </div>
                     <div className="col-md-10">
                         {this.show()}

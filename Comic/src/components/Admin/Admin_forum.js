@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, Route } from 'react-router-dom';
-import Content from './Content';
+import Content from '../Colaborator/Content';
 import Footer from './footer';
 
 export class Admin_forum extends Component {
@@ -37,7 +37,7 @@ export class Admin_forum extends Component {
             <div>
                 <div className="row">
                     <div className="col-md-2">
-                        <Content />
+                        <Content role={JSON.parse(localStorage.getItem('logined_user')).role} />
                     </div>
                     <div className="col-md-10" style={{ height: "100%" }}>
                         <div className="content-wrapper" style={{ height: "100%", padding:"0 0 "}} >

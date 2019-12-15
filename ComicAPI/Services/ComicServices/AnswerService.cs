@@ -29,7 +29,13 @@ namespace ComicAPI.Services.ComicServices
 
         public Answer GetAnswerByID(int id)
         {
-            return _context.Answers.FirstOrDefault(x=> x.ID==id);
+            return _context.Answers.Where(x=> x.ID==id).Select(y => new Answer{
+                ID=y.ID,
+                AnswerTime=y.AnswerTime,
+                UserID=y.UserID,
+                PostID=y.PostID,
+                Content=y.Content
+            }).SingleOrDefault();
         }
 
         public List<Answer> GetAnswers()

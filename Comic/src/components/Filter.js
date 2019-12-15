@@ -7,7 +7,7 @@ import Footer from './Footer';
 import Comic from './Comic'
 import { connect } from 'react-redux';
 import { SearchByName } from '../actions/SearchAction';
-import { fetchComicHot, fetchComicByCategory } from '../actions/ComicActions'
+import { fetchComicHot, fetchComicByCategory, filter } from '../actions/ComicActions'
 class Filter extends React.Component {
     constructor(props) {
         super(props)
@@ -15,28 +15,19 @@ class Filter extends React.Component {
     }
     componentDidMount() {
 
-        // if(window.location.pathname==='/TruyenHot')
-        // {
-
-        //     this.props.fetchComicHot()
-
-        // }else
-        // {
-        //     this.props.SearchByName(localStorage.getItem('searchByName'))
-        // }
-
     }
 
-    filter(comics) {
-        comics.length = 0;
-        for (var i = 0; i < this.props.comicsfilter.length; i++)
-            comics.push(<Comic id={this.props.comicsfilter[i].id} Src={this.props.comicsfilter[i].Image}
-                name={this.props.comicsfilter[i].Name} author={this.props.comicsfilter[i].Author}
-                follow={this.props.comicsfilter[i].Number_of_Read} like={this.props.comicsfilter[i].Number_of_Like} />)
-
-    }
     search(e) {
-        console.log("mdk")
+        var check = document.getElementById("check")
+        var status = check.checked ? 1 : 0
+        console.log(status)
+        var genreid = localStorage.getItem('genreid')
+        console.log(genreid)
+        this.props.filter(genreid, status)
+        localStorage.removeItem('genreid')
+        document.getElementById("selectgen").selectedIndex = 0
+        check.checked = false
+
     }
     getGenreId(genre) {
         console.log(genre)
@@ -48,6 +39,13 @@ class Filter extends React.Component {
 
         }
     }
+    show(comics) {
+        if (comics.length == 0) {
+            return <div className="row ">
+                <p style={{ marginLeft: "40%" }}>NO RESULT</p>
+            </div>
+        }
+    }
     render() {
 
         localStorage.setItem('searchByName', this.props.match.params.string)
@@ -57,6 +55,7 @@ class Filter extends React.Component {
 
 
         }
+
         var table_s = {
             textAlign: "center",
             width: "70%",
@@ -73,32 +72,35 @@ class Filter extends React.Component {
             return <Comic id={a.id} Src={a.image} name={a.name} author={a.author} follow={a.views} like={a.likes} />
         })
         return (
-            <div className="">
+            <>
+            <div className="container-fluid">
                 <Header />
                 <div>
                     <div className="container mt-2">
                         <div className="row">
                             <div className="col-md-12 col-lg-9 mb-4">
+
                                 <div style={con_m21}>
-                                    <div className="content m2l mt-3">
+                                    <div className="content m2l">
                                         <div >
                                             <form>
                                                 <table style={table_s}>
                                                     <tr>
                                                         <td>
-                                                            <select onChange={e => localStorage.setItem('genreid', (e.target.value))} class="mdb-select md-form colorful-select dropdown-primary">
-                                                                <option >Thể Loại </option>
+                                                            <select id="selectgen" onChange={e => localStorage.setItem('genreid', (e.target.value))} class="mdb-select md-form colorful-select dropdown-primary">
+                                                                <option value="0" >Thể Loại </option>
                                                                 {option}
 
                                                             </select>
                                                         </td>
                                                         <td>
+
                                                         </td>
                                                         <td>
-                                                            <input type="checkbox" />Truyện Full
+                                                            <input type="checkbox" id="check" />Truyện Full
                                                         </td>
                                                         <td>
-                                                            <button onClick={this.search} className="btn btn-search"><i class="fa fa-search fa-fw"></i>Tìm truyện</button>
+                                                            <Link onClick={this.search} to="/Search" className="btn btn-search"><i class="fa fa-search fa-fw"></i>Tìm truyện</Link>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -127,41 +129,44 @@ class Filter extends React.Component {
                                             </ul>
                                         </nav>
                                     </div>
+
                                     <div className="row ">
-                                        {(comics.length) && comics}
+                                        {comics}
                                     </div>
-                                    <div className="row ">
-                                        {!comics.length && <p style={{ marginLeft: "40%" }}>NO RESULT</p>}
-                                    </div>
+                                    {this.show(comics)}
+
+
                                 </div>
                             </div>
-                            <div className="col-md-12 col-lg-3 mt-3">
+                            <div className="col-md-12 col-lg-3">
                                 <RightBody />
                             </div>
+                            <hr />
                         </div>
-                        <hr />
-                    </div>
-                    <div className="row mt-2">
-                        <Footer />
+                        <div className="row mt-2">
+                            <Footer />
+                        </div>
                     </div>
                 </div>
-            </div>
-        );
-    }
-}
-
+                </div>
+                </>
+                );
+            }
+        }
+        
 const mapStateToProps = (state) => {
     return {
-        result: state.search,
-        list: state.genre
-    }
-}
-
+                    result: state.search,
+                list: state.genre
+            }
+        }
+        
 const mapDispatchToProps = (dispatch) => {
     return {
-        SearchByName: (keyword) => dispatch(SearchByName(keyword)),
-        fetchComicByCategory: (id) => dispatch(fetchComicByCategory(id))
-    };
-}
-
+                    SearchByName:(keyword) =>dispatch(SearchByName(keyword)),
+                fetchComicByCategory:(id)=> dispatch(fetchComicByCategory(id)),
+                filter:(id,s)=> dispatch(filter(id,s))
+              };
+          }
+          
 export default connect(mapStateToProps, mapDispatchToProps)(Filter);

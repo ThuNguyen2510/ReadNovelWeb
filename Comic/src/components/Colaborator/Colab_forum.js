@@ -37,7 +37,7 @@ export class Colab_forum extends Component {
             <div>
                 <div className="row">
                     <div className="col-md-2">
-                        <Content />
+                        <Content role={2} />
                     </div>
                     <div className="col-md-10" style={{ height: "100%" }}>
                         <div className="content-wrapper" style={{ height: "100%", padding: "0 0 " }} >

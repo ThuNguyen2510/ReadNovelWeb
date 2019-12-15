@@ -1,6 +1,6 @@
 import './Admin_user.css';
 import React from 'react';
-import Content from './Content';
+import Content from '../Colaborator/Content';
 import { Link, Route } from 'react-router-dom';
 import { getListUserFull, getListUserLimit, ChangeRole, deleteUser, Search } from './../../actions/ManagerUserAction';
 import { connect } from 'react-redux';
@@ -26,6 +26,7 @@ class Admin_user extends React.Component {
                     <td>
                         <select onChange={(e) => { if (window.confirm("Are you sure!!")) { this.props.ChangeRole(e.target.value, a.id) } }}>
                             <option value={1} selected={a.role == 1}>Admin</option>
+                            <option value={2} selected={a.role == 2} >Colaborator</option>
                             <option value={0} selected={a.role == 0} >Viewer</option>
                         </select>
                     </td>
@@ -79,7 +80,7 @@ class Admin_user extends React.Component {
                 <div className="containers">
                     <div className="row" >
                         <div className="col-md-2 col-lg-2">
-                            <Content />
+                            <Content role={JSON.parse(localStorage.getItem('logined_user')).role} />
                         </div>
                         <div className="col-md-10 col-lg-10" style={{ width: "100%",height:"100%"}}>
                             <div className="card" style={{  backgroundColor:"#f2edf3"}}>
@@ -99,13 +100,6 @@ class Admin_user extends React.Component {
                                                         </span>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div className="col-sm-12 col-md-6">
-                                                Show
-                                                <select className="custom-select d-block w-50" onChange={(e) => this.props.getListUserLimit(e.target.value)} >
-                                                    {this.option()}
-                                                </select>
-                                                entries                                                
                                             </div>
                                             <div className="row">
                                                 <div className="col-12 grid-margin">
@@ -170,7 +164,7 @@ class Admin_user extends React.Component {
 const mapStateToProps = (state) => {
     return {
         list: state.users.full,
-        list_limit: state.users.limit
+      
     }
 }
 

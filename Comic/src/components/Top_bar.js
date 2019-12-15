@@ -79,7 +79,7 @@ class Nav extends React.Component{
        localStorage.removeItem('login')
        localStorage.removeItem('logined_user')
        //document.getElementById('user').remove()
-      var link=document.getElementById('login')
+       var link=document.getElementById('login')
         link.setAttribute('href','/Signin')
         var icon=document.getElementById('icon')
         icon.setAttribute('class','fas fa-sign-in-alt link')

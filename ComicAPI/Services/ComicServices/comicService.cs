@@ -45,7 +45,7 @@ namespace ComicAPI.Services.ComicServices
         public List<Comic> ComicHot()
         {
             int like=0;
-            for(int i=1;i<=this.GetComics().Count;i++)
+            for(int i=this.GetComics().FirstOrDefault().ID;i<this.GetComics().Count;i++)
             {
                 Comic c= this.GetComicById(i);
                 like+=c.Likes;
@@ -186,8 +186,6 @@ namespace ComicAPI.Services.ComicServices
             var comic = _context.Comics.FirstOrDefault(x=>x.ID==id);
             comic.Name=comic_.Name;
             comic.Status=comic_.Status;
-            comic.Views=comic_.Views;
-            comic.Likes=comic_.Likes;
             comic.Image=comic_.Image;
             comic.Update_time=comic_.Update_time;
             comic.Author=comic_.Author;

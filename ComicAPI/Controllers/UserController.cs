@@ -50,5 +50,10 @@ namespace ComicAPI.Controllers
         {
             _userService.DeleteUser(id);
         }
+        [HttpPatch("{id}")]
+        public void Patch(int id,[FromBody] User user)
+        {
+            _userService.UpdateUser(id,user);
+        }
     }
 }

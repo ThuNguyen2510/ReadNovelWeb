@@ -23,8 +23,9 @@
 .status {
     background-color: rgb(29, 199, 80);
     border: 1px solid rgb(29, 199, 80);
-    border-radius: 2px;
-    ;
+    border-radius: 8px;
+    color: #fff;
+    padding: 5px;
 }
 
 .view {
@@ -62,6 +63,7 @@
 
 .but-like {
     border: 2px solid #8a8a8a;
+    border-radius: 50%;
     background-color: transparent;
     text-decoration: none;
     /* padding: 0.5rem; */
@@ -95,6 +97,7 @@
 .liked {
     background-color: #cc4b37;
     border-color: #cc4b37;
+    border-radius: 50%;
 }
 
 .liked .fa,

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { fetchGenres } from '../actions/GenreAction';
 import './Right_body.css';
+import {fetchComicByCategory} from '../actions/ComicActions'
 class RightBody extends React.Component {
     constructor(props) {
         super(props)
@@ -39,7 +40,7 @@ class RightBody extends React.Component {
             marginBottom: "-5px"
         }
         var list = this.props.gens.map((value_, index) => {
-            return <><Link to="/Search" className="theloai"  >{value_.genre_name}</Link><br></br></>
+            return <><Link to="/Search" className="theloai" onClick={e=> this.props.fetchComicByCategory(value_.genreID)} >{value_.genre_name}</Link><br></br></>
         })
         return (
             <>
@@ -55,9 +56,6 @@ class RightBody extends React.Component {
                         <div className="widget-content" style={tb_s}>
                             {list}
                         </div>
-                        {/* <span class="c-wg-button-wrap">
-                            <Link style={a_style} className="widget-view-more" to="/TruyenMoi">Xem thêm</Link>
-                        </span> */}
                     </div>
                 </div>
                 <div className="row">
@@ -67,6 +65,7 @@ class RightBody extends React.Component {
     }
 }
 
+
 const mapStateToProps = (state) => {
     return {
         gens: state.genre,
@@ -75,6 +74,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchGenres: () => dispatch(fetchGenres()),
+        fetchComicByCategory:(id)=> dispatch(fetchComicByCategory(id))
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(RightBody);

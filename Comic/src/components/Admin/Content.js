@@ -11,13 +11,11 @@ class Content extends React.Component {
                     <li className="nav-item nav-profile">
                         <a href="#" className="nav-link">
                             <div className="nav-profile-image">
-                                <img src="assets/images/faces/face1.jpg" alt="profile" />
+                                <img src="http://facebookfplus.com/upload/images/600_97d118b7a6f8f87d18f7b1385ea7665e.png" alt="profile" />
                                 <span className="login-status online" />
-                                {/*change to cd  or busy as needed*/}
                             </div>
                             <div className="nav-profile-text d-flex flex-column">
-                                <p className="font-weight-bold mb-2">David Grey. H</p>
-                                <p className="text-secondary text-small">Project Manager</p>
+                                <p className="font-weight-bold mb-2">Admin</p>
                             </div>
                             <i className="mdi mdi-bookmark-check text-success nav-profile-badge" />
                         </a>

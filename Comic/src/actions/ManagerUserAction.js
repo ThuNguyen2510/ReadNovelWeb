@@ -2,7 +2,14 @@ import axios from 'axios';
 export const getListUserFull = () => {
 
     return dispatch => {
-        return axios.get('http://127.0.0.1:3000/users').then(
+        return axios.get('http://127.0.0.1:3000/users',
+        {
+            headers: {
+                "Authorization": 'Bearer ' + localStorage.getItem("token"),
+                'Content-Type': 'application/json',
+            }
+        }
+        ).then(
             data => {
                 dispatch(fulllist(data.data))
             }
@@ -33,7 +40,13 @@ const listlimit = (users) => ({
 
 export const ChangeRole = (role, user_id) => {
     return dispatch => {
-        return axios.patch('http://127.0.0.1:3000/users/' + user_id, { 'role': role }).then(
+        return axios.patch('http://127.0.0.1:3000/users/' + user_id, {  "role":role  },
+        {
+            headers: {
+                "Authorization": 'Bearer ' + localStorage.getItem("token"),
+                'Content-Type': 'application/json',
+            }
+        }).then(
             (data) =>
             dispatch(changerole())
         )
@@ -59,10 +72,22 @@ const search = (users) => ({
 export const deleteUser = (user_id) => {
     return dispatch => {
 
-        return axios.delete('http://127.0.0.1:3000/users/' + user_id).then(
+        return axios.delete('http://127.0.0.1:3000/users/' + user_id, {
+            headers: {
+                "Authorization": 'Bearer ' + localStorage.getItem("token"),
+                'Content-Type': 'application/json',
+            }
+        }
+        ).then(
             (data) => {
                 dispatch(deleteuser())
-                return axios.get('http://127.0.0.1:3000/users').then(
+                return axios.get('http://127.0.0.1:3000/users',{
+                    headers: {
+                        "Authorization": 'Bearer ' + localStorage.getItem("token"),
+                        'Content-Type': 'application/json',
+                    }
+                }
+                ).then(
                     data => {
                         dispatch(fulllist(data.data))
                     }

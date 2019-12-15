@@ -55,7 +55,7 @@ class AddChapter extends React.Component {
             <>
                 <div className="row ">
                     <div className="col-md-2">
-                        <Content />
+                        <Content role={JSON.parse(localStorage.getItem('logined_user')).role} />
                     </div>
                     <div className="col-md-10" style={{ width: "100%", height: "100vh" }}>
                     <div className="content-wrapper" style={{ width: "100%", height: "100vh", padding: "0 0 0 0" }}>

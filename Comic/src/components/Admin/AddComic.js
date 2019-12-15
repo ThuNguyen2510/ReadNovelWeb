@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
-import Content from './Content';
+import Content from '../Colaborator/Content';
 import './Admin_Comic.css'; 
 import { connect } from 'react-redux';
 import { fetchGenres } from '../../actions/GenreAction';
-import { addComic } from '../../actions/ComicActions';
+import { addComic} from '../../actions/ComicActions';
 import ImageUploader from 'react-images-upload';
 import Footer from './footer';
 class AddComic extends React.Component {
@@ -18,22 +18,22 @@ class AddComic extends React.Component {
     }
     select() {
         var s = []
-
         s = this.props.gens.map(a => {
-            return <option value={a.id} >{a.genre_name}</option>
+            return <option value={a.genreID} >{a.genre_name}</option>
         })
         return s;
     }
     Save(e) {
         e.preventDefault();
         var temp = new Date
-        var date = temp.getMonth() + "/" + temp.getDate() + "/" + temp.getFullYear()
+        var date =temp.getFullYear()+ "/"+ temp.getMonth() + "/" + temp.getDate()  
         let { name, genre_id, author, des } = this.state;
         var img = localStorage.getItem('image_url')
         var id = parseInt(genre_id)
         if (window.confirm('Add a comic??')) {
             this.props.addComic(name, id, author, 0, des, date, img)
             alert("Add success")
+            this.props.history.push('/Colaborator/comics')
 
         }
     }
@@ -66,14 +66,14 @@ class AddComic extends React.Component {
             <>
                 <div className="row">
                     <div className="col-md-2">
-                        <Content />
+                        <Content role={JSON.parse(localStorage.getItem('logined_user')).role} />
                     </div>
                     <div className="col-md-10" style={{ width: "100%", height: "100%" }}>
                         <div className="content-wrapper" style={{ width: "100%", height: "100%", padding: "0 0" }}>
                             <nav aria-label="breadcrumb ">
                                 <ul className="breadcrumb">
                                     <li className="breadcrumb-item active ml-3" aria-current="page">
-                                        <span />Admin/Thêm truyện mới <i className="mdi mdi-alert-circle-outline icon-sm text-primary align-middle" />
+                                        <span />Thêm truyện mới <i className="mdi mdi-alert-circle-outline icon-sm text-primary align-middle" />
                                     </li>
                                 </ul>
                             </nav>
@@ -106,9 +106,7 @@ class AddComic extends React.Component {
                                                                 <textarea value={des} onChange={e => this.setState({ des: e.target.value })} className="form-control" id="selectcategory" rows="4"></textarea>
                                                             </div>
                                                         </div>
-                                                        <div className="mb-3">
-                                                            <label><Link to={"/Comic/"+this.props.match.params.index+"/Chap"}><i class="fas fa-plus"></i>Thêm chương </Link></label>
-                                                        </div>
+                                                       
                                                     </form>
                                                 </div>
                                                 <div className="col-md-4 mb-4 ">

@@ -50,7 +50,6 @@ namespace ComicAPI.Services.ComicServices
             var old= _context.Chapters.FirstOrDefault(x=> x.ChapterID==chapid);
             old.Title=chapter.Title;
             old.Content=chapter.Content;
-            old.STT=chapter.STT;
             _context.SaveChanges();
           
         }

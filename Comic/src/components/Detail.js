@@ -92,7 +92,7 @@ class Detail extends React.Component {
                     <p> Thể loại: < Link to = {"/Search/"+this.props.genreID} className = "author" > { this.genre(this.props.genreID) } </Link> </p >
                     <p> Trạng thái: < span className = "status" > { this.props.status } </span> </p >
                     <p> </p> 
-                    <div className = "view"> { console.log(this.props.liked) } { this.props.liked && this.daLike() } {!this.props.liked && this.chuaLike() } 
+                    <div className = "view"> { this.props.liked && this.daLike() } {!this.props.liked && this.chuaLike() } 
                         <button className = "but-dt" > < i className = "fa fa-eye" > { this.props.read } </i></button >
                     </div>
 

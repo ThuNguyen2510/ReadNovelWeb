@@ -17,60 +17,51 @@ export const fetchChapter = (chapter_id) => {
         return axios.get('http://127.0.0.1:3000/chapters/' + chapter_id).then(
             data => {
                 const gen = data.data
-                localStorage.setItem('chap', JSON.stringify(gen[0]))
+                localStorage.setItem('achap',JSON.stringify(gen))
                 dispatch(returnChapter(gen))
             }
         )
     }
 }
-export const addChapter = (comic_id, chapter_name, content) => {
+export const addChapter = (comicID, title, content,stt ) => {
     return dispatch => {
 
-        return axios.post('http://127.0.0.1:3000/chapters', { comic_id, chapter_name, content }).then(
+        return axios.post('http://127.0.0.1:3000/chapters', { comicID, title, content,stt }).then(
 
             dispatch(addchapter())
 
         )
     }
 }
-export const updateChapter = (chap_id, comic_id, chapter_name, content) => {
+export const updateChapter = (chap_id, chapter_name, content) => {
     return dispatch => {
-        return axios.get('http://127.0.0.1:3000/chapters?id=' + chap_id + '&&comic_id=' + comic_id).then(
-            data => {
-                const gen = data.data
-                const id = gen[0].id
-                return axios.patch('http://127.0.0.1:3000/chapters/' + id, { "chapter_name": chapter_name, "content": content }).then(
+        
+                return axios.put('http://127.0.0.1:3000/chapters/' + chap_id, { "title": chapter_name, "content": content }).then(
                     dispatch(updatechapter())
                 )
             }
-        )
+        
 
-    }
 }
-export const deleteChapter = (chap_id, comic_id) => {
+export const deleteChapter = (chap_id,comic_id) => {
     return dispatch => {
-        return axios.get('http://127.0.0.1:3000/chapters?id=' + chap_id + '&&comic_id=' + comic_id).then(
+        return axios.delete('http://127.0.0.1:3000/chapters/' + chap_id ).then(
             data => {
-                const gen = data.data[0]
-                return axios.delete('http://127.0.0.1:3000/chapters/' + gen.id).then(
-                    (data => {
+
                         dispatch(delchapter())
-                        return axios.get('http://127.0.0.1:3000/chapters?comic_id=' + comic_id).then(
-                            data => {
-                                const list = data.data
-                                dispatch(returnListChapter(list));
-                            }
-                        )
+                        return axios.get('http://127.0.0.1:3000/comics/' + comic_id).then(
+                        data => {
+                            const list = data.data.chapters
+                            dispatch(returnListChapter(list));
+                        }
+                    ).catch(error => {
+                        console.log(error);
+                        })
                     })
-                )
-
-
+                
             }
-        )
-
-
     }
-}
+
 const returnChapter = (Chapter) => ({
     type: 'GET_A_CHAPTER',
     chap: Chapter
