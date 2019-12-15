@@ -7,9 +7,9 @@ class Chap_content extends React.Component{
     render(){
         return(
             <div>
-                <div className="container">
+                <div className="container" >
                     <div className="row">
-                        <div className="col-md-12 content">
+                        <div className="col-md-12 content" style={{backgroundColor:this.props.bgcolor}}>
                             {this.props.content}
                         </div>
                     </div>

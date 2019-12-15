@@ -34,6 +34,7 @@ import Colab_Comic from './components/Colaborator/Colab_Comic';
 import Colab_UpChapter from './components/Colaborator/UpdateChapter';
 import Colab_AddChapter from './components/Colaborator/AddChapter';
 import Colab_AddComic from './components/Colaborator/AddComic';
+import Error from './components/Error';
 // import Colab_Update_Comic from './components/Colaborator/Update_Comic';
 import Colab_index from './components/Colaborator/index';
 const history = createBrowserHistory()
@@ -44,6 +45,7 @@ class App extends React.Component {
       <div className="App">      
         <Router history={history}>
           <Switch> 
+          <Route path= '/Error' component ={Error}/>
           <Route path= '/Colaborator' exact component = {Colab_index}/>
           <Route path='/Colaborator/categorys' exact component={Colab_Cate}/>
           <Route path='/Colaborator/forums' exact component = {Colab_forum}/>

@@ -24,7 +24,7 @@ class Chapter_detail extends React.Component {
                 var select = false;
                 if ((i + 1) == localStorage.getItem('chapid')) select = true;
                 chaps.push(
-                    <option  value={this.props.comic[j].chapters[i].chapterID} selected={select}>Chương {this.props.comic[j].chapters[i].stt}: {this.props.comic[j].chapters[i].title}</option>)
+                    <option value={this.props.comic[j].chapters[i].chapterID} selected={select}>Chương {this.props.comic[j].chapters[i].stt}: {this.props.comic[j].chapters[i].title}</option>)
             }
         return chaps;
     }
@@ -50,9 +50,10 @@ class Chapter_detail extends React.Component {
         }
     }
     select1() {
-        return <> <select id={'slt1'} onClick={e => this.SelectSync1(e.target.value)} className="chapter" onChange={(e) => this.props.fetchChapter(e.target.value)} >
-            {this.option()}
-        </select>
+        return <>
+            <select id={'slt1'} onClick={e => this.SelectSync1(e.target.value)} className="chapter" onChange={(e) => this.props.fetchChapter(e.target.value)} >
+                {this.option()}
+            </select>
         </>
     }
 
@@ -65,32 +66,56 @@ class Chapter_detail extends React.Component {
             </>
         )
     }
-
+    setBg(clor_) {
+        //alert(clor_);
+        console.log("mau " + clor_)
+        return clor_;
+    }
     show() {
         var name = ""
         var content = ""
         var id_ = 0
-        console.log(this.props.chap)
+        var getColor = this.setBg();
+        console.log("mau " +getColor)
+        var bgcolor = [
+            { name: "Xanh nhạt", _color: "rgb(233, 235, 238)" },
+            { name: "Xanh đậm", _color: "rgb(213, 216, 220)" },
+            { name: "Xám nhạt", _color: "rgb(213, 216, 220)" },
+            { name: "Xám đậm", _color: "rgb(213, 216, 220)" },
+            { name: "Hạt sạn", _color: "rgb(213, 216, 220)" },
+            { name: "Màu sepia", _color: "rgb(234, 228, 211)" }
+        ]
+        var color_ = bgcolor.map((a) => {
+            return (
+                <>
+                    <option value={a._color} className="cate ml-5">{a.name}</option>
+                </>
+            )
+        })
         for (var i = 0; i < this.props.chap.length; i++) {
             name = this.props.chap[i].title
             content = this.props.chap[i].content
             id_ = this.props.chap[i].stt
         }
-        localStorage.setItem('chapid',id_)
+        localStorage.setItem('chapid', id_)
         return (
-            <div >
+            <div>
                 <div className="container nav-content">
                     <Link id="home" to="/"><i className="fas fa-home"></i> TRANG CHỦ </Link> <i className="fas fa-angle-right"> </i>
                     <Link to={"/Comic/" + this.props.match.params.index}>{localStorage.getItem('comic_name')} </Link><i className="fas fa-angle-right"> </i>
                     <Link to={"/Comic/" + this.props.match.params.index + "/Chapter/" + this.props.match.params.id}> CHƯƠNG {parseInt(id_)}</Link>
+                    <select onChange={(e) => (this.setBg(e.target.value))} className="float-right colorName" id="bg">
+                        <option>MÀU NỀN</option>
+                        {color_}
+                    </select>
                     <hr style={{ marginTop: "4px" }} />
                 </div>
                 <div className="list-chap">
                     <Link id="chapname" to={"/Comic/" + this.props.match.params.index + "/Chapter/" + this.props.match.params.id}>{name}</Link><br />
                     {this.select1()}
                 </div>
-                <Chap_content id="chap-content" content={content} />
-                     {this.select2()}
+                <Chap_content id="chap-content" bgcolor={getColor} content={content} />
+                {this.select2()}
             </div>
         )
     }
