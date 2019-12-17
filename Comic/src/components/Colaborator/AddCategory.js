@@ -30,8 +30,8 @@ class AddCategory extends React.Component {
                     <div className="col-md-2">
                         <Content role={JSON.parse(localStorage.getItem('logined_user')).role} />
                     </div>
-                    <div className="col-md-10" style={{ width: "100%", height: "100%" }}>
-                        <div className="content-wrapper" style={{ width: "100%", height: "100%", padding: "0 0" }}>
+                    <div className="col-md-10" style={{ width: "100%", height: "100vh%" }}>
+                        <div className="content-wrapper" style={{ width: "100%", height: "100vh", padding: "0 0" }}>
                             <nav aria-label="breadcrumb ">
                                 <ul className="breadcrumb">
                                     <li className="breadcrumb-item active ml-3" aria-current="page">
@@ -46,8 +46,6 @@ class AddCategory extends React.Component {
                                             <div className="row">
                                                 <div className="col-md-7">
                                                     <h4 className="card-title">Thêm thể loại</h4>
-                                                    
-                                                    
                                                         <div className="form-group">
                                                             <label htmlFor="comicname" style={{ float: "left" }}>Tên Thể loại</label>
                                                             <input type="text" value={cate} onChange={e => this.setState({ cate: e.target.value })}  class="form-control" id="comicname" placeholder="Nhập tên truyện..." />
@@ -63,8 +61,8 @@ class AddCategory extends React.Component {
                             <div className="row">
                                 <div className="col-md-7"></div>
                                 <div className="col-md-5">
-                                    <button type="button" onClick={this.Save} class="btn btn-pill btn-warning">Lưu</button>
-                                    <button type="button" onClick={e => this.props.history.goBack()} class="btn btn-square btn-secondary">Cancel</button>
+                                    <button type="button" onClick={this.Save} class="btn btn-pill btn-gradient-warning">Lưu</button>
+                                    <button type="button" onClick={e => this.props.history.goBack()} class="btn btn-square btn-gradient-secondary ml-2">Cancel</button>
                                 </div>
                             </div>
 

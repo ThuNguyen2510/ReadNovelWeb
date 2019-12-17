@@ -50,7 +50,7 @@ class ShowComic extends React.Component {
                         <div className="col-md-7 ml-3 order-md-1">
                             <form className="needs-validation">
                                 <div className="mb-3">
-                                    <label for="username">Tên truyện</label>
+                                    <label for="username">Tên truyện </label>
                                     <div class="input-group">
                                         <div class="input-group-prepend"></div>
                                         <input type="text" class="form-control" id="username" value={this.props.comic[i].name} required=""></input>

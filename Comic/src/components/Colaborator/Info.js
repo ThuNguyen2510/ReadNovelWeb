@@ -38,7 +38,7 @@ export class Info extends Component {
                                 <div className="card-body">
                                     <Link className="text-decoration-none" style={{fontSize:"50px", color:"#fff"}} to="/Colaborator/comics"><h4 className="font-weight-normal mb-3">Quản lý truyện <i className="mdi mdi-bookmark-outline mdi-24px float-right" />
                                     </h4>
-                                 <h2 className="mb-5">{this.props.list.length}</h2>
+                                    <h2 className="mb-5">{this.props.list.length}</h2>
                                     <a href="/Colaborator/comics" style={{fontSize:"50px", color:"#fff"}}><i className="mdi mdi-plus-circle-outline large"></i></a>
                                     </Link>
                                 </div>

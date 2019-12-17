@@ -73,100 +73,99 @@ class Filter extends React.Component {
         })
         return (
             <>
-            <div className="container-fluid">
-                <Header />
-                <div>
-                    <div className="container mt-2">
-                        <div className="row">
-                            <div className="col-md-12 col-lg-9 mb-4">
+                <div className="">
+                    <Header />
+                    <div>
+                        <div className="container mt-4">
+                            <div className="row mt-2">
+                                <div className="col-md-12 col-lg-9 mb-4">
+                                    <div style={con_m21}>
+                                        <div className="content m2l">
+                                            <div >
+                                                <form>
+                                                    <table style={table_s}>
+                                                        <tr>
+                                                            <td>
+                                                                <select id="selectgen" onChange={e => localStorage.setItem('genreid', (e.target.value))} class="mdb-select md-form colorful-select dropdown-primary">
+                                                                    <option value="0" >Thể Loại </option>
+                                                                    {option}
 
-                                <div style={con_m21}>
-                                    <div className="content m2l">
-                                        <div >
-                                            <form>
-                                                <table style={table_s}>
-                                                    <tr>
-                                                        <td>
-                                                            <select id="selectgen" onChange={e => localStorage.setItem('genreid', (e.target.value))} class="mdb-select md-form colorful-select dropdown-primary">
-                                                                <option value="0" >Thể Loại </option>
-                                                                {option}
+                                                                </select>
+                                                            </td>
+                                                            <td>
 
-                                                            </select>
+                                                            </td>
+                                                            <td>
+                                                                <input type="checkbox" id="check" />Truyện Full
                                                         </td>
-                                                        <td>
-
-                                                        </td>
-                                                        <td>
-                                                            <input type="checkbox" id="check" />Truyện Full
-                                                        </td>
-                                                        <td>
-                                                            <Link onClick={this.search} to="/Search" className="btn btn-search"><i class="fa fa-search fa-fw"></i>Tìm truyện</Link>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </form>
+                                                            <td>
+                                                                <Link onClick={this.search} to="/Search" className="btn btn-search"><i class="fa fa-search fa-fw"></i>Tìm truyện</Link>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </form>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <hr></hr>
-                                    <div>
-                                        <nav aria-label="Page navigation example">
-                                            <ul className="pagination justify-content-center">
-                                                <li className="page-item">
-                                                    <Link className="page-link" to="/" aria-label="Previous">
-                                                        <span aria-hidden="true">«</span>
-                                                        <span className="sr-only">Previous</span>
-                                                    </Link>
-                                                </li>
-                                                <li className="page-item"><Link className="page-link" to="#">1</Link></li>
-                                                <li className="page-item"><Link className="page-link" to="#">2</Link></li>
-                                                <li className="page-item"><Link className="page-link" to="#">3</Link></li>
-                                                <li className="page-item">
-                                                    <Link className="page-link" to="/" aria-label="Next">
-                                                        <span aria-hidden="true">»</span>
-                                                        <span className="sr-only">Next</span>
-                                                    </Link>
-                                                </li>
-                                            </ul>
-                                        </nav>
-                                    </div>
+                                        <hr></hr>
+                                        <div>
+                                            <nav aria-label="Page navigation example">
+                                                <ul className="pagination justify-content-center">
+                                                    <li className="page-item">
+                                                        <Link className="page-link" to="/" aria-label="Previous">
+                                                            <span aria-hidden="true">«</span>
+                                                            <span className="sr-only">Previous</span>
+                                                        </Link>
+                                                    </li>
+                                                    <li className="page-item"><Link className="page-link" to="#">1</Link></li>
+                                                    <li className="page-item"><Link className="page-link" to="#">2</Link></li>
+                                                    <li className="page-item"><Link className="page-link" to="#">3</Link></li>
+                                                    <li className="page-item">
+                                                        <Link className="page-link" to="/" aria-label="Next">
+                                                            <span aria-hidden="true">»</span>
+                                                            <span className="sr-only">Next</span>
+                                                        </Link>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
 
-                                    <div className="row ">
-                                        {comics}
+                                        <div className="row ">
+                                            {comics}
+                                        </div>
+                                        {this.show(comics)}
+
+
                                     </div>
-                                    {this.show(comics)}
-
-
                                 </div>
+                                <div className="col-md-12 col-lg-3">
+                                    <RightBody />
+                                </div>
+                                <hr />
                             </div>
-                            <div className="col-md-12 col-lg-3">
-                                <RightBody />
-                            </div>
-                            <hr />
                         </div>
                         <div className="row mt-2">
                             <Footer />
                         </div>
                     </div>
                 </div>
-                </div>
-                </>
-                );
-            }
-        }
-        
+            </>
+        );
+    }
+}
+
 const mapStateToProps = (state) => {
     return {
-                    result: state.search,
-                list: state.genre
-            }
-        }
-        
+        result: state.search,
+        list: state.genre
+    }
+}
+
 const mapDispatchToProps = (dispatch) => {
     return {
-                    SearchByName:(keyword) =>dispatch(SearchByName(keyword)),
-                fetchComicByCategory:(id)=> dispatch(fetchComicByCategory(id)),
-                filter:(id,s)=> dispatch(filter(id,s))
-              };
-          }
-          
+        SearchByName: (keyword) => dispatch(SearchByName(keyword)),
+        fetchComicByCategory: (id) => dispatch(fetchComicByCategory(id)),
+        filter: (id, s) => dispatch(filter(id, s))
+    };
+}
+
 export default connect(mapStateToProps, mapDispatchToProps)(Filter);

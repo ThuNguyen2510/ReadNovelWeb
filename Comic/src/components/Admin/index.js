@@ -2,12 +2,20 @@ import React from 'react';
 import { Link, Route } from 'react-router-dom';
 import Content from '../Colaborator/Content';
 import Footer from './footer';
+import Ad_info from './Info';
 import Info from '../Colaborator/Info';
 import './index.css'
 class index extends React.Component {
     render() {
         var meno = {
             marginTop: "20px",
+        }
+        var info=[];
+        var user = JSON.parse(localStorage.getItem('logined_user'));
+        if(user.role==1){
+            info.push(<Ad_info/>)
+        }else if (user.role==2){
+            info.push(<Info/>)
         }
         return (
             <div id="mmenu_screen">
@@ -17,7 +25,7 @@ class index extends React.Component {
                         <Content role={JSON.parse(localStorage.getItem('logined_user')).role} />
                     </div>
                     <div className="col-md-10 " >
-                        <Info/>
+                        {info}
                         <Footer/>
                     </div>
                 </div>

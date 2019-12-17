@@ -6,6 +6,7 @@ class Info extends React.Component{
     render(){
         var user= JSON.parse(localStorage.getItem('logined_user'))
         var username=user.username
+        var image = user.image
         return (
             <>
             <div className="coverContent mt-0">
@@ -13,7 +14,8 @@ class Info extends React.Component{
                     <img src = "https://genknews.genkcdn.vn/2017/photo-4-1490675003802.jpg" id="cv"/>
                 </div>
                 <div class="avatarProfile">
-                    <img id="avar" src ="https://cdn.shopify.com/s/files/1/0078/6563/0831/products/TogaPrint_grande.png?v=1552807118"/>
+                    <img id="avar" src ={image}/>
+                    {/* <img id="avar" src ="https://cdn.shopify.com/s/files/1/0078/6563/0831/products/TogaPrint_grande.png?v=1552807118"/> */}
                 </div>
             </div>
             <div className="card ml-5 mt-4 mb-5 "  style={{width: '90%'}}>

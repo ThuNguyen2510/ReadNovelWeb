@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ComicAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20191215131728_init")]
+    [Migration("20191215154909_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -120,7 +120,7 @@ namespace ComicAPI.Migrations
                         new
                         {
                             ID = 1,
-                            AnswerTime = new DateTime(2019, 12, 15, 20, 17, 28, 435, DateTimeKind.Local).AddTicks(4166),
+                            AnswerTime = new DateTime(2019, 12, 15, 22, 49, 8, 878, DateTimeKind.Local).AddTicks(4841),
                             Content = "Ta đề cử Tối cường thần thoại đế hoàng , Thần khống thiên hạ",
                             PostID = 1,
                             UserID = 1
@@ -128,7 +128,7 @@ namespace ComicAPI.Migrations
                         new
                         {
                             ID = 2,
-                            AnswerTime = new DateTime(2019, 12, 15, 20, 17, 28, 435, DateTimeKind.Local).AddTicks(7574),
+                            AnswerTime = new DateTime(2019, 12, 15, 22, 49, 8, 879, DateTimeKind.Local).AddTicks(450),
                             Content = "Linh vũ thiên hạ , hộ hoa cao thủ tại đô thị , 1 truyện huyền huyễn 1 truyện đô thị",
                             PostID = 1,
                             UserID = 2
@@ -136,7 +136,7 @@ namespace ComicAPI.Migrations
                         new
                         {
                             ID = 3,
-                            AnswerTime = new DateTime(2019, 12, 15, 20, 17, 28, 435, DateTimeKind.Local).AddTicks(8606),
+                            AnswerTime = new DateTime(2019, 12, 15, 22, 49, 8, 879, DateTimeKind.Local).AddTicks(1832),
                             Content = "Sao ta không lên cấp được nhỉ?",
                             PostID = 2,
                             UserID = 3
@@ -144,7 +144,7 @@ namespace ComicAPI.Migrations
                         new
                         {
                             ID = 4,
-                            AnswerTime = new DateTime(2019, 12, 15, 20, 17, 28, 435, DateTimeKind.Local).AddTicks(9419),
+                            AnswerTime = new DateTime(2019, 12, 15, 22, 49, 8, 879, DateTimeKind.Local).AddTicks(2848),
                             Content = "chờ các cao nhân vào chỉ điểm a. chở Dâm Lão huynh đệ lên tiếng a ",
                             PostID = 2,
                             UserID = 1
@@ -176,7 +176,7 @@ namespace ComicAPI.Migrations
                         {
                             ChapterID = 1,
                             ComicID = 1,
-                            Content = "",
+                            Content = "Đã hơn một năm, Cố Minh Sâm cho Ôn Vãn “ăn quả lơ”, không hề nói chuyện cùng cô, hôn nhân của bọn họ luôn ngầm tồn tại sự giằng co, cưỡng chế lẫn nhau. Vì thế, hiện tại anh ta chủ động mở miệng, khiến Ôn Vãn ngơ ngác. Cô còn chưa kịp suy nghĩ cẩn thận về câu hỏi của anh ta, trước mặt đã bị một thứ đập vào. Cố Minh Sâm quẳng tờ tạp chí vào mặt cô. Người đàn ông đang trong cơn thịnh nộ, không kiểm soát được lực đạo của mình. Vì sự tấn công đột ngột của anh ta, sườn mặt của Ôn Vãn đau rát, bắt đầu ửng đỏ, nhưng khuôn mặt llại không chút cảm xúc. Cô bình tĩnh đặt ly thủy tinh trong tay xuống, khom người, cầm tờ tạp chí lên xem. Nội dung bài báo tương đồng với tin nhắn cô nhận được, có điều, tấm ảnh đã xóa mờ gương mặt của Cố Minh Sâm. Lúc này Ôn Vãn mới biết, người phụ nữ trong ảnh là ngôi sao đang rất nổi tiếng. Một lần nữa, Ôn Vãn buộc phải nhìn lại những hình ảnh gai mắt, hình chụp trên báo còn nét hơn trong tin nhắn. Anh cho là tôi làm? Ngại quá, tôi chẳng rỗi hơi đến thế đâu.   Ôn Vãn bị vu oan không hề nao núng, bình tĩnh biện luận cho mình. Cố Minh Sâm phì cười, ấn một tay lên kệ tủ phía sau:   Mẹ kiếp, định chơi trò bịp với tôi hả? Tay anh ta giật lại tờ tạp chí, giở đến trang “mấu chốt”, rồi dí sát mặt cô:   Không phải cô làm? Trừ cô ra, ai dám đối nghịch với tôi. Loại tin tức này, cho bọn nhà báo thêm một trăm lá gan, bọn chúng cũng không dám tùy tiện đăng. Ôn Vãn thản nhiên ngắm nhìn người đàn ông đang bộc phát lửa giận. Cô và Cố Minh Sâm quen biết 12 năm. Năm 16 tuổi, cô tới Cố gia, bắt đầu đoạn nghiệt duyên với Cố Minh Sâm – một người đàn ông lạnh lùng, luôn đặt bản thân trên mọi thứ. Cố Minh Sâm không thích cô, hình như từ lần gặp đầu tiên, anh ta đã ghét bỏ cô . Cố Minh Sâm chê bai cô, bảo cô là con bé quê mùa xuất thân từ nông thôn nghèo hèn, vừa cục mịch vừa không có giáo dục. Mười hai năm trôi qua, cô bé quê mùa năm nào đã hoàn toàn lột xác, nhưng trong mắt Cố Minh sâm, cô vẫn như buổi đầu gặp gỡ, chỉ là, lòng dạ đa đoan, quỷ kế hơn. Ôn Vãn học theo điệu cười khinh miệt của anh ta, ra vẻ “anh sao tôi vậy”, khí thế trên người không hề thấp kém hơn anh ta:   Não anh càng ngày càng teo nhở, thủ đoạn cấp thấp như vậy mà cũng nghĩ tới được. Lời này trực tiếp vạch trần sự ngu muội của anh ta, vừa nãy Cố Minh Sâm để lửa giận che mờ lí trí, giờ đã tỉnh táo nên có thể nhận định rõ hơn. Tuy nhiên, sự tự ái của đàn ông không cho phép anh ta cúi đầu, vẫn theo thói quen lạnh nhạt, bắt bẻ Ôn Vãn. Anh ta khom người, giọng đệu lạnh lẽo xuất ra hơi lạnh như băng:   Không ngờ Cố gia nuôi nhầm một con sói đội lốt cừu, đáng tiếc, đến giờ mẹ tôi vẫn chưa nhìn rõ bộ mặt thật của cô. Muốn ly hôn à? Tôi đồng ý với cô.Anh ta nói rõ ràng dứt khoát, động tác lại cực kì thô bạo, dứt lời liền hung hăng đẩy cô ra. Lưng Ôn Vãn va mạnh vào mặt bàn lạnh lẽo, bả vai đụng phải vòi nước inox, đau điếng người. Cố Minh Sâm không thèm nhìn cô, lấy tay sửa sang lại vạt áo hơi nhăn nhúm:   Đừng quên những thứ cô đã cướp mất của tôi. Những gì cô nợ tôi, bây giờ nên tính toán cả vốn lẫn lời, hoàn trả cho chính chủ nhỉ? Anh ta nói đến phần sau, ngữ điệu bất chợt nhẹ nhàng trầm bổng:   Lúc trước là cô đồng ý kết hôn, hiện tại cũng là cô đòi ly hôn. Chuyện hôn nhân của Cố Minh Sâm tôi, trong mắt cô, chẳng đáng giá một xu. Tôi muốn đòi lại những gì mình nên có, sau này cô đừng trách tôi quá ác. Vóc dáng của Cố Minh Sâm cao lớn, thân hình cao 1,88 mét đứng ngược chiều ánh sáng, tạo thành bóng đen tăm tối, phủ kín Ôn Vãn. Ôn Vãn rùng mình, luồn khí lạnh lẽo lan tràn khắp đáy lòng:   Có ý gì? Ôn Vãn rùng mình, luồn khí lạnh lẽo lan tràn khắp đáy lòng:   Có ý gì? Cố Minh Sâm chậm rãi xoay người, khóe miệng nhếch thành ý cười bạc bẽo:   Cô thiếu tôi cái gì, chính cô biết rõ nhất. Sau khi ly hôn, cô đừng hòng mơ tưởng, bà cụ sẽ tiếp tục che chở cho cô. Ôn Vãn mím chặt môi, nụ cười của Cố Minh Sâm càng lúc càng ác liệt:   Kỳ thật ngẫm lại, chuyện ly hôn cũng thú vị lắm. Tôi rất muốn chứng kiến loại phụ nữ ham hư vinh, một lòng muốn bò lên cao như cô, sau này không còn Cố gia làm chỗ dựa, sẽ vẫy vùng, biến thành cái dạng gì. Cố Minh Sâm tàn nhẫn ném cho cô cái lườm sắc bén. Ánh mắt của anh ta quá phức tạp, Ôn Vãn không thể nhìn thấu, chỉ biết sự đụng chạm ở sau lưng, càng lúc càng đau đớn. Cô biết Cố Minh Sâm hận cô, nhưng không ngờ nỗi hận của anh ta đã biến đổi, vặn vẹo đến độ này. Thật ra cũng dễ hiểu, không ai có thể lưu tình với kẻ giết người cả! Buổi tối, Chu Nhĩ Lam nhất định không thả người, kiên quyết bắt hai người phải ở lại qua đêm. Ý tứ quá rõ rệt, thậm chí người làm đã chuẩn bị đủ chăn mềm cho đôi uyên ương trải qua một đêm xuân. Ôn Vãn đứng trước cái giường rộng lớn, sững sờ nhìn chiếc đệm đỏ thẫm. Cô như trở về hiện trường của đêm tân hôn hai năm trước, lúc đấy, Chu Nhĩ Lam cũng thay cô chuẩn bị mọi thứ chu đáo, bà luôn nhiệt tình đối xử tốt với cô. Đáng tiếc, có làm gì cũng không thể vực dậy những thứ đã héo rũ. Ôn Vãn khó xử nhìn Chu Nhĩ Lam:   Mẹ, con ——  Đừng nói gì cả, mẹ biết nỗi ấm ức mà con phải chịu.   Chu Nhĩ Lam nắm tay cô, nói lời thấm thía,   Lần này là Minh Sâm không đúng, mẹ đã dạy dỗ nó rồi. Đàn ông đều như thế,thỉnh thoảng ra ngoài gặp dịp thì chơi, nhưng họ vẫn biết đâu là nhà . Ôn Vãn ngắm nhìn mu bàn tay đang phủ trên tay mình, những đường gân xanh nổi đầy, các khe rãnh lỗi lõm chính là vết tích của năm tháng qua đi. Nói cho cùng, bà vẫn là một người mẹ, luôn ưu tiên dành sự yêu thương cho đứa con ruột của mình, cô không nên ký thác nhiều hi vọng vào bà. Không có người mẹ nào dễ dàng thừa nhận khuyết điểm của con trai trong đời sống hôn nhân, cũng không có bà mẹ chồng nào, thật tâm xem con dâu như chính con gái ruột do mình sinh ra. Nhất thời, Ôn Vãn không biết đối đáp ra sao, hơn nữa, phải nói như thế nào về chuyện ly hôn của hai người. Cô cảm thấy kì quái, vì sao Cố Minh Sâm vẫn chưa nói cho bà biết, chẳng lẽ anh ta định đùn đẩy trách nhiệm cho cô? Chu Nhĩ Lam thấy hai vợ chồng đều im lặng, cho rằng hai đứa con đã hiểu chuyện, vui vẻ hòa thuận với nhau. Trong lòng bà nhất thời vui như hoa nở, xoay người ra ngoài, trước khi đi còn nháy mắt với con trai:   Hai đứa nghỉ ngơi sớm đi   Ôn Vãn tức giận, trừng mắt với Cố Minh Sâm. Cố Minh Sâm lại phô ra bộ dạng: chả có việc gì liên quan đến ông, thoải mái cởi áo sơ mi, chuẩn bị đi tắm. Hai mắt Ôn Vãn trợn trắng, bật tiếng gọi:Mẹ. ",
                             STT = 1,
                             Title = "Đỗ Mạnh Cầm"
                         },
@@ -184,7 +184,7 @@ namespace ComicAPI.Migrations
                         {
                             ChapterID = 2,
                             ComicID = 1,
-                            Content = "",
+                            Content = "Đã hơn một năm, Cố Minh Sâm cho Ôn Vãn “ăn quả lơ”, không hề nói chuyện cùng cô, hôn nhân của bọn họ luôn ngầm tồn tại sự giằng co, cưỡng chế lẫn nhau. Vì thế, hiện tại anh ta chủ động mở miệng, khiến Ôn Vãn ngơ ngác. Cô còn chưa kịp suy nghĩ cẩn thận về câu hỏi của anh ta, trước mặt đã bị một thứ đập vào. Cố Minh Sâm quẳng tờ tạp chí vào mặt cô. Người đàn ông đang trong cơn thịnh nộ, không kiểm soát được lực đạo của mình. Vì sự tấn công đột ngột của anh ta, sườn mặt của Ôn Vãn đau rát, bắt đầu ửng đỏ, nhưng khuôn mặt llại không chút cảm xúc. Cô bình tĩnh đặt ly thủy tinh trong tay xuống, khom người, cầm tờ tạp chí lên xem. Nội dung bài báo tương đồng với tin nhắn cô nhận được, có điều, tấm ảnh đã xóa mờ gương mặt của Cố Minh Sâm. Lúc này Ôn Vãn mới biết, người phụ nữ trong ảnh là ngôi sao đang rất nổi tiếng. Một lần nữa, Ôn Vãn buộc phải nhìn lại những hình ảnh gai mắt, hình chụp trên báo còn nét hơn trong tin nhắn. Anh cho là tôi làm? Ngại quá, tôi chẳng rỗi hơi đến thế đâu.   Ôn Vãn bị vu oan không hề nao núng, bình tĩnh biện luận cho mình. Cố Minh Sâm phì cười, ấn một tay lên kệ tủ phía sau:   Mẹ kiếp, định chơi trò bịp với tôi hả? Tay anh ta giật lại tờ tạp chí, giở đến trang “mấu chốt”, rồi dí sát mặt cô:   Không phải cô làm? Trừ cô ra, ai dám đối nghịch với tôi. Loại tin tức này, cho bọn nhà báo thêm một trăm lá gan, bọn chúng cũng không dám tùy tiện đăng. Ôn Vãn thản nhiên ngắm nhìn người đàn ông đang bộc phát lửa giận. Cô và Cố Minh Sâm quen biết 12 năm. Năm 16 tuổi, cô tới Cố gia, bắt đầu đoạn nghiệt duyên với Cố Minh Sâm – một người đàn ông lạnh lùng, luôn đặt bản thân trên mọi thứ. Cố Minh Sâm không thích cô, hình như từ lần gặp đầu tiên, anh ta đã ghét bỏ cô . Cố Minh Sâm chê bai cô, bảo cô là con bé quê mùa xuất thân từ nông thôn nghèo hèn, vừa cục mịch vừa không có giáo dục. Mười hai năm trôi qua, cô bé quê mùa năm nào đã hoàn toàn lột xác, nhưng trong mắt Cố Minh sâm, cô vẫn như buổi đầu gặp gỡ, chỉ là, lòng dạ đa đoan, quỷ kế hơn. Ôn Vãn học theo điệu cười khinh miệt của anh ta, ra vẻ “anh sao tôi vậy”, khí thế trên người không hề thấp kém hơn anh ta:   Não anh càng ngày càng teo nhở, thủ đoạn cấp thấp như vậy mà cũng nghĩ tới được. Lời này trực tiếp vạch trần sự ngu muội của anh ta, vừa nãy Cố Minh Sâm để lửa giận che mờ lí trí, giờ đã tỉnh táo nên có thể nhận định rõ hơn. Tuy nhiên, sự tự ái của đàn ông không cho phép anh ta cúi đầu, vẫn theo thói quen lạnh nhạt, bắt bẻ Ôn Vãn. Anh ta khom người, giọng đệu lạnh lẽo xuất ra hơi lạnh như băng:   Không ngờ Cố gia nuôi nhầm một con sói đội lốt cừu, đáng tiếc, đến giờ mẹ tôi vẫn chưa nhìn rõ bộ mặt thật của cô. Muốn ly hôn à? Tôi đồng ý với cô.Anh ta nói rõ ràng dứt khoát, động tác lại cực kì thô bạo, dứt lời liền hung hăng đẩy cô ra. Lưng Ôn Vãn va mạnh vào mặt bàn lạnh lẽo, bả vai đụng phải vòi nước inox, đau điếng người. Cố Minh Sâm không thèm nhìn cô, lấy tay sửa sang lại vạt áo hơi nhăn nhúm:   Đừng quên những thứ cô đã cướp mất của tôi. Những gì cô nợ tôi, bây giờ nên tính toán cả vốn lẫn lời, hoàn trả cho chính chủ nhỉ? Anh ta nói đến phần sau, ngữ điệu bất chợt nhẹ nhàng trầm bổng:   Lúc trước là cô đồng ý kết hôn, hiện tại cũng là cô đòi ly hôn. Chuyện hôn nhân của Cố Minh Sâm tôi, trong mắt cô, chẳng đáng giá một xu. Tôi muốn đòi lại những gì mình nên có, sau này cô đừng trách tôi quá ác. Vóc dáng của Cố Minh Sâm cao lớn, thân hình cao 1,88 mét đứng ngược chiều ánh sáng, tạo thành bóng đen tăm tối, phủ kín Ôn Vãn. Ôn Vãn rùng mình, luồn khí lạnh lẽo lan tràn khắp đáy lòng:   Có ý gì? Ôn Vãn rùng mình, luồn khí lạnh lẽo lan tràn khắp đáy lòng:   Có ý gì? Cố Minh Sâm chậm rãi xoay người, khóe miệng nhếch thành ý cười bạc bẽo:   Cô thiếu tôi cái gì, chính cô biết rõ nhất. Sau khi ly hôn, cô đừng hòng mơ tưởng, bà cụ sẽ tiếp tục che chở cho cô. Ôn Vãn mím chặt môi, nụ cười của Cố Minh Sâm càng lúc càng ác liệt:   Kỳ thật ngẫm lại, chuyện ly hôn cũng thú vị lắm. Tôi rất muốn chứng kiến loại phụ nữ ham hư vinh, một lòng muốn bò lên cao như cô, sau này không còn Cố gia làm chỗ dựa, sẽ vẫy vùng, biến thành cái dạng gì. Cố Minh Sâm tàn nhẫn ném cho cô cái lườm sắc bén. Ánh mắt của anh ta quá phức tạp, Ôn Vãn không thể nhìn thấu, chỉ biết sự đụng chạm ở sau lưng, càng lúc càng đau đớn. Cô biết Cố Minh Sâm hận cô, nhưng không ngờ nỗi hận của anh ta đã biến đổi, vặn vẹo đến độ này. Thật ra cũng dễ hiểu, không ai có thể lưu tình với kẻ giết người cả! Buổi tối, Chu Nhĩ Lam nhất định không thả người, kiên quyết bắt hai người phải ở lại qua đêm. Ý tứ quá rõ rệt, thậm chí người làm đã chuẩn bị đủ chăn mềm cho đôi uyên ương trải qua một đêm xuân. Ôn Vãn đứng trước cái giường rộng lớn, sững sờ nhìn chiếc đệm đỏ thẫm. Cô như trở về hiện trường của đêm tân hôn hai năm trước, lúc đấy, Chu Nhĩ Lam cũng thay cô chuẩn bị mọi thứ chu đáo, bà luôn nhiệt tình đối xử tốt với cô. Đáng tiếc, có làm gì cũng không thể vực dậy những thứ đã héo rũ. Ôn Vãn khó xử nhìn Chu Nhĩ Lam:   Mẹ, con ——  Đừng nói gì cả, mẹ biết nỗi ấm ức mà con phải chịu.   Chu Nhĩ Lam nắm tay cô, nói lời thấm thía,   Lần này là Minh Sâm không đúng, mẹ đã dạy dỗ nó rồi. Đàn ông đều như thế,thỉnh thoảng ra ngoài gặp dịp thì chơi, nhưng họ vẫn biết đâu là nhà . Ôn Vãn ngắm nhìn mu bàn tay đang phủ trên tay mình, những đường gân xanh nổi đầy, các khe rãnh lỗi lõm chính là vết tích của năm tháng qua đi. Nói cho cùng, bà vẫn là một người mẹ, luôn ưu tiên dành sự yêu thương cho đứa con ruột của mình, cô không nên ký thác nhiều hi vọng vào bà. Không có người mẹ nào dễ dàng thừa nhận khuyết điểm của con trai trong đời sống hôn nhân, cũng không có bà mẹ chồng nào, thật tâm xem con dâu như chính con gái ruột do mình sinh ra. Nhất thời, Ôn Vãn không biết đối đáp ra sao, hơn nữa, phải nói như thế nào về chuyện ly hôn của hai người. Cô cảm thấy kì quái, vì sao Cố Minh Sâm vẫn chưa nói cho bà biết, chẳng lẽ anh ta định đùn đẩy trách nhiệm cho cô? Chu Nhĩ Lam thấy hai vợ chồng đều im lặng, cho rằng hai đứa con đã hiểu chuyện, vui vẻ hòa thuận với nhau. Trong lòng bà nhất thời vui như hoa nở, xoay người ra ngoài, trước khi đi còn nháy mắt với con trai:   Hai đứa nghỉ ngơi sớm đi   Ôn Vãn tức giận, trừng mắt với Cố Minh Sâm. Cố Minh Sâm lại phô ra bộ dạng: chả có việc gì liên quan đến ông, thoải mái cởi áo sơ mi, chuẩn bị đi tắm. Hai mắt Ôn Vãn trợn trắng, bật tiếng gọi:Mẹ. ",
                             STT = 2,
                             Title = "Khổ luyện"
                         },
@@ -210,7 +210,7 @@ namespace ComicAPI.Migrations
                             ComicID = 2,
                             Content = "Đã hơn một năm, Cố Minh Sâm cho Ôn Vãn “ăn quả lơ”, không hề nói chuyện cùng cô, hôn nhân của bọn họ luôn ngầm tồn tại sự giằng co, cưỡng chế lẫn nhau. Vì thế, hiện tại anh ta chủ động mở miệng, khiến Ôn Vãn ngơ ngác. Cô còn chưa kịp suy nghĩ cẩn thận về câu hỏi của anh ta, trước mặt đã bị một thứ đập vào. Cố Minh Sâm quẳng tờ tạp chí vào mặt cô. Người đàn ông đang trong cơn thịnh nộ, không kiểm soát được lực đạo của mình. Vì sự tấn công đột ngột của anh ta, sườn mặt của Ôn Vãn đau rát, bắt đầu ửng đỏ, nhưng khuôn mặt llại không chút cảm xúc. Cô bình tĩnh đặt ly thủy tinh trong tay xuống, khom người, cầm tờ tạp chí lên xem. Nội dung bài báo tương đồng với tin nhắn cô nhận được, có điều, tấm ảnh đã xóa mờ gương mặt của Cố Minh Sâm. Lúc này Ôn Vãn mới biết, người phụ nữ trong ảnh là ngôi sao đang rất nổi tiếng. Một lần nữa, Ôn Vãn buộc phải nhìn lại những hình ảnh gai mắt, hình chụp trên báo còn nét hơn trong tin nhắn. Anh cho là tôi làm? Ngại quá, tôi chẳng rỗi hơi đến thế đâu.   Ôn Vãn bị vu oan không hề nao núng, bình tĩnh biện luận cho mình. Cố Minh Sâm phì cười, ấn một tay lên kệ tủ phía sau:   Mẹ kiếp, định chơi trò bịp với tôi hả? Tay anh ta giật lại tờ tạp chí, giở đến trang “mấu chốt”, rồi dí sát mặt cô:   Không phải cô làm? Trừ cô ra, ai dám đối nghịch với tôi. Loại tin tức này, cho bọn nhà báo thêm một trăm lá gan, bọn chúng cũng không dám tùy tiện đăng. Ôn Vãn thản nhiên ngắm nhìn người đàn ông đang bộc phát lửa giận. Cô và Cố Minh Sâm quen biết 12 năm. Năm 16 tuổi, cô tới Cố gia, bắt đầu đoạn nghiệt duyên với Cố Minh Sâm – một người đàn ông lạnh lùng, luôn đặt bản thân trên mọi thứ. Cố Minh Sâm không thích cô, hình như từ lần gặp đầu tiên, anh ta đã ghét bỏ cô . Cố Minh Sâm chê bai cô, bảo cô là con bé quê mùa xuất thân từ nông thôn nghèo hèn, vừa cục mịch vừa không có giáo dục. Mười hai năm trôi qua, cô bé quê mùa năm nào đã hoàn toàn lột xác, nhưng trong mắt Cố Minh sâm, cô vẫn như buổi đầu gặp gỡ, chỉ là, lòng dạ đa đoan, quỷ kế hơn. Ôn Vãn học theo điệu cười khinh miệt của anh ta, ra vẻ “anh sao tôi vậy”, khí thế trên người không hề thấp kém hơn anh ta:   Não anh càng ngày càng teo nhở, thủ đoạn cấp thấp như vậy mà cũng nghĩ tới được. Lời này trực tiếp vạch trần sự ngu muội của anh ta, vừa nãy Cố Minh Sâm để lửa giận che mờ lí trí, giờ đã tỉnh táo nên có thể nhận định rõ hơn. Tuy nhiên, sự tự ái của đàn ông không cho phép anh ta cúi đầu, vẫn theo thói quen lạnh nhạt, bắt bẻ Ôn Vãn. Anh ta khom người, giọng đệu lạnh lẽo xuất ra hơi lạnh như băng:   Không ngờ Cố gia nuôi nhầm một con sói đội lốt cừu, đáng tiếc, đến giờ mẹ tôi vẫn chưa nhìn rõ bộ mặt thật của cô. Muốn ly hôn à? Tôi đồng ý với cô.Anh ta nói rõ ràng dứt khoát, động tác lại cực kì thô bạo, dứt lời liền hung hăng đẩy cô ra. Lưng Ôn Vãn va mạnh vào mặt bàn lạnh lẽo, bả vai đụng phải vòi nước inox, đau điếng người. Cố Minh Sâm không thèm nhìn cô, lấy tay sửa sang lại vạt áo hơi nhăn nhúm:   Đừng quên những thứ cô đã cướp mất của tôi. Những gì cô nợ tôi, bây giờ nên tính toán cả vốn lẫn lời, hoàn trả cho chính chủ nhỉ? Anh ta nói đến phần sau, ngữ điệu bất chợt nhẹ nhàng trầm bổng:   Lúc trước là cô đồng ý kết hôn, hiện tại cũng là cô đòi ly hôn. Chuyện hôn nhân của Cố Minh Sâm tôi, trong mắt cô, chẳng đáng giá một xu. Tôi muốn đòi lại những gì mình nên có, sau này cô đừng trách tôi quá ác. Vóc dáng của Cố Minh Sâm cao lớn, thân hình cao 1,88 mét đứng ngược chiều ánh sáng, tạo thành bóng đen tăm tối, phủ kín Ôn Vãn. Ôn Vãn rùng mình, luồn khí lạnh lẽo lan tràn khắp đáy lòng:   Có ý gì? Ôn Vãn rùng mình, luồn khí lạnh lẽo lan tràn khắp đáy lòng:   Có ý gì? Cố Minh Sâm chậm rãi xoay người, khóe miệng nhếch thành ý cười bạc bẽo:   Cô thiếu tôi cái gì, chính cô biết rõ nhất. Sau khi ly hôn, cô đừng hòng mơ tưởng, bà cụ sẽ tiếp tục che chở cho cô. Ôn Vãn mím chặt môi, nụ cười của Cố Minh Sâm càng lúc càng ác liệt:   Kỳ thật ngẫm lại, chuyện ly hôn cũng thú vị lắm. Tôi rất muốn chứng kiến loại phụ nữ ham hư vinh, một lòng muốn bò lên cao như cô, sau này không còn Cố gia làm chỗ dựa, sẽ vẫy vùng, biến thành cái dạng gì. Cố Minh Sâm tàn nhẫn ném cho cô cái lườm sắc bén. Ánh mắt của anh ta quá phức tạp, Ôn Vãn không thể nhìn thấu, chỉ biết sự đụng chạm ở sau lưng, càng lúc càng đau đớn. Cô biết Cố Minh Sâm hận cô, nhưng không ngờ nỗi hận của anh ta đã biến đổi, vặn vẹo đến độ này. Thật ra cũng dễ hiểu, không ai có thể lưu tình với kẻ giết người cả! Buổi tối, Chu Nhĩ Lam nhất định không thả người, kiên quyết bắt hai người phải ở lại qua đêm. Ý tứ quá rõ rệt, thậm chí người làm đã chuẩn bị đủ chăn mềm cho đôi uyên ương trải qua một đêm xuân. Ôn Vãn đứng trước cái giường rộng lớn, sững sờ nhìn chiếc đệm đỏ thẫm. Cô như trở về hiện trường của đêm tân hôn hai năm trước, lúc đấy, Chu Nhĩ Lam cũng thay cô chuẩn bị mọi thứ chu đáo, bà luôn nhiệt tình đối xử tốt với cô. Đáng tiếc, có làm gì cũng không thể vực dậy những thứ đã héo rũ. Ôn Vãn khó xử nhìn Chu Nhĩ Lam:   Mẹ, con ——  Đừng nói gì cả, mẹ biết nỗi ấm ức mà con phải chịu.   Chu Nhĩ Lam nắm tay cô, nói lời thấm thía,   Lần này là Minh Sâm không đúng, mẹ đã dạy dỗ nó rồi. Đàn ông đều như thế,thỉnh thoảng ra ngoài gặp dịp thì chơi, nhưng họ vẫn biết đâu là nhà . Ôn Vãn ngắm nhìn mu bàn tay đang phủ trên tay mình, những đường gân xanh nổi đầy, các khe rãnh lỗi lõm chính là vết tích của năm tháng qua đi. Nói cho cùng, bà vẫn là một người mẹ, luôn ưu tiên dành sự yêu thương cho đứa con ruột của mình, cô không nên ký thác nhiều hi vọng vào bà. Không có người mẹ nào dễ dàng thừa nhận khuyết điểm của con trai trong đời sống hôn nhân, cũng không có bà mẹ chồng nào, thật tâm xem con dâu như chính con gái ruột do mình sinh ra. Nhất thời, Ôn Vãn không biết đối đáp ra sao, hơn nữa, phải nói như thế nào về chuyện ly hôn của hai người. Cô cảm thấy kì quái, vì sao Cố Minh Sâm vẫn chưa nói cho bà biết, chẳng lẽ anh ta định đùn đẩy trách nhiệm cho cô? Chu Nhĩ Lam thấy hai vợ chồng đều im lặng, cho rằng hai đứa con đã hiểu chuyện, vui vẻ hòa thuận với nhau. Trong lòng bà nhất thời vui như hoa nở, xoay người ra ngoài, trước khi đi còn nháy mắt với con trai:   Hai đứa nghỉ ngơi sớm đi   Ôn Vãn tức giận, trừng mắt với Cố Minh Sâm. Cố Minh Sâm lại phô ra bộ dạng: chả có việc gì liên quan đến ông, thoải mái cởi áo sơ mi, chuẩn bị đi tắm. Hai mắt Ôn Vãn trợn trắng, bật tiếng gọi:Mẹ. ",
                             STT = 3,
-                            Title = "Nói chuyện"
+                            Title = "Ánh mắt này?"
                         },
                         new
                         {
@@ -384,7 +384,7 @@ namespace ComicAPI.Migrations
                             Likes = 23,
                             Name = "Công Cuộc Bị 999 Em Gái Chinh Phục",
                             Status = 0,
-                            Update_time = new DateTime(2019, 12, 15, 20, 17, 28, 432, DateTimeKind.Local).AddTicks(6700),
+                            Update_time = new DateTime(2019, 12, 15, 22, 49, 8, 874, DateTimeKind.Local).AddTicks(2407),
                             Views = 100
                         },
                         new
@@ -398,7 +398,7 @@ namespace ComicAPI.Migrations
                             Likes = 44,
                             Name = "Câu Chuyện Hồ Đồ",
                             Status = 0,
-                            Update_time = new DateTime(2019, 12, 15, 20, 17, 28, 433, DateTimeKind.Local).AddTicks(4274),
+                            Update_time = new DateTime(2019, 12, 15, 22, 49, 8, 875, DateTimeKind.Local).AddTicks(2410),
                             Views = 100
                         },
                         new
@@ -412,7 +412,7 @@ namespace ComicAPI.Migrations
                             Likes = 11,
                             Name = "Truyền Nhân Trừ Ma",
                             Status = 1,
-                            Update_time = new DateTime(2019, 12, 15, 20, 17, 28, 433, DateTimeKind.Local).AddTicks(4292),
+                            Update_time = new DateTime(2019, 12, 15, 22, 49, 8, 875, DateTimeKind.Local).AddTicks(2432),
                             Views = 100
                         },
                         new
@@ -426,7 +426,7 @@ namespace ComicAPI.Migrations
                             Likes = 11,
                             Name = "Yêu Sâu Nặng",
                             Status = 0,
-                            Update_time = new DateTime(2019, 12, 15, 20, 17, 28, 433, DateTimeKind.Local).AddTicks(4350),
+                            Update_time = new DateTime(2019, 12, 15, 22, 49, 8, 875, DateTimeKind.Local).AddTicks(2435),
                             Views = 100
                         },
                         new
@@ -440,7 +440,7 @@ namespace ComicAPI.Migrations
                             Likes = 30,
                             Name = "Thiên Đạo Đồ Thư Quán",
                             Status = 0,
-                            Update_time = new DateTime(2019, 12, 15, 20, 17, 28, 433, DateTimeKind.Local).AddTicks(4352),
+                            Update_time = new DateTime(2019, 12, 15, 22, 49, 8, 875, DateTimeKind.Local).AddTicks(2437),
                             Views = 100
                         },
                         new
@@ -454,7 +454,7 @@ namespace ComicAPI.Migrations
                             Likes = 45,
                             Name = "Tất Cả Bạn Gái Của Tôi Đều Là Lệ Quỷ",
                             Status = 0,
-                            Update_time = new DateTime(2019, 12, 15, 20, 17, 28, 433, DateTimeKind.Local).AddTicks(4354),
+                            Update_time = new DateTime(2019, 12, 15, 22, 49, 8, 875, DateTimeKind.Local).AddTicks(2439),
                             Views = 100
                         },
                         new
@@ -468,7 +468,7 @@ namespace ComicAPI.Migrations
                             Likes = 15,
                             Name = "Bệnh Chiếm Hữu",
                             Status = 0,
-                            Update_time = new DateTime(2019, 12, 15, 20, 17, 28, 433, DateTimeKind.Local).AddTicks(4356),
+                            Update_time = new DateTime(2019, 12, 15, 22, 49, 8, 875, DateTimeKind.Local).AddTicks(2442),
                             Views = 100
                         },
                         new
@@ -482,7 +482,7 @@ namespace ComicAPI.Migrations
                             Likes = 45,
                             Name = "Cả Đời Chỉ Yêu Em",
                             Status = 0,
-                            Update_time = new DateTime(2019, 12, 15, 20, 17, 28, 433, DateTimeKind.Local).AddTicks(4358),
+                            Update_time = new DateTime(2019, 12, 15, 22, 49, 8, 875, DateTimeKind.Local).AddTicks(2444),
                             Views = 100
                         },
                         new
@@ -496,7 +496,7 @@ namespace ComicAPI.Migrations
                             Likes = 20,
                             Name = "Xin Hãy Ôm Em",
                             Status = 0,
-                            Update_time = new DateTime(2019, 12, 15, 20, 17, 28, 433, DateTimeKind.Local).AddTicks(4361),
+                            Update_time = new DateTime(2019, 12, 15, 22, 49, 8, 875, DateTimeKind.Local).AddTicks(2447),
                             Views = 100
                         },
                         new
@@ -510,7 +510,7 @@ namespace ComicAPI.Migrations
                             Likes = 12,
                             Name = "Sư Huynh, Rất Vô Lương",
                             Status = 1,
-                            Update_time = new DateTime(2019, 12, 15, 20, 17, 28, 433, DateTimeKind.Local).AddTicks(4362),
+                            Update_time = new DateTime(2019, 12, 15, 22, 49, 8, 875, DateTimeKind.Local).AddTicks(2450),
                             Views = 100
                         },
                         new
@@ -524,7 +524,7 @@ namespace ComicAPI.Migrations
                             Likes = 5,
                             Name = "Điều Mặc Sư",
                             Status = 0,
-                            Update_time = new DateTime(2019, 12, 15, 20, 17, 28, 433, DateTimeKind.Local).AddTicks(4364),
+                            Update_time = new DateTime(2019, 12, 15, 22, 49, 8, 875, DateTimeKind.Local).AddTicks(2452),
                             Views = 100
                         },
                         new
@@ -538,7 +538,7 @@ namespace ComicAPI.Migrations
                             Likes = 4,
                             Name = "Hồ Ly Muốn Làm Người Mẫu",
                             Status = 0,
-                            Update_time = new DateTime(2019, 12, 15, 20, 17, 28, 433, DateTimeKind.Local).AddTicks(4366),
+                            Update_time = new DateTime(2019, 12, 15, 22, 49, 8, 875, DateTimeKind.Local).AddTicks(2454),
                             Views = 100
                         },
                         new
@@ -552,7 +552,7 @@ namespace ComicAPI.Migrations
                             Likes = 10,
                             Name = "Siêu Thần Yêu Nghiệt",
                             Status = 1,
-                            Update_time = new DateTime(2019, 12, 15, 20, 17, 28, 433, DateTimeKind.Local).AddTicks(4368),
+                            Update_time = new DateTime(2019, 12, 15, 22, 49, 8, 875, DateTimeKind.Local).AddTicks(2455),
                             Views = 78
                         },
                         new
@@ -566,7 +566,7 @@ namespace ComicAPI.Migrations
                             Likes = 10,
                             Name = "Tam Sinh Tam Thế Bộ Sinh Liên",
                             Status = 1,
-                            Update_time = new DateTime(2019, 12, 15, 20, 17, 28, 433, DateTimeKind.Local).AddTicks(4370),
+                            Update_time = new DateTime(2019, 12, 15, 22, 49, 8, 875, DateTimeKind.Local).AddTicks(2457),
                             Views = 101
                         },
                         new
@@ -580,7 +580,7 @@ namespace ComicAPI.Migrations
                             Likes = 7,
                             Name = "Tân Thần Chi Chiến",
                             Status = 1,
-                            Update_time = new DateTime(2019, 12, 15, 20, 17, 28, 433, DateTimeKind.Local).AddTicks(4372),
+                            Update_time = new DateTime(2019, 12, 15, 22, 49, 8, 875, DateTimeKind.Local).AddTicks(2460),
                             Views = 100
                         },
                         new
@@ -594,7 +594,7 @@ namespace ComicAPI.Migrations
                             Likes = 7,
                             Name = "Mạt Thế Chi Cô Thành",
                             Status = 1,
-                            Update_time = new DateTime(2019, 12, 15, 20, 17, 28, 433, DateTimeKind.Local).AddTicks(4374),
+                            Update_time = new DateTime(2019, 12, 15, 22, 49, 8, 875, DateTimeKind.Local).AddTicks(2462),
                             Views = 100
                         },
                         new
@@ -608,7 +608,7 @@ namespace ComicAPI.Migrations
                             Likes = 40,
                             Name = "Gió Nổi Lên Khi Nhớ Anh",
                             Status = 1,
-                            Update_time = new DateTime(2019, 12, 15, 20, 17, 28, 433, DateTimeKind.Local).AddTicks(4376),
+                            Update_time = new DateTime(2019, 12, 15, 22, 49, 8, 875, DateTimeKind.Local).AddTicks(2464),
                             Views = 100
                         },
                         new
@@ -622,7 +622,7 @@ namespace ComicAPI.Migrations
                             Likes = 27,
                             Name = "Diễn Trò",
                             Status = 1,
-                            Update_time = new DateTime(2019, 12, 15, 20, 17, 28, 433, DateTimeKind.Local).AddTicks(4378),
+                            Update_time = new DateTime(2019, 12, 15, 22, 49, 8, 875, DateTimeKind.Local).AddTicks(2467),
                             Views = 111
                         },
                         new
@@ -636,7 +636,7 @@ namespace ComicAPI.Migrations
                             Likes = 12,
                             Name = "Ngày Nắng Chói Chang",
                             Status = 0,
-                            Update_time = new DateTime(2019, 12, 15, 20, 17, 28, 433, DateTimeKind.Local).AddTicks(4380),
+                            Update_time = new DateTime(2019, 12, 15, 22, 49, 8, 875, DateTimeKind.Local).AddTicks(2469),
                             Views = 111
                         },
                         new
@@ -650,7 +650,7 @@ namespace ComicAPI.Migrations
                             Likes = 17,
                             Name = "Một Thoáng Mộng Mơ",
                             Status = 0,
-                            Update_time = new DateTime(2019, 12, 15, 20, 17, 28, 433, DateTimeKind.Local).AddTicks(4382),
+                            Update_time = new DateTime(2019, 12, 15, 22, 49, 8, 875, DateTimeKind.Local).AddTicks(2471),
                             Views = 111
                         },
                         new
@@ -664,7 +664,7 @@ namespace ComicAPI.Migrations
                             Likes = 33,
                             Name = "Nghịch Tỷ Lệ Hệ Thống",
                             Status = 1,
-                            Update_time = new DateTime(2019, 12, 15, 20, 17, 28, 433, DateTimeKind.Local).AddTicks(4384),
+                            Update_time = new DateTime(2019, 12, 15, 22, 49, 8, 875, DateTimeKind.Local).AddTicks(2473),
                             Views = 123
                         },
                         new
@@ -678,7 +678,7 @@ namespace ComicAPI.Migrations
                             Likes = 26,
                             Name = "Khi Bác Sĩ Mở Hack",
                             Status = 1,
-                            Update_time = new DateTime(2019, 12, 15, 20, 17, 28, 433, DateTimeKind.Local).AddTicks(4385),
+                            Update_time = new DateTime(2019, 12, 15, 22, 49, 8, 875, DateTimeKind.Local).AddTicks(2476),
                             Views = 88
                         },
                         new
@@ -692,7 +692,7 @@ namespace ComicAPI.Migrations
                             Likes = 20,
                             Name = "Đằng Ấy, Làm Bạn Nhé?",
                             Status = 1,
-                            Update_time = new DateTime(2019, 12, 15, 20, 17, 28, 433, DateTimeKind.Local).AddTicks(4387),
+                            Update_time = new DateTime(2019, 12, 15, 22, 49, 8, 875, DateTimeKind.Local).AddTicks(2478),
                             Views = 143
                         },
                         new
@@ -706,7 +706,7 @@ namespace ComicAPI.Migrations
                             Likes = 36,
                             Name = "Tiên Đạo Bất Chính",
                             Status = 1,
-                            Update_time = new DateTime(2019, 12, 15, 20, 17, 28, 433, DateTimeKind.Local).AddTicks(4390),
+                            Update_time = new DateTime(2019, 12, 15, 22, 49, 8, 875, DateTimeKind.Local).AddTicks(2481),
                             Views = 167
                         });
                 });
@@ -751,7 +751,7 @@ namespace ComicAPI.Migrations
                         {
                             ID = 1,
                             ComicID = 11,
-                            CommentTime = new DateTime(2019, 12, 15, 20, 17, 28, 433, DateTimeKind.Local).AddTicks(5825),
+                            CommentTime = new DateTime(2019, 12, 15, 22, 49, 8, 875, DateTimeKind.Local).AddTicks(4580),
                             Content = "Truyện này hay lắm dịch giả cố lên nha",
                             UserID = 1
                         },
@@ -759,7 +759,7 @@ namespace ComicAPI.Migrations
                         {
                             ID = 2,
                             ComicID = 10,
-                            CommentTime = new DateTime(2019, 12, 15, 20, 17, 28, 434, DateTimeKind.Local).AddTicks(1814),
+                            CommentTime = new DateTime(2019, 12, 15, 22, 49, 8, 876, DateTimeKind.Local).AddTicks(3868),
                             Content = "Giữ tiến độ nha",
                             UserID = 2
                         },
@@ -767,7 +767,7 @@ namespace ComicAPI.Migrations
                         {
                             ID = 3,
                             ComicID = 9,
-                            CommentTime = new DateTime(2019, 12, 15, 20, 17, 28, 434, DateTimeKind.Local).AddTicks(3284),
+                            CommentTime = new DateTime(2019, 12, 15, 22, 49, 8, 876, DateTimeKind.Local).AddTicks(6417),
                             Content = "Không ai dịch tiếp hả ?",
                             UserID = 3
                         },
@@ -775,7 +775,7 @@ namespace ComicAPI.Migrations
                         {
                             ID = 4,
                             ComicID = 11,
-                            CommentTime = new DateTime(2019, 12, 15, 20, 17, 28, 434, DateTimeKind.Local).AddTicks(4508),
+                            CommentTime = new DateTime(2019, 12, 15, 22, 49, 8, 876, DateTimeKind.Local).AddTicks(8126),
                             Content = "Bạo chương nha các bạn",
                             UserID = 1
                         },
@@ -783,7 +783,7 @@ namespace ComicAPI.Migrations
                         {
                             ID = 5,
                             ComicID = 7,
-                            CommentTime = new DateTime(2019, 12, 15, 20, 17, 28, 434, DateTimeKind.Local).AddTicks(5304),
+                            CommentTime = new DateTime(2019, 12, 15, 22, 49, 8, 876, DateTimeKind.Local).AddTicks(9718),
                             Content = "đọc đến chương 73-74 thấy tội anh Cố Yến Trinh mặc dù cùng họ với anh Cố Gia Minh nhưng die oan vãi chỉ định hù dọa anh Nghị ai ngờ họa sát thân",
                             UserID = 2
                         },
@@ -791,7 +791,7 @@ namespace ComicAPI.Migrations
                         {
                             ID = 6,
                             ComicID = 11,
-                            CommentTime = new DateTime(2019, 12, 15, 20, 17, 28, 434, DateTimeKind.Local).AddTicks(6153),
+                            CommentTime = new DateTime(2019, 12, 15, 22, 49, 8, 877, DateTimeKind.Local).AddTicks(1515),
                             Content = "dịch rồi mà k ai convert hết @@ truyện hay mà",
                             UserID = 3
                         },
@@ -799,7 +799,7 @@ namespace ComicAPI.Migrations
                         {
                             ID = 7,
                             ComicID = 5,
-                            CommentTime = new DateTime(2019, 12, 15, 20, 17, 28, 434, DateTimeKind.Local).AddTicks(7057),
+                            CommentTime = new DateTime(2019, 12, 15, 22, 49, 8, 877, DateTimeKind.Local).AddTicks(3144),
                             Content = "truyện quá đẳng cấp :) nếu so với mấy thứ yy tự kỷ cứ như là Iphone với Bphone",
                             UserID = 3
                         });
@@ -958,7 +958,7 @@ namespace ComicAPI.Migrations
                         {
                             ID = 1,
                             PostContent = "Mn tim giup minh cuon truyen",
-                            PostTime = new DateTime(2019, 12, 15, 20, 17, 28, 434, DateTimeKind.Local).AddTicks(9447),
+                            PostTime = new DateTime(2019, 12, 15, 22, 49, 8, 877, DateTimeKind.Local).AddTicks(7667),
                             Title = "Tìm truyện sắc hiệp",
                             UserID = 1
                         },
@@ -966,7 +966,7 @@ namespace ComicAPI.Migrations
                         {
                             ID = 2,
                             PostContent = "Tác phẩm các đh hay nhất từng đọc tên là gì. (Trong này có vài tác phẩm để đời ai cần ghé qua)",
-                            PostTime = new DateTime(2019, 12, 15, 20, 17, 28, 435, DateTimeKind.Local).AddTicks(90),
+                            PostTime = new DateTime(2019, 12, 15, 22, 49, 8, 877, DateTimeKind.Local).AddTicks(8469),
                             Title = "Help me",
                             UserID = 2
                         },
@@ -974,7 +974,7 @@ namespace ComicAPI.Migrations
                         {
                             ID = 3,
                             PostContent = "Có trường hợp nào hộp thiên giới rỗng ko các đh. Ta nhận đc 1 hộp mà mở ra nó lag. Tải lại thì hộp ko còn mà vật phẩm cũng chẳng có",
-                            PostTime = new DateTime(2019, 12, 15, 20, 17, 28, 435, DateTimeKind.Local).AddTicks(100),
+                            PostTime = new DateTime(2019, 12, 15, 22, 49, 8, 877, DateTimeKind.Local).AddTicks(8482),
                             Title = "Thắc mắc hộp thiên giới",
                             UserID = 3
                         },
@@ -982,7 +982,7 @@ namespace ComicAPI.Migrations
                         {
                             ID = 4,
                             PostContent = "Như trên nha nhiều vợ tí nó ms thú vị ko thì nhạt bỏ mẹ ra các đạo hữu ạ",
-                            PostTime = new DateTime(2019, 12, 15, 20, 17, 28, 435, DateTimeKind.Local).AddTicks(102),
+                            PostTime = new DateTime(2019, 12, 15, 22, 49, 8, 877, DateTimeKind.Local).AddTicks(8483),
                             Title = "Xin truyện main bá đạo. Quyết đoán ( và main có nhìu vợ)",
                             UserID = 4
                         });

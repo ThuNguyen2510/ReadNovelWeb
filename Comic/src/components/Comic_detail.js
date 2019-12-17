@@ -50,7 +50,6 @@ class Comic_detail extends React.Component{
                     like={this.props.comic[i].likes} genreID={this.props.comic[i].genreID}
                     read={this.props.comic[i].views} status={tus} description={this.props.comic[i].description}/>)
             }
-           
             return result;
             
     }

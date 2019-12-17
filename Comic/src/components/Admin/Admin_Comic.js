@@ -37,13 +37,13 @@ class Admin_Comic extends React.Component {
     show() {
         
         return this.props.list.map((a) =>           
-            <tr>
-                <td>
+            <tr className="row w-100">
+                <td className="col-md-3">
                     <img src={a.image} className="mr-2" alt="image" /><br/>
                     <Link onClick={e=> {this.props.fetchOneComic(a.id);}} to={"/Comic/" + a.id + "/Show"}>{a.name}</Link>
                 </td>
-                <td> {this.findGenre(a.genreID)} </td>
-                <td>
+                <td className="col-md-3"> {this.findGenre(a.genreID)} </td>
+                <td className="col-md-3">
                 {a.author}
                 </td>
                 <td className="col-md-3"> 

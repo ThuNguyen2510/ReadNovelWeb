@@ -55,7 +55,7 @@ class Content extends React.Component {
                         </a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link float-md-left" href="pages/charts/chartjs.html">
+                        <a className="nav-link float-md-left" href="/Admin/Forums">
                             <i className="mdi mdi-chart-bar menu-icon" />
                             <span className="menu-title ml-2">Diễn đàn</span>
                         </a>
@@ -77,7 +77,7 @@ class Content extends React.Component {
                     </li>
                     <li className="nav-item sidebar-actions">
                         <span className="nav-link float-md-left">
-                            <a href="/" style={{textDecoration:"none"}}><button className="btn btn-block btn-lg btn-gradient-success mt-4">+ Đăng xuất</button></a>
+                        <a href="/" style={{textDecoration:"none"}}><button onClick={e=> {localStorage.removeItem('logined_user') ;localStorage.removeItem('login')}} className="btn btn-block btn-lg btn-gradient-success mt-4">Đăng xuất</button></a>
                         </span>
                     </li>
                 </ul>
