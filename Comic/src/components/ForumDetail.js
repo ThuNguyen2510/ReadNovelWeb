@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
 import {fetchAPost,addAnswer} from '../actions/PostFAction';
 import {getUserName} from '../actions/LoadUserAction';
+import FroalaEditorView from 'react-froala-wysiwyg';
 export class ForumDetail extends Component {
     constructor(props)
     {
@@ -72,9 +73,10 @@ export class ForumDetail extends Component {
     showAnswer()
     {
         var l=[];
+        var c=[]
         for(var i=0;i<this.props.answers.length;i++)
         {
-           
+           c.push(this.props.answers[i].content)
             l.push(<li className="media">
             <a href="#" className="pull-left">
                 <img src={this.im(this.props.answers[i].userID)} alt="" className="img-circle" />
@@ -84,7 +86,8 @@ export class ForumDetail extends Component {
                     <small className="text-muted">{this.props.answers[i].answerTime}</small>
                 </span>
                 <strong className="text-success">@{this.getun(this.props.answers[i].userID)}</strong>
-                <p>{this.props.answers[i].content}</p>
+                {c}
+
                 <Link className="pull-right ml-2 edit">Sửa</Link>
                 <Link className="pull-right ml-2 edit">Xóa</Link>
             </div>

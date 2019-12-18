@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import './Detail.css';
 import { likeComic } from '../actions/ComicActions';
-import { fetchLike } from '../actions/LikeComicAction';
+import { addLike } from '../actions/LikeComicAction';
 import { getLike } from '../actions/LikeComicAction';
 import { unLike } from '../actions/LikeComicAction';
 import { connect } from 'react-redux';
@@ -22,8 +22,9 @@ class Detail extends React.Component {
 
         // }else{
         if (JSON.parse(localStorage.getItem('logined_user')) != null) {
+           
             var user = JSON.parse(localStorage.getItem('logined_user'))
-            this.props.getLike(user.id, this.props.id_comic)
+            this.props.getLike(user.id)
         }
         
         // }
@@ -36,31 +37,39 @@ class Detail extends React.Component {
         {
             if(id==this.props.genre[i].genreID)
             {
-                return this.props.genre[i].genre_name
-                
+                return this.props.genre[i].genre_name                
             }
         }
     }
-    btnClick() {
+    btnClick(a) {
         if (JSON.parse(localStorage.getItem('logined_user')) === null) {
             alert("vui lòng đăng nhập để tương tác")
         } else {
             var user = JSON.parse(localStorage.getItem('logined_user'))
-
-            if (this.props.liked === false) {
-                this.props.fetchLike(user.id, this.props.id_comic)
-
-            } else {
-
-                this.props.unLike(user.id, this.props.id_comic)
+            if(a==1)
+            for(var i=0;i<this.props.liked.length;i++){
+                if(this.props.id_comic==this.props.liked[i].comicID){
+                   this.props.unLike(this.props.id_comic,user.id,this.props.liked[i].id)
+                   this.checklike()
+                   break
+                }
             }
+            else if(a==0)
+            for(var i=0;i<this.props.liked.length;i++){
+                if(this.props.id_comic!=this.props.liked[i].comicID){
+                    this.props.addLike(user.id,this.props.id_comic)                    
+                    this.checklike()
+                   break
+                }
+            }
+            
         }
 
     }
     daLike() {
         return ( 
         <> 
-            <button className = "liked" onClick = { this.btnClick.bind(this) } >
+            <button className = "liked" onClick = { e=> this.btnClick(1) } >
                 <i className = "fa fa-heart" > </i> 
             </button > 
             <span className = "like" > { this.props.like } </span>
@@ -70,15 +79,26 @@ class Detail extends React.Component {
     chuaLike() {
         return (
         <> 
-            < button className = "but-like" onClick = { this.btnClick.bind(this) } >
+            < button className = "but-like" onClick = {e=> this.btnClick(0) } >
                 <i className = "fa fa-heart" > </i> 
             </button> 
             < span className = "like" > { this.props.like } </span>
         </>
         );
     }
+    checklike(){
+        console.log(this.props.liked.length)
+        for(var i=0;i<this.props.liked.length;i++){
+            if(this.props.id_comic==this.props.liked[i].comicID){
+                return this.daLike();
+            }
+              
+            
+        }
+        return this.chuaLike();
+    }
     render() {
-
+ 
         return ( 
         <>
             <div className = "title" >
@@ -92,7 +112,7 @@ class Detail extends React.Component {
                     <p> Thể loại: < Link to = {"/Search/"+this.props.genreID} className = "author" > { this.genre(this.props.genreID) } </Link> </p >
                     <p> Trạng thái: < span className = "status" > { this.props.status } </span> </p >
                     <p> </p> 
-                    <div className = "view"> { this.props.liked && this.daLike() } {!this.props.liked && this.chuaLike() } 
+                    <div className = "view"> {this.checklike()} 
                         <button className = "but-dt" > < i className = "fa fa-eye" > { this.props.read } </i></button >
                     </div>
 
@@ -119,9 +139,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         likeComic: (id) => dispatch(likeComic(id)),
-        fetchLike: (user_id, comic_id) => dispatch(fetchLike(user_id, comic_id)),
-        getLike: (user_id, comic_id) => dispatch(getLike(user_id, comic_id)),
-        unLike: (id, user_id, comic_id) => dispatch(unLike(id, user_id, comic_id)),
+        addLike: (user_id, comic_id) => dispatch(addLike(user_id, comic_id)),
+        getLike: (uid) => dispatch(getLike(uid)),
+        unLike: (comic_id,user_id,id) => dispatch(unLike(comic_id,user_id,id )),
         fetchgenre:()=> dispatch(fetchGenre())
     };
 }

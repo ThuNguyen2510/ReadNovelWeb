@@ -57,7 +57,26 @@ namespace ComicAPI.Services.UserService
         public List<User> GetUsers()
         {      
             var users= new List<User>();
-            users=_context.Users.ToList();
+            users=_context.Users.Select(u=> new User{
+                ID=u.ID,
+                Username=u.Username,
+                Password=u.Password,
+                Image=u.Image,
+                Email=u.Email,Role=u.Role,
+                Posts=u.Posts.ToList(),
+                Comment=u.Comment.Select(e=> new Comment
+                {
+                    ID = e.ID,
+                   Content= e.Content,CommentTime=e.CommentTime,Comic= new Comic{ID=e.Comic.ID}
+                }).ToList(),
+                Likes=u.Likes.Select(e=> new Like{
+                    ID=e.ID,
+                    check=e.check,
+                    ComicID=e.ComicID,
+                    Comic=e.Comic,
+                }).ToList(),
+                
+            }).ToList();
             return users;
           
         }
@@ -75,7 +94,26 @@ namespace ComicAPI.Services.UserService
 
         public User UserLogin(string Username,string Password)
         {
-            return _context.Users.FirstOrDefault(x=> x.Username==Username && x.Password==Password);
+            return _context.Users.Select(u=> new User{
+                ID=u.ID,
+                Username=u.Username,
+                Password=u.Password,
+                Image=u.Image,
+                Email=u.Email,Role=u.Role,
+                Posts=u.Posts.ToList(),
+                Comment=u.Comment.Select(e=> new Comment
+                {
+                    ID = e.ID,
+                   Content= e.Content,CommentTime=e.CommentTime,Comic= new Comic{ID=e.Comic.ID}
+                }).ToList(),
+                Likes=u.Likes.Select(e=> new Like{
+                    ID=e.ID,
+                    check=e.check,
+                    ComicID=e.ComicID,
+                    Comic=e.Comic,
+                }).ToList(),
+                
+            }).FirstOrDefault(x=> x.Username==Username && x.Password==Password);
           
         }
     }

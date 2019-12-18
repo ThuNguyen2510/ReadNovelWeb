@@ -14,6 +14,11 @@ namespace ComicAPI.Services
             _context=dataContext;
         }
 
+        public List<Like> GetListLike()
+        {
+            return _context.Likes.ToList();
+        }
+
         public void Like(Like like)
         {
             _context.Likes.Add(like);
@@ -29,8 +34,11 @@ namespace ComicAPI.Services
         public void UnLike(int id)
         {
            Like like= _context.Likes.FirstOrDefault(x=> x.ID==id);
+           Comic comic= _context.Comics.FirstOrDefault(x=> x.ID==like.ComicID);
+           comic.Likes--;
            _context.Likes.Remove(like);
            _context.SaveChanges();
         }
+        
     }
 }

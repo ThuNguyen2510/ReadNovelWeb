@@ -7,8 +7,10 @@ import 'froala-editor/js/froala_editor.pkgd.min.js';
 import 'froala-editor/css/froala_style.min.css';
 import 'froala-editor/css/froala_editor.pkgd.min.css';
 import FroalaEditor from 'react-froala-wysiwyg';
+import FroalaEditorView from 'react-froala-wysiwyg';
 import {getUName} from '../actions/LoadUserAction';
 import {addPostF} from '../actions/NewPostForumAction';
+import {fetchPosts} from '../actions/PostFAction';
 import {connect} from 'react-redux';
 import newpost from '../reducers/new_post_reducer';
 export class ForumNPost extends Component {
@@ -21,11 +23,13 @@ export class ForumNPost extends Component {
     handleOnClick(e){
         e.preventDefault();
         let{content,title}=this.state;
+        console.log(this.state)
         var us_=JSON.parse(localStorage.getItem('logined_user'));
         var temp= new Date
         var date=temp.getMonth()+"/"+temp.getDate()+"/"+temp.getFullYear()
         this.props.addPostF(us_.id,title,content,date);
-        this.setState({content:" ",title:" "})
+        this.setState({content:"",title:" "})
+        
         this.props.history.goBack();
        }
     render() {
@@ -53,7 +57,8 @@ export class ForumNPost extends Component {
                                     <p>Tựa đề: </p>
                                     <input className="form-control" type="text" placeholder="Đủ nghĩa - Ngắn gọn - Súc tích" defaultValue={""} onChange={e=> this.setState({title: e.target.value})} value={title} required />
                                     <p>Nội dung bài viết</p>
-                                    <FroalaEditor defaultValue={""} onChange={e=> this.setState({content: e.target.value})} value={content} required></FroalaEditor>
+                                    <textarea className="form-control" placeholder="Nội dung chi tiết nè....." defaultValue={""} onChange={e=> this.setState({content: e.target.value})} value={content} required></textarea>
+                                    {/* <FroalaEditorView  onModelChange={e => {this.setState({ content: e }); console.log(this.state.content)} } model={this.state.content}/> */}
                                     <button className="btn btn-info mt-2" onClick={this.handleOnClick}>Post</button>
                                     <button className="btn btn-dark mt-2 ml-1" onClick={e=>this.props.history.goBack()}>Hủy</button>
                                 </form>
@@ -74,7 +79,8 @@ const mapStateToProps=(state)=>{
 const mapDispatchToProps =(dispatch) =>{
     return {
         getUName: (id)=>dispatch(getUName(id)),
-        addPostF:  (userid,title,content,time)=> dispatch(addPostF(userid,title,content,time))
+        addPostF:  (userid,title,content,time)=> dispatch(addPostF(userid,title,content,time)),
+        fetchPosts: ()=>dispatch(fetchPosts()),
     }
 }
 export default connect(mapStateToProps,mapDispatchToProps) (ForumNPost);

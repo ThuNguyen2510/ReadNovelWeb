@@ -10,5 +10,6 @@ namespace ComicAPI.Services
     {
         void Like(Like like);
         void UnLike(int id);
+        List<Like> GetListLike();
     }
 }

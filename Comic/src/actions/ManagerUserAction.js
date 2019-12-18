@@ -86,6 +86,7 @@ export const getLike = (id) => {
             }
         }).then(
             d => {
+                console.log(d.data.likes)
                 dispatch(getlike(d.data.likes))
             }
         )

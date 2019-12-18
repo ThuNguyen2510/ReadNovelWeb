@@ -21,9 +21,9 @@ namespace ComicAPI.Controllers
             _likeservice=like;
         }
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IEnumerable<Like>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _likeservice.GetListLike();
         }
 
         [HttpGet("{id}")]
