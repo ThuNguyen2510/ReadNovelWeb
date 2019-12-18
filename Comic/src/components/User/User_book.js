@@ -16,10 +16,8 @@ class User_book extends React.Component{
     {
         var user=JSON.parse(localStorage.getItem('logined_user'))
         this.props.getLike(user.id)
-        
     }
     render(){
-        
         console.log(this.props.like.length)  
         console.log(this.props.posts)  
         var likescm= []

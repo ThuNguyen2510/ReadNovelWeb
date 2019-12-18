@@ -20,7 +20,7 @@ export class Colab_Cate extends Component {
                         {value_.genre_name}
                     </td>
                     <td>
-                        <Link to={"/Admin/Show/Category/"+index}><button type="button" className="btn btn-gradient-danger btn-fw">Show</button></Link>
+                        <Link to={"/Admin/Show/Category/"+value_.genreID}><button type="button" className="btn btn-gradient-danger btn-fw">Show</button></Link>
                     </td>
                 </tr>
             </>

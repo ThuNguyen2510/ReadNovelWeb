@@ -15,9 +15,9 @@ class Content extends React.Component {
                 <>
                 <nav className="sidebar sidebar-offcanvas ml-3" id="sidebar">
                 <ul className="nav">
-                    <li className="navbar-brand">
+                    <Link to="/" className="navbar-brand">
                         <h4>TVT</h4>
-                    </li>
+                    </Link>
                     <li className="nav-item nav-profile">
                         <a href="#" className="nav-link">
                             <div className="nav-profile-image">
@@ -91,9 +91,9 @@ class Content extends React.Component {
                 <>
                 <nav className="sidebar sidebar-offcanvas ml-3" id="sidebar">
                 <ul className="nav">
-                    <li className="navbar-brand">
+                <Link to="/" className="navbar-brand">
                         <h4>TVT</h4>
-                    </li>
+                    </Link>
                     <li className="nav-item nav-profile">
                         <a href="#" className="nav-link">
                             <div className="nav-profile-image">

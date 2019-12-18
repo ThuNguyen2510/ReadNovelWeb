@@ -35,6 +35,7 @@ import Colab_Comic from './components/Colaborator/Colab_Comic';
 import Colab_AddChapter from './components/Colaborator/AddChapter';
 import Colab_AddComic from './components/Colaborator/AddComic';
 import AddCategory from './components/Colaborator/AddCategory';
+
 const history = createBrowserHistory()
 class App extends React.Component {
   render(){
@@ -43,7 +44,7 @@ class App extends React.Component {
       <div className="App">      
         <Router history={history}>
           <Switch> 
-          <Route path = '/Admin/Show/Category' component = {Show_Cate}/>
+          <Route path = '/Admin/Show/Category/:id' component = {Show_Cate}/>
           <Route path= '/Error' component ={Error}/>
           <Route path='/Colaborator/categorys' exact component={Colab_Cate}/>
           <Route path='/Colaborator/forums' exact component = {Colab_forum}/>
