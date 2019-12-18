@@ -9,7 +9,6 @@ import index from './components/Admin/index';
 import createBrowserHistory from 'history/createBrowserHistory';
 import Comic_detail from './components/Comic_detail';
 import Admin_Comic from './components/Admin/Admin_Comic';
-import Update_Comic from './components/Admin/Update_Comic';
 import AddComic from './components/Admin/AddComic';
 import Chapter_detail from './components/Chapter_detail';
 import Filter from './components/Filter';
@@ -22,20 +21,21 @@ import User_book from './components/User/User_book';
 import User_forum from './components/User/User_forum';
 import Read from './components/User/ReadBook';
 import AddChapter from './components/Admin/AddChapter';
+import ShowChapter from './components/Admin/ShowChapter';
+import UpdateComic from './components/Admin/UpdateComic';
 import UpdateChapter from './components/Admin/UpdateChapter';
-import ShowChapter from './components/Admin/ShowChapter'
 import ShowComic from './components/Admin/ShowComic';
 import ForumNPost from './components/ForumNPost';
 import Admin_Cate from './components/Admin/Admin_Cate';
 import Admin_forum from './components/Admin/Admin_forum';
+import Show_Cate from './components/Admin/Show_Cate';
 import Colab_Cate from './components/Colaborator/Colab_Cate';
 import Colab_forum from './components/Colaborator/Colab_forum';
 import Colab_Comic from './components/Colaborator/Colab_Comic';
-import Colab_UpChapter from './components/Colaborator/UpdateChapter';
 import Colab_AddChapter from './components/Colaborator/AddChapter';
 import Colab_AddComic from './components/Colaborator/AddComic';
-// import Colab_Update_Comic from './components/Colaborator/Update_Comic';
-import Colab_index from './components/Colaborator/index';
+import AddCategory from './components/Colaborator/AddCategory';
+
 const history = createBrowserHistory()
 class App extends React.Component {
   render(){
@@ -44,12 +44,11 @@ class App extends React.Component {
       <div className="App">      
         <Router history={history}>
           <Switch> 
-          <Route path= '/Colaborator' exact component = {Colab_index}/>
+          <Route path = '/Admin/Show/Category/:id' component = {Show_Cate}/>
+          <Route path= '/Error' component ={Error}/>
           <Route path='/Colaborator/categorys' exact component={Colab_Cate}/>
           <Route path='/Colaborator/forums' exact component = {Colab_forum}/>
           <Route path = '/Colaborator/comics' exact component =  {Colab_Comic}/>
-          {/* <Route path = '/Colaborator/update/comic' exact component = {Colab_Update_Comic}/> */}
-          <Route path =  '/Colaborator/update/chap' exact component = {Colab_UpChapter} />
           <Route path = '/Colaborator/add/comic' exact component = {Colab_AddComic}/>
           <Route path = '/Colaborator/add/chap' exact component = {Colab_AddChapter} />
           <Route path='/Forum-New-Post' exact component={ForumNPost}/>
@@ -66,14 +65,16 @@ class App extends React.Component {
           <Route path='/TruyenHot' exact component={Filter}/>   
           <Route path='/Category' exact component={Filter}/>
           <Route path='/Comic/:index/Chapter/:id' exact component={Chapter_detail}/>   
-          <Route path='/Comic/:index/Chapter/:id/Update' exact component={UpdateChapter}/>  
+     
           <Route path='/Comic/:index/Chapter/:id/Show' exact component={ShowChapter}/> 
+          <Route path='/Comic/:index/Chapter/:id/Edit' exact component={UpdateChapter}/> 
           <Route path='/Comic/:index/Chap' exact component={AddChapter}/> 
-          <Route path='/Admin' exact component={index}/> 
+          <Route path='/Admin' exact component={index}/>
+          <Route path='/Colaborator' exact component={index}/>
           <Route path='/Admin/Comics' exact component={Admin_Comic}/> 
           <Route path='/Comics/Add' exact component={AddComic}/> 
-          <Route path='/Comic/:index/Edit' component={Update_Comic}/> 
           <Route path='/Comic/:index/Show' component={ShowComic}/> 
+          <Route path='/Comic/:index/Update' component={UpdateComic}/> 
           <Route path='/Comic/:index/Delete' component={Admin_Comic}/> 
           {/* <Route path='/Comic/:index/Chap/:id' component={AddChapter}/>  */}
           <Route path="/Comics/trang:index" component={Admin_Comic}/>
@@ -85,6 +86,7 @@ class App extends React.Component {
           <Route path='/User/readbook' exact component={Read}/> 
           <Route path='/Admin/Categorys' exact component={Admin_Cate}/>
           <Route path='/Admin/Forums' exact component={Admin_forum}/>
+          <Route path="/Comics/AddCategory" exact component={AddCategory}/>
           <Route path='/' component={Home} />
           
           </Switch>        

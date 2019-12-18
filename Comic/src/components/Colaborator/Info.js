@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {Link,Route} from 'react-router-dom';
 import {fetchListComic} from '../../actions/ComicActions';
 import {fetchGenres} from '../../actions/GenreAction';
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
+import {fetchPosts} from '../../actions/PostFAction'
 export class Info extends Component {
     constructor(props)
     {
@@ -12,6 +13,7 @@ export class Info extends Component {
     {
         this.props.fetchListComic()
         this.props.fetchGenres()
+        this.props.fetchPosts()
     }
     render() {
         return (
@@ -36,7 +38,7 @@ export class Info extends Component {
                                 <div className="card-body">
                                     <Link className="text-decoration-none" style={{fontSize:"50px", color:"#fff"}} to="/Colaborator/comics"><h4 className="font-weight-normal mb-3">Quản lý truyện <i className="mdi mdi-bookmark-outline mdi-24px float-right" />
                                     </h4>
-                                 <h2 className="mb-5">{this.props.list.length}</h2>
+                                    <h2 className="mb-5">{this.props.list.length}</h2>
                                     <a href="/Colaborator/comics" style={{fontSize:"50px", color:"#fff"}}><i className="mdi mdi-plus-circle-outline large"></i></a>
                                     </Link>
                                 </div>
@@ -56,10 +58,9 @@ export class Info extends Component {
                         <div className="col-md-4 stretch-card grid-margin">
                             <div className="card bg-gradient-primary card-img-holder text-white">
                                 <div className="card-body">
-                                    {/* <img src="assets/images/dashboard/circle.svg" className="card-img-absolute" alt="circle-image" /> */}
                                     <Link className="text-decoration-none" style={{fontSize:"50px", color:"#fff"}} to="/Colaborator/forums"><h4 className="font-weight-normal mb-3">Diễn đàn <i className="mdi mdi-folder mdi-24px float-right" />
                                     </h4>
-                                    <h2 className="mb-5">95,5741</h2>
+                                     <h2 className="mb-5">{this.props.posts.length}</h2>
                                     <a href="/Colaborator/forums" style={{fontSize:"50px", color:"#fff"}}><i className="mdi mdi-plus-circle-outline large"></i></a>
                                     </Link>
                                 </div>
@@ -75,7 +76,8 @@ export class Info extends Component {
 const mapStateToProps = (state) => {
     return {
         list: state.comics,
-        gens:state.genre
+        gens:state.genre,
+        posts:state.lpost
     }
 }
 
@@ -84,7 +86,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch, props) => {
     return {
         fetchListComic: () => {  dispatch(fetchListComic())      },
-        fetchGenres:()=>{dispatch(fetchGenres())}
+        fetchGenres:()=>{dispatch(fetchGenres())},
+        fetchPosts:()=> dispatch(fetchPosts())
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Info);

@@ -1,62 +1,65 @@
 import React from 'react';
-import {Link,Route,Redirect} from 'react-router-dom';
+import {Link,Route} from 'react-router-dom';
 import Nav from './Nav';
-import Content from './Content';
+import Content from '../Colaborator/Content';
 import './Admin_Comic.css';
 import {connect} from 'react-redux';
-import {fetchOneComic} from '../../actions/ComicActions';
-import {updateChapter} from '../../actions/ChapterAction';
-import {fetchChapter} from '../../actions/ChapterAction'
+import {updateChapter,fetchChapters} from '../../actions/ChapterAction';
 class UpdateChapter extends React.Component{
     constructor(props)
     {
         super(props)
+        var chap=JSON.parse(localStorage.getItem('achap'))   
+        var name
+        var content
+        for(var i=0;i<chap.length;i++)
+        {
+            name=chap[i].title
+            content=chap[i].content
+        }  
         this.state={
-            name:JSON.parse(localStorage.getItem('chap')).chapter_name,
-            content:JSON.parse(localStorage.getItem('chap')).content
+            name:name,
+            content:content
         }
         this.Save = this.Save.bind(this);
     }
     componentDidMount()
     {
-        this.props.fetchOneComic(this.props.match.params.index)
-       
-    }
+        
+    }   
     name()
     {
         var name=""
-        for(var i=0;i<this.props.comic.length-1;i++)
+        for(var i=0;i<this.props.comic.length;i++)
         {
-            name=this.props.comic[i].Name
+            name=this.props.comic[i].name
         }
         return name
     }
     Save(e)
     {
-        e.preventDefault();
         let {name,content} = this.state;
         if(window.confirm('Are you sure?'))
         {
-            this.props.UpdateChapter(this.props.match.params.id,this.props.match.params.index,name,content)
+            this.props.UpdateChapter(this.props.match.params.id,name,content)
             alert("Success")
-           // this.props.history.goBack()
-            //this.props.history.push('/Comic/'+this.props.match.params.index+'/Edit')
+            this.props.history.goBack()
+            this.props.fetchChapters(this.props.match.params.index)
+            this.props.history.push('/Comic/'+this.props.match.params.index+'/Show')
         }
 
     }
     show()
     {
         var s=[]       
-        for(var i=0;i<this.props.chap.length;i++)
-        {  
-            let{name,content}=this.state
+        let{name,content}=this.state
+       
             s.push(
                 <div className="row ">
                 <div className="col-md-2">
-                    <Content/>
+                    <Content role={JSON.parse(localStorage.getItem('logined_user')).role}/>
                 </div>
-                <div className="col-md-10">
-                    <Nav/>                    
+                <div className="col-md-10" style={{    marginTop: "50px"}}>                   
                     <div className="row" id="row">
                         <div className="col-md-7 ml-3 order-md-1">
                             <form className="needs-validation">
@@ -88,18 +91,19 @@ class UpdateChapter extends React.Component{
                         <div className="row">
                             <div className="col-md-7"></div>
                             <div className="col-md-5">
-                                <button type="button" onClick={this.Save} class="btn btn-pill btn-warning">Lưu</button>
-                                <button type="button" onClick={e=> this.props.history.push('/Comic/'+this.props.match.params.index+'/Edit')} class="btn btn-square btn-secondary">Cancel</button>
+                                 <Link onClick={e=> this.Save()} type="button" to={"/Comic/"+this.props.match.params.index+"/Chapter/"+this.props.match.params.id+"/Show"} class="btn btn-pill btn-warning">Save</Link>
+                                <Link type="button" to={"/Comic/"+this.props.match.params.index+"/Show"} class="btn btn-square btn-secondary">Cancel</Link>
                             </div>
                         </div>
-                    </div>               
+                    </div>                  
                 </div>  
             )
-        }
+        
         return s;
     }
     render()
     {
+        
         return (
             <>
             {this.show()}
@@ -117,9 +121,9 @@ const mapStateToProps =(state)=>
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchOneComic:(comic_id) => dispatch(fetchOneComic(comic_id)),
-        fetchChapter:(chap_id,com_id) =>dispatch(fetchChapter(chap_id,com_id)),
-        UpdateChapter:(chap_id,comic_id,name,content) => dispatch(updateChapter(chap_id,comic_id,name,content))
+        UpdateChapter:(chap_id,name,content) => dispatch(updateChapter(chap_id,name,content)),
+        fetchChapters: (id) => dispatch(fetchChapters(id)),
+
   };
 }
   export default connect(mapStateToProps, mapDispatchToProps)(UpdateChapter);

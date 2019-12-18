@@ -1,55 +1,29 @@
 import React from 'react';
 import {Link,Route} from 'react-router-dom';
 import Nav from './Nav';
-import Content from './Content';
+import Content from '../Colaborator/Content';
 import './Admin_Comic.css';
 import {connect} from 'react-redux';
-import {fetchOneComic} from '../../actions/ComicActions';
-import {updateChapter} from '../../actions/ChapterAction';
-import {fetchChapter} from '../../actions/ChapterAction'
+import {updateChapter,fetchChapter} from '../../actions/ChapterAction';
 class ShowChapter extends React.Component{
     constructor(props)
     {
         super(props)
-        console.log(this.props)
-        this.state={
-            name:'',
-            content:''
-        }
-        this.Save = this.Save.bind(this);
     }
     componentDidMount()
     {
-        this.props.fetchOneComic(this.props.match.params.index)
-       
-    }
-   
-    name()
-    {
-        var name=""
-        for(var i=0;i<this.props.comic.length-1;i++)
-        {
-            name=this.props.comic[i].Name
-        }
-        return name
-    }
-    Save(e)
-    {
-        e.preventDefault();
-    }
+        this.props.fetchChapter(this.props.match.params.id)
+    }   
     show()
     {
-        var s=[]       
-        for(var i=0;i<this.props.chap.length;i++)
-        {  
-           
-            s.push(
-                <div className="row ">
+           console.log(this.props.comic)
+        var s=this.props.chap.map(a=>{
+         return  <>           
+            <div className="row ">
                 <div className="col-md-2">
-                    <Content/>
+                    <Content role={JSON.parse(localStorage.getItem('logined_user')).role}/>
                 </div>
-                <div className="col-md-10">
-                    <Nav/>                    
+                <div className="col-md-10" style={{    marginTop: "50px"}}>                   
                     <div className="row" id="row">
                         <div className="col-md-7 ml-3 order-md-1">
                             <form className="needs-validation">
@@ -57,21 +31,21 @@ class ShowChapter extends React.Component{
                                     <label for="username">Tên truyện</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend"></div>
-                                    <label type="text" class="form-control" id="username" >{this.name()}</label>
+                                    <label type="text" class="form-control" id="username" >{this.props.comic.map(a=>{return a.name})}</label>
                                     </div>
                                 </div>
                                 <div className="mb-3">
                                     <label for="username">Tên chương</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend"> </div>
-                             <input type="text"  value={this.props.chap[i].chapter_name} class="form-control" id="name" readonly></input>
+                                        <input type="text" value={a.title}class="form-control" id="name" required></input>
                                     </div>
                                 </div>
                             
                                 <div className="mb-3">
                                     <label for="username">Nội dung</label>
                                     <div className="form-group">
-                                        <textarea value={this.props.chap[i].content}  className="form-control" id="exampleFormControlTextarea3" rows="8" readonly></textarea>
+                                        <textarea value={a.content} className="form-control" id="exampleFormControlTextarea3" rows="8"></textarea>
                                     </div>
                                 </div>
                                 
@@ -81,14 +55,15 @@ class ShowChapter extends React.Component{
                         <div className="row">
                             <div className="col-md-7"></div>
                             <div className="col-md-5">
-                                <Link type="button" to={"/Comic/"+this.props.match.params.index+"/Chapter/"+this.props.match.params.id+"/Update"} class="btn btn-pill btn-warning">Edit</Link>
-                                <Link type="button" onClick={e=>this.props.history.goBack()} class="btn btn-square btn-secondary">Cancel</Link>
+                                 <Link type="button" to={"/Comic/"+this.props.match.params.index+"/Chapter/"+this.props.match.params.id+"/Edit"} class="btn btn-pill btn-warning">Edit</Link>
+                                <Link type="button" to={"/Comic/"+this.props.match.params.index+"/Show"} class="btn btn-square btn-secondary">Cancel</Link>
                             </div>
                         </div>
-                    </div>               
+                    </div>                  
                 </div>  
-            )
-        }
+                </>
+        })
+       
         return s;
     }
     render()
@@ -111,9 +86,8 @@ const mapStateToProps =(state)=>
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchOneComic:(comic_id) => dispatch(fetchOneComic(comic_id)),
-        fetchChapter:(chap_id,com_id) =>dispatch(fetchChapter(chap_id,com_id)),
-        UpdateChapter:(chap_id,comic_id,name,content) => dispatch(updateChapter(chap_id,comic_id,name,content))
+        UpdateChapter:(chap_id,name,content) => dispatch(updateChapter(chap_id,name,content)),
+        fetchChapter: (id) => dispatch(fetchChapter(id)),
   };
 }
   export default connect(mapStateToProps, mapDispatchToProps)(ShowChapter);

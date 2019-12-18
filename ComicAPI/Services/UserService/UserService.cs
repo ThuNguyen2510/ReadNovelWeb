@@ -84,9 +84,6 @@ namespace ComicAPI.Services.UserService
         public void UpdateUser(int id, User user)
         {
             var olduser=_context.Users.FirstOrDefault(x=>x.ID==id);
-            olduser.Password=user.Password;
-            olduser.Username=user.Username;
-            olduser.Email=user.Email;
             olduser.Role=user.Role;
             _context.SaveChanges();
           

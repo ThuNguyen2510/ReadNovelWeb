@@ -35,7 +35,9 @@ export const fetchOneComic = (Id) => {
         return axios.get('http://127.0.0.1:3000/comics/' + Id, ).then(
             data => {
                 const c = data.data
+
                 dispatch(returnOneComic(c))
+                localStorage.setItem('acomic', JSON.stringify(c))
             }
         )
     }
@@ -94,20 +96,21 @@ export const likeComic = (comic_id, Number_of_Like) => {
     }
 }
 export const addComic = (name, genre_id, author, chap_number, des, date, img) => {
+
     return dispatch => {
 
 
         return axios.post('http://127.0.0.1:3000/comics/', {
-            'Name': name,
-            'Author': author,
-            'Genre_id': genre_id,
-            'Description': des,
-            'Chapter_number_of': chap_number,
-            'Status': 0,
-            'Number_of_Like': '0',
-            'Number_of_Read': '0',
-            'Post_DateTime': date,
-            'Image': img
+            'name': name,
+            'author': author,
+            'genreID': genre_id,
+            'description': des,
+            'chapter_long': chap_number,
+            'status': 0,
+            'likes': 0,
+            'views': 0,
+            'update_time': date,
+            'image': img
         }).then(
 
             dispatch(addcomic())
@@ -127,28 +130,40 @@ export const deleteComic = (id) => {
     }
 
 }
-export const updateComic = (id, Name, Author, genre_id, des, Image, date, chaps, Status) => {
-    console.log("ACtion")
-    console.log(Status)
+export const updateComic = (id, name, author, genreID, des, Image, date, chaps, Status, likes, views) => {
     return dispatch => {
-        return axios.patch('http://127.0.0.1:3000/comics/' + id, {
-            'Name': Name,
-            'Author': Author,
-            'Genre_id': genre_id,
-            'Image': Image,
-            'Description': des,
-            'Post_DateTime': date,
-            'Chappter_number_of': chaps,
-            'Status': Status
+        return axios.put('http://127.0.0.1:3000/comics/' + id, {
+            'name': name,
+            'author': author[0],
+            'genreID': genreID[0],
+            'image': Image[0],
+            'description': des[0],
+            'update_time': date,
+            'chapter_long': chaps,
+            'status': Status[0]
         }).then(
             (data) => {
+
                 dispatch(updatecomic())
 
             }
-        )
+        ).catch(error => console.log(error))
     }
 
 }
+export const addCategory = (cate) => {
+    return dispatch => {
+        return axios.post('http://127.0.0.1:3000/genres', { genre_name: cate }).then(
+            data => {
+                dispatch(addGenre())
+            }
+        )
+    }
+}
+const addGenre = () => ({
+    type: 'ADD_GENRE',
+
+});
 const returnList = (comics) => ({
     type: 'SHOW_LIST',
     list: comics
