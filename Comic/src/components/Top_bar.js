@@ -105,7 +105,8 @@ class Nav extends React.Component {
     span = 'Logout'
     link = '/'
     i = "fas fa-sign-out-alt"
-    user = <Link to="/Colaborator" id="user">{JSON.parse(localStorage.getItem('logined_user')).username}</Link>
+    user = <Link to={linkto
+    } id="user">{JSON.parse(localStorage.getItem('logined_user')).username}</Link>
     return <>
       {user}
       <Link onClick={this.logoutf} id="login" className="link" to={link}><i id="icon" className={i}></i></Link>
