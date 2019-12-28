@@ -49,6 +49,7 @@ export class ForumRight extends React.Component {
                         <tr>
                             <th scope="col">Chủ thớt</th>
                             <th scope="col">Tiêu đề</th>
+                            <th scope="col">Like</th>
                             <th scope="col">Comment</th>
                             <th scope="col"><i className="far fa-clock"></i></th>
                         </tr>

@@ -49,13 +49,13 @@ class ListChap extends React.Component
         return(
             <>
             <div className="row list-chap">
-                <div className="col-xs-12">
+                <div className="col-lg-12">
                     <h4 className="title">Danh sách chương</h4>
                 </div>
-                <div className="col-sm-6">
+                <div className="col-lg-6">
                     {this.show2(this.show1())}
                 </div>
-                <div className="col-sm-6">
+                <div className="col-lg-6">
                     {this.show3(this.show1())}
                 </div>
                 </div>

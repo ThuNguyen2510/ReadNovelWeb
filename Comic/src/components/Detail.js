@@ -55,13 +55,22 @@ class Detail extends React.Component {
                 }
             }
             else if(a==0)
-            for(var i=0;i<this.props.liked.length;i++){
-                if(this.props.id_comic!=this.props.liked[i].comicID){
+            {
+                if(this.props.liked.length!=0)
+                for(var i=0;i<this.props.liked.length;i++){
+                    if(this.props.id_comic!=this.props.liked[i].comicID){
+                        this.props.addLike(user.id,this.props.id_comic)                    
+                        this.checklike()
+                       break
+                    }
+                }
+                else{
                     this.props.addLike(user.id,this.props.id_comic)                    
                     this.checklike()
-                   break
+
                 }
             }
+           
             
         }
 

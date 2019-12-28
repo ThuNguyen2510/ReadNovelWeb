@@ -136,9 +136,7 @@ class Admin_user extends React.Component {
                                             {
                                                 (this.props.list == null) &&
                                                 <div className="row">
-                                                    <div className="dataTables_info ml-4" id="dataTable_info" role="status" aria-live="polite">
-                                                        <i class="fas fa-pencil-ruler mr-2"></i>THỐNG KÊ {localStorage.getItem('total_user')}  user
-                                                    </div>
+                                                    <div className="dataTables_info ml-4" id="dataTable_info" role="status" aria-live="polite"><i class="fas fa-pencil-ruler mr-2"></i>THỐNG KÊ {localStorage.getItem('total_user')}  user</div>
                                                 </div>
                                             }
                                             <div className="row justify-content-center align-items-center">

@@ -78,7 +78,7 @@ class Nav extends React.Component {
     link.setAttribute('href', '/Signin')
     var icon = document.getElementById('icon')
     icon.setAttribute('class', 'fas fa-sign-in-alt link')
-    //   link.setAttribute('data-content','Signin/Signup')
+    // link.setAttribute('data-content','Signin/Signup')
     document.getElementById("user").style.visibility = "hidden";
 
 

@@ -22,8 +22,8 @@ export class Admin_forum extends Component {
         var show= list.map((a)=>{
             return(<>
                 <tr  className="row w-100">
-                    <td className="col-md-4">{a.user}</td>
                     <td className="col-md-4">{a.post}</td>
+                    <td className="col-md-4">{a.user}</td>
                     <td className="col-md-4">
                         <ul className="ml-5">
                         <li id="but" ><Link ><button className = "btn btn-gradient-primary">Xem</button></Link></li>

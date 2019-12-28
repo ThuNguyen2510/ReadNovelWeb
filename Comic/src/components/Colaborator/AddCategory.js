@@ -18,6 +18,7 @@ class AddCategory extends React.Component {
         let{cate}=this.state
         console.log(cate)
         this.props.addCategory(cate)
+        this.props.history.push("/Colaborator/categorys")
     }
 
    

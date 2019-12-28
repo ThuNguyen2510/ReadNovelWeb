@@ -112,8 +112,19 @@ export const addComic = (name, genre_id, author, chap_number, des, date, img) =>
             'update_time': date,
             'image': img
         }).then(
+            d => {
+                dispatch(addcomic())
+                return axios.get('http://127.0.0.1:3000/comics', {
+                    headers: {
+                        "Authorization": 'Bearer ' + localStorage.getItem("token"),
+                        'Content-Type': 'application/json',
+                    }
+                }).then(data => {
 
-            dispatch(addcomic())
+                    dispatch(returnList(data.data))
+                })
+            }
+
         )
     }
 }
@@ -134,20 +145,20 @@ export const updateComic = (id, name, author, genreID, des, Image, date, chaps, 
     return dispatch => {
         return axios.put('http://127.0.0.1:3000/comics/' + id, {
             'name': name,
-            'author': author[0],
-            'genreID': genreID[0],
-            'image': Image[0],
+            'author': author,
+            'genreID': parseInt(genreID[0]),
             'description': des[0],
             'update_time': date,
-            'chapter_long': chaps,
-            'status': Status[0]
+            'chapter_long': parseInt(chaps),
+            'status': parseInt(Status[0]),
+            'image': Image,
         }).then(
             (data) => {
 
                 dispatch(updatecomic())
 
             }
-        ).catch(error => console.log(error))
+        )
     }
 
 }
@@ -156,10 +167,17 @@ export const addCategory = (cate) => {
         return axios.post('http://127.0.0.1:3000/genres', { genre_name: cate }).then(
             data => {
                 dispatch(addGenre())
+                return axios.get('http://127.0.0.1:3000/genres').then(d => {
+                    dispatch(returnGenres(d.data))
+                })
             }
         )
     }
 }
+const returnGenres = (Genre) => ({
+    type: 'GET_GENRES',
+    gens: Genre
+})
 const addGenre = () => ({
     type: 'ADD_GENRE',
 

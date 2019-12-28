@@ -88,8 +88,8 @@ class AddChapter extends React.Component {
                                         <div className="mb-5">
                                             <label className="mb-3" for="username" style={{ float: "left" }}>Nội dung</label><br />
                                             <div className="form-group">
-                                                {/* <textarea value={this.state.content} onChange={e => this.setState({ content: e.target.value })} className="form-control" id="exampleFormControlTextarea3" rows="4"></textarea> */}
-                                                <FroalaEditor value={this.state.content} onChange={e => this.setState({ content: e.target.value })} ></FroalaEditor>
+                                                <textarea value={this.state.content} onChange={e => this.setState({ content: e.target.value })} className="form-control" id="exampleFormControlTextarea3" rows="4"></textarea>
+                                                {/* <FroalaEditor value={this.state.content} onChange={e => this.setState({ content: e.target.value })} ></FroalaEditor> */}
                                                 <input type="file" className=" mt-4" onChange={e => this.selectFile(e.target.files[0])}></input>
                                             </div>
                                         </div>

@@ -231,6 +231,7 @@ const mapDispatchToProps = (dispatch) => {
         fetchOneComic: (comic_id) => dispatch(fetchOneComic(comic_id)),
         fetchChapters: (id) => dispatch(fetchChapters(id)),
         fetchChapter: (id) => dispatch(fetchChapter(id)),
+        
         updateComic:(id, Name, Author, genre_id, des, Image, date, chaps, Status,l,v)=>
         dispatch(updateComic(id, Name, Author, genre_id, des, Image, date, chaps, Status,l,v)),
         deleteChapter: (id,a) => dispatch(deleteChapter(id,a)),

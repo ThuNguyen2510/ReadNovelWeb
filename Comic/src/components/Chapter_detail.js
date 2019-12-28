@@ -5,17 +5,24 @@ import Footer from './Footer';
 import Chap_content from './Chap_content';
 import { Link } from 'react-router-dom';
 import './Chapter_detail.css';
-import { fetchChapter } from '../actions/ChapterAction'
+import { fetchChapter } from '../actions/ChapterAction';
+import {fetchOneComic} from '../actions/ComicActions';
 import { connect } from 'react-redux'
 import { parenthesizedExpression } from '@babel/types';
 class Chapter_detail extends React.Component {
     constructor(props) {
         super(props)
+        this.state={
+            color:""
+        }
     }
     componentDidMount() {
         this.props.fetchChapter(this.props.match.params.id)
     }
     componentWillMount() {
+        this.props.fetchChapter(this.props.match.params.id)
+        this.props.fetchOneComic(this.props.match.params.index);  
+
     }
     option() {
         var chaps = []
@@ -68,7 +75,7 @@ class Chapter_detail extends React.Component {
     }
     setBg(clor_) {
         //alert(clor_);
-        console.log("mau " + clor_)
+        
         return clor_;
     }
     show() {
@@ -98,13 +105,14 @@ class Chapter_detail extends React.Component {
             id_ = this.props.chap[i].stt
         }
         localStorage.setItem('chapid', id_)
+
         return (
             <div>
                 <div className="container nav-content">
                     <Link id="home" to="/"><i className="fas fa-home"></i> TRANG CHỦ </Link> <i className="fas fa-angle-right"> </i>
                     <Link to={"/Comic/" + this.props.match.params.index}>{localStorage.getItem('comic_name')} </Link><i className="fas fa-angle-right"> </i>
                     <Link to={"/Comic/" + this.props.match.params.index + "/Chapter/" + this.props.match.params.id}> CHƯƠNG {parseInt(id_)}</Link>
-                    <select onChange={(e) => (this.setBg(e.target.value))} className="float-right colorName" id="bg">
+                    <select onChange={(e) =>this.setState({color:e.target.value})} className="float-right colorName" id="bg">
                         <option>MÀU NỀN</option>
                         {color_}
                     </select>
@@ -114,7 +122,7 @@ class Chapter_detail extends React.Component {
                     <Link id="chapname" to={"/Comic/" + this.props.match.params.index + "/Chapter/" + this.props.match.params.id}>{name}</Link><br />
                     {this.select1()}
                 </div>
-                <Chap_content id="chap-content" bgcolor={getColor} content={content} />
+                <Chap_content id="chap-content" bgcolor={this.state.color} content={content} />
                 {this.select2()}
             </div>
         )
@@ -144,6 +152,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchChapter: (chap_id) => dispatch(fetchChapter(chap_id)),
+        fetchOneComic:(id)=> dispatch(fetchOneComic(id))
     };
 }
 

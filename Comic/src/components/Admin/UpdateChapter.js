@@ -41,11 +41,10 @@ class UpdateChapter extends React.Component{
         let {name,content} = this.state;
         if(window.confirm('Are you sure?'))
         {
-            this.props.UpdateChapter(this.props.match.params.id,name,content)
+            this.props.UpdateChapter(this.props.match.params.id,name,content,this.props.match.params.index)
             alert("Success")
-            this.props.history.goBack()
-            this.props.fetchChapters(this.props.match.params.index)
-            this.props.history.push('/Comic/'+this.props.match.params.index+'/Show')
+           
+           // this.props.history.push("/Comic/"+this.props.match.params.index+"/Show")
         }
 
     }
@@ -91,7 +90,7 @@ class UpdateChapter extends React.Component{
                         <div className="row">
                             <div className="col-md-7"></div>
                             <div className="col-md-5">
-                                 <Link onClick={e=> this.Save()} type="button" to={"/Comic/"+this.props.match.params.index+"/Chapter/"+this.props.match.params.id+"/Show"} class="btn btn-pill btn-warning">Save</Link>
+                                 <Link onClick={e=> this.Save()} type="button" to={"/Comic/"+this.props.match.params.index+"/Show"} class="btn btn-pill btn-warning">Save</Link>
                                 <Link type="button" to={"/Comic/"+this.props.match.params.index+"/Show"} class="btn btn-square btn-secondary">Cancel</Link>
                             </div>
                         </div>
@@ -121,7 +120,7 @@ const mapStateToProps =(state)=>
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        UpdateChapter:(chap_id,name,content) => dispatch(updateChapter(chap_id,name,content)),
+        UpdateChapter:(chap_id,name,content,comicid) => dispatch(updateChapter(chap_id,name,content,comicid)),
         fetchChapters: (id) => dispatch(fetchChapters(id)),
 
   };

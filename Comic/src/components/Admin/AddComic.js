@@ -52,7 +52,7 @@ class AddComic extends React.Component {
             this.setState({
                 imageUrls: reader.result
             })
-            localStorage.setItem('image_url', reader.result)
+        localStorage.setItem('image_url', reader.result)
         };
     }
 

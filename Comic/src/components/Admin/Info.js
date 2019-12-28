@@ -42,7 +42,7 @@ export class Info extends Component {
                                     <Link className="text-decoration-none" style={{fontSize:"50px", color:"#fff"}} to="/Admin/Users"> 
                                     <h4 className="font-weight-normal mb-3">Thành viên <i className="mdi mdi-chart-line mdi-24px float-right" />
                                     </h4>
-                                    <h2 className="mb-5">{this.props.posts.length} </h2>
+                                    <h2 className="mb-5">{this.props.user.length} </h2>
                                     <a href="/Admin/Users" style={{fontSize:"50px", color:"#fff"}}><i className="mdi mdi-plus-circle-outline large"></i></a>
                                     {/* <h6 className="card-text">Increased by 60%</h6> */}
                                     </Link>
@@ -99,7 +99,7 @@ const mapStateToProps=(state) =>{
         list: state.comics,
         gens:state.genre,
         posts:state.lpost,
-        user: state.user
+        user: state.users.full
     }
 }
 const mapDispatchToProps=(dispatch, props)=>{

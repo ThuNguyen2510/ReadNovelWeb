@@ -9,6 +9,7 @@ class Chap_content extends React.Component{
             <div>
                 <div className="container" >
                     <div className="row">
+                        {console.log(this.props.bgcolor)}
                         <div className="col-md-12 content" style={{backgroundColor:this.props.bgcolor}}>
                             {this.props.content}
                         </div>
